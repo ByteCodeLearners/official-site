@@ -65,7 +65,6 @@ export default {
 .bcl-intro-text{
   margin: 20vh 20vh 0 5vw;
   width: 60%;
-  /* background: blue; */
   color: #fff;
 }
 .social-links{
@@ -102,12 +101,23 @@ export default {
 }
 
 @media only screen and (max-width: 600px) {
-  /* .content {
+  .content {
     flex-direction: column;
-  } */
-  /* .bcl-side-image{
-    width: 100px;
-    height: 50px;
-  } */
+    height: auto;
+  } 
+  
+  .bcl-intro-text .heading{
+  font-size: 3.5em;
+  }
+   .bcl-side-image img{
+    width:100%;
+    height:auto;
+  }
+  .slide-btn {
+    display: none;
+  }
+  .social-links{
+    width: 70%;
+  }
 }
 </style>
