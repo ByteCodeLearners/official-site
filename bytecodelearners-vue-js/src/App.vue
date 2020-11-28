@@ -3,12 +3,13 @@
   dark>
     <HeaderComponent/>
     <router-view/>
+    <ByteCodeFooter/>
   </v-app>
 </template>
 
 <script>
 import HeaderComponent from "@/components/HeaderTop"
-
+import ByteCodeFooter from "@/components/ByteCodeFooter"
 export default {
   name: 'App', 
 
@@ -16,6 +17,7 @@ export default {
   }),
   components:{
     HeaderComponent,
+    ByteCodeFooter,
   }
   ,
   methods:{

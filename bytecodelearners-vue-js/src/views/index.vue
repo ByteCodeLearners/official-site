@@ -1,6 +1,7 @@
 <template>
   <div class="homepage">
     <Introduction/>
+    <div class="contents"></div>
     <ByteCodeSlider/>
     <PhotoGallery />
   </div>
@@ -22,5 +23,7 @@ export default {
 </script>
 
 <style scoped>
-
+.contents{
+  height: 200vh;
+}
 </style>
