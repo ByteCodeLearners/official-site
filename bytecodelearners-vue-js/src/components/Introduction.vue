@@ -28,7 +28,7 @@ export default {
     scrollDown()
     {
       const toScrollHeight=document.getElementsByClassName("intro")[0];
-      window.scrollBy(0,toScrollHeight.clientHeight)
+      window.scrollTo(0,toScrollHeight.clientHeight)
     }
   },
 }
@@ -36,13 +36,12 @@ export default {
 
 <style>
 .heading{
-  font-size: 6em;
+  font-size: 7em;
   font-weight: 700;
   color:#fff;
 }
 .intro
 {
-  scroll-behavior: smooth;
   height: 100vh !important;
   margin: 0;
   padding: 0;
@@ -54,11 +53,13 @@ export default {
   display: flex;
   flex-direction: row;
   background: black;
+  
 }
 .bcl-intro-text-container{
   
   width: 60%;
   color: #fff;
+  
 }
 .bcl-intro-text{
   margin: 0 0 0 10%;
@@ -66,21 +67,16 @@ export default {
 }
 .bcl-side-image 
 {
-  width: 30%;
+  width: 40%;
   margin: 0;
   padding: 0;
+  /* border: 2px solid red; */
+
 }
 .bcl-side-image  img
 {
   width: 50%;
   margin: 30%;
-}
-.social-links{
-  margin-top:7vh;
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 .slide-btn
 {
@@ -109,27 +105,42 @@ export default {
 .sub-text
 {
   text-transform: capitalize;
-  font-size: 1.3em;
+  font-size: 1.7em;
 }
 
 @media only screen and (max-width: 600px) {
-  .content {
-    flex-direction: column;
-    height: auto;
+  .intro{
+    height: 94vh !important;
   }
-  
+  .content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .bcl-intro-text-container{
+    width: 100%;
+
+  }
   .bcl-intro-text-container .heading{
-  font-size: 3.5em;
+  font-size: 3.1em;
+
   }
   .bcl-intro-text{
     font-size: 0.8em;
   }
-   .bcl-side-image img{
-    width:100%;
-    height:100%;
+  .sub-text{
+    font-size: smaller;
   }
-  .slide-btn {
-    display: none;
+  .bcl-side-image{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .bcl-side-image>img{
+    width: 100%;
+    margin:0;
+    padding: 0;
   }
 }
 </style>

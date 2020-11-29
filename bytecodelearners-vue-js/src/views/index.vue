@@ -3,7 +3,10 @@
     <Introduction/>
     <div class="contents"></div>
     <ByteCodeSlider/>
+    <v-container>
     <PhotoGallery />
+
+    </v-container>
   </div>
 </template>
 

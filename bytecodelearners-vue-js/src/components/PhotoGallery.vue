@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="bcl-container">
     <v-card class="gallery_heading mx-auto mb-4">EVENTS GALLERY</v-card>
             <div class="gallery">
                 <figure class="gallery__item gallery__item--1">
@@ -53,28 +53,12 @@ export default {
   box-sizing: inherit; 
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%; 
-}
-
-body {
-  font-family: "Nunito", sans-serif;
-  color: #333;
-  font-weight: 300;
-  line-height: 1.6; 
-}
-
-.container {
-  width: 60%;
-  margin: 2rem auto; 
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 5vw);
   grid-gap: 1.5rem; 
+  z-index: 0;
 }
 
 .gallery__img {
