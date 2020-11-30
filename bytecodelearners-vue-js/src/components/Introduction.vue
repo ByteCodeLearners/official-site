@@ -56,7 +56,7 @@ export default {
     scrollDown()
     {
       const toScrollHeight=document.getElementsByClassName("intro")[0];
-      window.scrollBy(0,toScrollHeight.clientHeight)
+      window.scrollTo(0,toScrollHeight.clientHeight)
     }
   },
 }
@@ -64,13 +64,12 @@ export default {
 
 <style>
 .heading{
-  font-size: 6em;
+  font-size: 7em;
   font-weight: 700;
   color:#fff;
 }
 .intro
 {
-  scroll-behavior: smooth;
   height: 100vh !important;
   margin: 0;
   padding: 0;
@@ -83,12 +82,13 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* background: black; */
-}
+  background: black;
+  }
 .bcl-intro-text-container{
   
   width: 60%;
   color: #fff;
+  
 }
 .bcl-intro-text{
   margin: 0 0 0 10%;
@@ -96,9 +96,11 @@ export default {
 }
 .bcl-side-image 
 {
-  width: 30%;
+  width: 40%;
   margin: 0;
   padding: 0;
+  /* border: 2px solid red; */
+
 }
 .bcl-side-image  img
 {
@@ -241,6 +243,7 @@ export default {
           animation-delay: 15s;
   -webkit-animation-duration: 40s;
           animation-duration: 40s;
+  font-size: 1.7em;
 }
 .bg-bubbles li:nth-child(9) {
   left: 25%;
@@ -286,23 +289,38 @@ export default {
 
 
 @media only screen and (max-width: 600px) {
-  .content {
-    flex-direction: column;
-    height: auto;
+  .intro{
+    height: 94vh !important;
   }
-  
+  .content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .bcl-intro-text-container{
+    width: 100%;
+
+  }
   .bcl-intro-text-container .heading{
-  font-size: 3.5em;
+  font-size: 3.1em;
+
   }
   .bcl-intro-text{
     font-size: 0.8em;
   }
-   .bcl-side-image img{
-    width:100%;
-    height:100%;
+  .sub-text{
+    font-size: smaller;
   }
-  .slide-btn {
-    display: none;
+  .bcl-side-image{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .bcl-side-image>img{
+    width: 100%;
+    margin:0;
+    padding: 0;
   }
 }
 </style>
