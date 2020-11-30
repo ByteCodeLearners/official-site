@@ -21,7 +21,15 @@
 export default {
   data:()=>({
     menu:false
-  })
+  }),
+  mounted(){
+    window.addEventListener("keydown",(e)=>{
+      if(e.keyCode==27)
+      {
+        this.menu=false;
+      }
+    })
+  }
 
 }
 </script>
@@ -34,7 +42,7 @@ export default {
 }
 .bcl-menu-bar{
   height: 60px !important;
-  outline: none !important;
+  outline: 0 !important;
   background: rgba(0,0,0,0) !important;
   box-shadow: unset !important;
 }
