@@ -51,6 +51,9 @@ export default {
     justify-content: center;
     align-content: center;
 }
+.bcl-group-slider-content{
+    margin:10px;
+}
 @keyframes slide {
     to{
         transform: translateX(-100%);

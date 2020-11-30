@@ -1,5 +1,6 @@
 <template>
-  <div class="bcl-members-details-container">
+ <v-card>
+      <div class="bcl-members-details-container">
         <div class="bcl-members-image">
                   <img :src="image" alt="image">
               </div>
@@ -7,6 +8,7 @@
                   <p>ByteCoder</p>
               </div>
   </div>
+ </v-card>
 </template>
 
 <script>
