@@ -2,7 +2,6 @@
  <div>
     <v-app-bar
       app
-      dark
       collapse
       class="bcl-menu-bar"
     >
@@ -22,13 +21,7 @@
 export default {
   data:()=>({
     menu:false
-  }),
-    methods:{
-    test()
-    {
-      console.log("hello")
-    }
-  },
+  })
 
 }
 </script>
@@ -37,10 +30,13 @@ export default {
 .menu-icon
 {
   font-size: 2.7em !important;
-  color: #0B0505;
+  color: whitesmoke;
 }
 .bcl-menu-bar{
   height: 60px !important;
+  outline: none !important;
+  background: rgba(0,0,0,0) !important;
+  box-shadow: unset !important;
 }
 
 @media only screen and (max-width: 500px) {
