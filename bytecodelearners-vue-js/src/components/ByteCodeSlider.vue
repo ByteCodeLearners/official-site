@@ -20,7 +20,7 @@ export default {
     }),
     components:{
         MembersDetailsCard,
-    }
+    },
 }
 </script>
 <style scoped>
@@ -38,7 +38,7 @@ export default {
     position: relative;
 }
 .slide{
-    animation: slide 80s ease infinite;
+    /* animation: slide 80s ease infinite; */
 }
 
 .slide:hover{

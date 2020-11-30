@@ -82,8 +82,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  background: black;
-  }
+}
 .bcl-intro-text-container{
   
   width: 60%;
@@ -99,7 +98,6 @@ export default {
   width: 40%;
   margin: 0;
   padding: 0;
-  /* border: 2px solid red; */
 
 }
 .bcl-side-image  img
