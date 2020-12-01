@@ -18,7 +18,9 @@
             </div>
         </div>
         <div class="bcl-line"></div>
-        <div class="bcl-footer right"></div>
+        <div class="bcl-footer right">
+
+        </div>
     </footer>
 </template>
 
@@ -40,9 +42,22 @@ footer{
 .bcl-footer{
     height: 250px;
     width: 30%;
-    margin: 0;
+    margin: 5px;
     padding: 0;
 }
+.left{
+   border: 1px solid red;
+}
+.middle{
+    border: 1px solid;
+    padding: 2%;
+    box-shadow: 2px 2px blue;
+}
+.right{
+    border: 1px solid green;
+
+}
+
 .bcl-line
 {
     border: 1px solid rgb(97, 94, 94);
@@ -57,7 +72,7 @@ footer{
 }
 .bcl-follow-us-on span{
     text-align: center;
-    font-size: 2.5em;
+    font-size: 5em;
 }
 .bcl-social-links{
     display: flex;
@@ -73,27 +88,36 @@ footer{
 }
 .bcl-social-media-icons{
     color: black;
-    font-size: 3em;
+    font-size: 5em;
     text-align: center;
-    text-decoration: none;
 }
 .bcl-social-media-icons:hover{
     color: red;
-    text-decoration: none;
  
 }
 @media only screen and (max-width: 600px){
+    footer{
+        flex-direction: column;
+    }
     .bcl-follow-us-on span{
-        font-size: 2em;
+        font-size: 3em;
     }
     .bcl-social-links{
-        flex-direction: column ;
+        flex-direction: row;
+        margin: 2% 0 0 0;
     }
     .bcl-social-media-icons{
         font-size: 4em;
     }
     .bcl-social-links>a{
         margin: 2%;
+    }
+    .bcl-line{
+        display: none;
+    }
+    .bcl-footer{
+        width: 98%;
+        height: 120px;
     }
 
 }
