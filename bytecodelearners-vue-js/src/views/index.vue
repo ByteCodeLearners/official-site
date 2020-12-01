@@ -32,6 +32,6 @@ export default {
 
 <style scoped>
 .contents{
-  height: 200vh;
+  height: 100vh;
 }
 </style>

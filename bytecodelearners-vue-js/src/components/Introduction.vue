@@ -58,10 +58,11 @@ export default {
   methods:{
     scrollDown()
     {
+      // smooth scrolling using JQuery
       $(".slide-btn").click(()=>{
         $( 'html, body' ).animate({
           scrollTop: $( "#bcl-index-main-content" ).offset().top
-        }, '400' );
+        }, 700 );
       })
     }
   },
@@ -335,6 +336,9 @@ export default {
   }
 }
 @media only screen and (max-width:500px) {
+  .bcl-intro ,.wrapper{
+    height: 90vh;
+  }
   .bcl-intro-text-container .heading{
     font-size: 3em;
   }

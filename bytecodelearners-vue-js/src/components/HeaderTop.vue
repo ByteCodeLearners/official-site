@@ -6,7 +6,7 @@
       class="bcl-menu-bar"
     >
     <button @click="menu=!menu">
-      <span class="material-icons menu-icon">menu</span>
+      <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
     </v-app-bar>
     <v-navigation-drawer app v-model="menu">
@@ -39,7 +39,7 @@ export default {
 .menu-icon
 {
   font-size: 2.7em !important;
-  color: whitesmoke;
+  color: white;
 }
 .bcl-menu-bar{
   height: 60px !important;
