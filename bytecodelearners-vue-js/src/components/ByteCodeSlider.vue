@@ -42,9 +42,11 @@ export default {
                 easing:"linear"
             })
             .animate({
-                marginLeft:0
-            },"fast",()=>{
-                animate(to)
+                marginLeft:20
+            },{
+                duration:childrenCount*300,
+                easing:"linear",
+                finish:()=>{animate(to)}
             })
         }
         animate(toSlide);
