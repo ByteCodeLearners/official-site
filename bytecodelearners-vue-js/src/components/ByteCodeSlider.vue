@@ -6,7 +6,8 @@
           <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
             <MembersDetailsCard/>
           </div >
-          <div class="bcl-group-slider-content"></div>
+          <!-- Dummy slide content -->
+          <div class="bcl-group-slider-content dummy-content"></div>
       </div>
   </div>
 </template>
@@ -15,7 +16,9 @@
 import MembersDetailsCard from "@/components/ByteCodeMemberDetailsCard"
 export default {
     data:()=>({
-        sliderContent:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        sliderContent:[1,2,3,4,5,6,7,8,9,10
+        // ,11,12,13,14,15,16,17,18,19,20
+        ],
         show:true
 
     }),
@@ -33,7 +36,7 @@ export default {
             slideElemntWidth=$(".bcl-group-slider-content").outerWidth();
             toSlide=window.outerWidth-$(".bcl-group-slider").width();
         })
-        function animate(to)
+        function slideAnimation(to)
         {
             $(".bcl-group-slider").animate({
                 marginLeft:to
@@ -43,13 +46,12 @@ export default {
             })
             .animate({
                 marginLeft:20
-            },{
-                duration:childrenCount*300,
-                easing:"linear",
-                finish:()=>{animate(to)}
+            },childrenCount*300,"linear",()=>{
+                /*  for looping animation  */
+                slideAnimation(to)
             })
         }
-        animate(toSlide);
+        slideAnimation(toSlide);
     }
 }
 </script>
