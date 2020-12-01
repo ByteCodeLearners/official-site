@@ -2,7 +2,7 @@
   <div class="homepage">
     
     <Introduction/>
-    <div class="contents"></div>
+    <div id="bcl-index-main-content" class="contents"></div>
     <ByteCodeSlider/>
     <v-container>
     <PhotoGallery />
@@ -19,7 +19,8 @@ import PhotoGallery from "@/components/PhotoGallery"
 
 
 export default {
-     components:{
+    name:"homePage",
+    components:{
     Introduction,
     ByteCodeSlider,
     PhotoGallery,
