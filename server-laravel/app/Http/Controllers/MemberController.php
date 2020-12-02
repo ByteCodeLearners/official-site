@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 use App\Models\MemberDetails;
 use App\Models\Members;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 
 class MemberController extends Controller
 {
+    private $member_image_location="/members-image";
     public function addMember(Request $request){
         $request_member_details=[
             "first_name"=>$request["first_name"],
@@ -17,8 +19,9 @@ class MemberController extends Controller
             "email"=>$request["email"],
             "mobile_number"=>$request["mobile_number"],
             /* for profile picture upload (PS: No column in database to store url)*/
-//            $url=$request->file("image")->store('/images',"public")
-
+            "image"=>$url=$request->file("image")->store("/members-image","public")
+//            GET URL http://localhost:8000/storage/members-image/{image_url} (Development)
+//        http://bytecodelearners.club/bytecodelearners-server-laravel/storage/app/public/members-image/WkEjCTCYUmifXWLsKI49VqXHFYCqDGpWlL1axhiF.png
         ];
         $member_details=new MemberDetails($request_member_details);
         try{
@@ -39,7 +42,10 @@ class MemberController extends Controller
             return response()->json($member,202);
         }
         catch (Throwable $ex){
-            return response()->json($ex->errorInfo[2],500);
+            if($ex instanceof QueryException) {
+                return response()->json($ex->errorInfo[2], 500);
+            }
+            return response()->json("member not added",500);
         }
     }
     public function getAllMembers()
