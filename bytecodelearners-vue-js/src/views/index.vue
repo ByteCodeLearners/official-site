@@ -16,6 +16,8 @@
       </ByteCodeFormContainer> -->
 
     </div>
+    <div id="bcl-index-main-content" class="contents"></div>
+    <Events/>
     <ByteCodeSlider/>
     <v-container>
     <PhotoGallery />
@@ -30,6 +32,8 @@ import ByteCodeSlider from "@/components/ByteCodeSlider"
 import Introduction from "@/components/Introduction"
 import PhotoGallery from "@/components/PhotoGallery"
 import api from "@/config/api"
+import Events from "@/components/ByteCodeEvents"
+
 
 
 export default {
@@ -40,6 +44,7 @@ export default {
     }),
     components:{
     Introduction,
+    Events,
     ByteCodeSlider,
     PhotoGallery,
     ByteCodeFormContainer,
