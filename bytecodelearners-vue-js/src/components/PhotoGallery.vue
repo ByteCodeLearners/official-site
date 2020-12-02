@@ -29,6 +29,7 @@
 
 <script>
 export default {
+  name:"PhotoGallery",
 
 }
 </script>
@@ -145,6 +146,11 @@ export default {
   /* grid-row: 6 / span 3; */
 }
 
-
+@media only screen and (max-width:500px)
+{
+  .gallery_heading{
+    font-size: 2em;
+  }
+}
 
 </style>

@@ -6,7 +6,7 @@
       class="bcl-menu-bar"
     >
     <button @click="menu=!menu">
-      <span class="material-icons menu-icon">menu</span>
+      <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
     </v-app-bar>
     <v-navigation-drawer app v-model="menu">
@@ -19,15 +19,18 @@
 
 <script>
 export default {
+  name:"HeaderTop",
   data:()=>({
     menu:false
   }),
-    methods:{
-    test()
-    {
-      console.log("hello")
-    }
-  },
+  mounted(){
+    window.addEventListener("keydown",(e)=>{
+      if(e.keyCode==27)
+      {
+        this.menu=false;
+      }
+    })
+  }
 
 }
 </script>
@@ -35,11 +38,19 @@ export default {
 <style scoped>
 .menu-icon
 {
+<<<<<<< HEAD
   font-size: 3.7em !important;
   color: #fff;
+=======
+  font-size: 2.7em !important;
+  color: white;
+>>>>>>> 2e37b3ab8e7b3e883260b04a390fa1e36f809862
 }
 .bcl-menu-bar{
   height: 60px !important;
+  outline: 0 !important;
+  background: rgba(0,0,0,0) !important;
+  box-shadow: unset !important;
 }
 
 @media only screen and (max-width: 500px) {

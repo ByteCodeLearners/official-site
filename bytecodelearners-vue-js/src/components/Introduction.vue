@@ -1,5 +1,5 @@
 !<template>
-  <div class="intro">
+  <div class="bcl-intro">
 
 <!-- background animation -->
 <div class="wrapper">
@@ -20,20 +20,20 @@
 <!-- background animation end -->
 
 
-
-
       <div class="content">
         <div class="bcl-intro-text-container align-content-center-column">
           <div class="bcl-intro-text">
             <div class="heading">Coding Community</div>
             <div class="sub-text">create something ctrl + n</div>
-          </div>
-          <div class="social-links">
-                    <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
-                    <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-twitter</v-icon></a>
-                    <a href="https://www.facebook.com/Bytecode-Learners-103644071079006" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
-                    <a href="https://github.com/ByteCodeLearners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
-          </div>
+          </div> 
+         <div class="bcl-social-link-container">
+            <div class="bcl-social-links">
+                <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
+                <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-twitter</v-icon></a>
+                <a href="https://www.facebook.com/Bytecode-Learners-103644071079006" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
+                <a href="https://github.com/ByteCodeLearners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
+            </div>
+         </div>
         </div>
         <div class="bcl-side-image align-content-center-column ">
         <img :src="logo">
@@ -48,15 +48,22 @@
 
 <script>
 export default {
+  name:"Introduction",
   data:()=>({
     logo:require("@/assets/bytecode.png")
 
   }),
+  name:"Introduction"
+  ,
   methods:{
     scrollDown()
     {
-      const toScrollHeight=document.getElementsByClassName("intro")[0];
-      window.scrollTo(0,toScrollHeight.clientHeight)
+      // smooth scrolling using JQuery
+      $(".slide-btn").click(()=>{
+        $( 'html, body' ).animate({
+          scrollTop: $( "#bcl-index-main-content" ).offset().top
+        }, 700 );
+      })
     }
   },
 }
@@ -64,16 +71,18 @@ export default {
 
 <style>
 .heading{
-  font-size: 7em;
+  font-size: 6em;
   font-weight: 700;
   color:#fff;
 }
-.intro
+.bcl-intro
 {
-  height: 100vh !important;
+  height: 100vh;
   margin: 0;
   padding: 0;
   position: relative; 
+  color: #fff;
+
 }
 .content
 {
@@ -82,13 +91,9 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  background: black;
-  }
+}
 .bcl-intro-text-container{
-  
   width: 60%;
-  color: #fff;
-  
 }
 .bcl-intro-text{
   margin: 0 0 0 10%;
@@ -96,10 +101,9 @@ export default {
 }
 .bcl-side-image 
 {
-  width: 40%;
+  width: 30%;
   margin: 0;
   padding: 0;
-  /* border: 2px solid red; */
 
 }
 .bcl-side-image  img
@@ -107,19 +111,17 @@ export default {
   width: 50%;
   margin: 30%;
 }
-.social-links{
-  margin: 5% 0 0 10%;
-  width: 30%;
-
+.bcl-social-links{
+  margin-left: 10%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
 }
-.social-links a{
+.bcl-social-links a{
   text-decoration: none;
   transition: transform .5s;
 }
-.social-links a:hover{
+.bcl-social-links a:hover{
   text-decoration:underline;
   color:#fff;
   transform: scale(1.5);
@@ -152,7 +154,7 @@ export default {
 .sub-text
 {
   text-transform: capitalize;
-  font-size: 2.3em;
+  font-size: 1.6em;
 }
 
 
@@ -202,21 +204,21 @@ export default {
   width: 80px;
   height: 80px;
   -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-delay: 2s;
   -webkit-animation-duration: 17s;
-          animation-duration: 17s;
+  animation-duration: 17s;
 }
 .bg-bubbles li:nth-child(3) {
   left: 25%;
   -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  animation-delay: 4s;
 }
 .bg-bubbles li:nth-child(4) {
   left: 40%;
   width: 60px;
   height: 60px;
   -webkit-animation-duration: 22s;
-          animation-duration: 22s;
+  animation-duration: 22s;
   background-color: rgba(255, 255, 255, 0.25);
 }
 .bg-bubbles li:nth-child(5) {
@@ -227,7 +229,7 @@ export default {
   width: 120px;
   height: 120px;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
   background-color: rgba(255, 255, 255, 0.2);
 }
 .bg-bubbles li:nth-child(7) {
@@ -235,7 +237,7 @@ export default {
   width: 160px;
   height: 160px;
   -webkit-animation-delay: 7s;
-          animation-delay: 7s;
+  animation-delay: 7s;
 }
 .bg-bubbles li:nth-child(8) {
   left: 55%;
@@ -290,32 +292,23 @@ export default {
 
 
 
-@media only screen and (max-width: 600px) {
-  .intro{
-    height: 94vh !important;
-  }
-  .content {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  .bcl-intro-text-container{
-    width: 100%;
 
-  }
+
+@media only screen and (max-width:800px) {
   .bcl-intro-text-container .heading{
-  font-size: 3.1em;
-
+    font-size: 4.3em;
   }
-  .bcl-intro-text{
-    font-size: 0.8em;
+  
+  .bcl-intro-text-container{
+    width: 70%;
   }
   .sub-text{
-    font-size: smaller;
+    font-size: 1.2em;
   }
+  
   .bcl-side-image{
     height: 100%;
+    width: 25%;
     margin: 0;
     padding: 0;
   }
@@ -323,6 +316,50 @@ export default {
     width: 100%;
     margin:0;
     padding: 0;
+  }
+}
+@media only screen and (max-width:700px) {
+  .bcl-intro-text-container .heading{
+    font-size: 4em;
+  }
+  
+  .bcl-intro-text-container{
+    width: 70%;
+  }
+  .sub-text{
+    font-size: 1.2em;
+  }
+  
+  .bcl-side-image{
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media only screen and (max-width:500px) {
+  .bcl-intro ,.wrapper{
+    height: 95.5vh;
+  }
+  .bcl-intro-text-container .heading{
+    font-size: 3em;
+  }
+  .sub-text{
+    font-size: 1em;
+  }
+  .slide-btn
+{
+  width: 100%;
+  height: 70px;
+}
+}
+
+@media only screen and (max-width: 400px) {
+  .bcl-intro-text-container .heading{
+    font-size: 3.25em;
+  }
+  .bcl-intro-text{
+    font-size: 0.8em;
   }
 }
 </style>
