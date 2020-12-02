@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .heading{
   font-size: 6em;
   font-weight: 700;
@@ -113,7 +113,7 @@ export default {
 }
 .bcl-social-links{
   margin: 2% 0 0 10%;
-  width:30%;
+  width:30%;  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
