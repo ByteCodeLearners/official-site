@@ -337,7 +337,7 @@ export default {
 }
 @media only screen and (max-width:500px) {
   .bcl-intro ,.wrapper{
-    height: 90vh;
+    height: 95.5vh;
   }
   .bcl-intro-text-container .heading{
     font-size: 3em;
@@ -345,6 +345,11 @@ export default {
   .sub-text{
     font-size: 1em;
   }
+  .slide-btn
+{
+  width: 100%;
+  height: 70px;
+}
 }
 
 @media only screen and (max-width: 400px) {
