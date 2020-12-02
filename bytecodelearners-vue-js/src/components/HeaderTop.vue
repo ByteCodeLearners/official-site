@@ -2,11 +2,8 @@
  <div>
     <v-app-bar
       app
-      color="green"
-      height="60"
-      width="40"
       collapse
-      min-width="100"
+      class="bcl-menu-bar"
     >
     <button @click="menu=!menu">
       <span class="material-icons menu-icon">menu</span>
@@ -40,5 +37,15 @@ export default {
 {
   font-size: 3.7em !important;
   color: #fff;
+}
+.bcl-menu-bar{
+  height: 60px !important;
+}
+
+@media only screen and (max-width: 500px) {
+.bcl-menu-bar{
+  height: 50px !important;
+  width: 70px !important;
+}
 }
 </style>
