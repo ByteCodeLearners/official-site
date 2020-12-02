@@ -17,9 +17,9 @@
 
     </div>
     <div id="bcl-index-main-content" class="contents"></div>
-    <Events/>
-    <ByteCodeSlider/>
     <v-container>
+    <Events/>
+    <ByteCodeSlider sliderTitle="Members"/>
     <PhotoGallery />
 
     </v-container>

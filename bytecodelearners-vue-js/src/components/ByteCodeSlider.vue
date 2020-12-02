@@ -1,6 +1,9 @@
 <template>
-  <div class="bcl-slider-container">
-      
+  <div class="bcl-slider">
+      <div class="bcl-slider-title">
+          {{sliderTitle}}
+      </div>
+      <div class="bcl-slider-container">
           <div class="bcl-group-slider  slide">
           <!-- CONTENT for sliding-->
           <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
@@ -9,6 +12,7 @@
           <!-- Dummy slide content -->
           <div class="bcl-group-slider-content dummy-content"></div>
       </div>
+  </div>
   </div>
 </template>
 
@@ -25,6 +29,10 @@ export default {
     components:{
         MembersDetailsCard,
     },
+    props:{
+        sliderTitle:String
+    }
+    ,
     mounted()
     {
         var animation="translateX:-100px";
@@ -81,5 +89,13 @@ export default {
 .bcl-group-slider-content{
     margin:10px;
     min-width: 150px;
+}
+.bcl-slider-title{
+  font-size: 4em;
+  font-weight: 700;
+  /* width: 75%; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 </style>
