@@ -38,13 +38,8 @@ export default {
 <style scoped>
 .menu-icon
 {
-<<<<<<< HEAD
   font-size: 3.7em !important;
-  color: #fff;
-=======
-  font-size: 2.7em !important;
-  color: white;
->>>>>>> 2e37b3ab8e7b3e883260b04a390fa1e36f809862
+  color: #fff;  
 }
 .bcl-menu-bar{
   height: 60px !important;
