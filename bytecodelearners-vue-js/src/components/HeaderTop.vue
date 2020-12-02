@@ -2,8 +2,9 @@
  <div>
     <v-app-bar
       app
-      dark
+      color="green"
       height="60"
+      width="40"
       collapse
       min-width="100"
     >
@@ -37,7 +38,7 @@ export default {
 <style scoped>
 .menu-icon
 {
-  font-size: 2.7em !important;
-  color: #0B0505;
+  font-size: 3.7em !important;
+  color: #fff;
 }
 </style>

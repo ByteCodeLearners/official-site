@@ -115,10 +115,12 @@ export default {
 }
 .social-links a{
   text-decoration: none;
+  transition: transform .5s;
 }
 .social-links a:hover{
   text-decoration:underline;
   color:#fff;
+  transform: scale(1.5);
 }
 
 .slide-btn
