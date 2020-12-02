@@ -16,8 +16,6 @@ export default {
   text-align: center;
   font-size: 4em;
   font-weight: 700;
-  margin-top: 10px;
-  width: 75%;
 }
 *,
 *::after,
