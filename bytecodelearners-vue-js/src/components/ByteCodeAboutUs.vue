@@ -1,33 +1,25 @@
 <template>
     <div class="bcl-events">
         
-        <v-card class="events-heading  mx-auto mb-4" flat outlined> EVENTS
-        </v-card>
-        <vue-typer class="typer" text='Come learn, share and connect with us in person'></vue-typer>
+        <v-card class="events-heading  mx-auto mb-4" flat outlined> About Us </v-card>
+        <vue-typer class="typer" text='We make this happen!'></vue-typer>
+       
        <div class="container ">
+        
         <div class="row ">
-         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" outlined   color="rgba(0,0,0,0.1)">
-              <center><h1>Upcoming Event</h1></center>
-              <div class="bcl-current-event-img">
-                  <center><img :src="logo"></center>
-              </div>
-              <div class="bcl-current-event">
-               <v-hover close-delay="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dolorem?</v-hover>
-              </div>
-      
-         </v-card>
-        <v-card class="col-sm-12  center col-md-6 bcl-small-container-2"  outlined color="rgba(0,0,0,0.1)">
          
-           <center><h1>Previous Events</h1></center>
+         <v-card class="col-sm-12   col-md-6 bcl-small-container-1" outlined   color="rgba(0,0,0,0.1)">
+              
+              <div class="bcl-current-event">
+               <v-hover close-delay="200">ByteCodeLearners is a coding community at university,
+                    where students apply their skills into developing the applications for
+                     the benefit of the sociaty and enhancing their own skills in the process.</v-hover>
+              </div>
+         </v-card>
+
+        <v-card class="col-sm-12   col-md-6 bcl-small-container-2"  outlined color="rgba(0,0,0,0.1)">
            <div class="bcl-previous-events">
-               <div class="line1">
-               <img :src="logo">
-               <img :src="logo">
-               </div>
-               <div class="line2">
-               <img :src="logo">
-               <img :src="logo">
-               </div>
+              <center><img :src="logo" alt=""></center>
 
            </div>
        
@@ -46,6 +38,7 @@
 
 <script>
 export default {
+    name: 'About',
           data:()=>({
     logo:require("@/assets/bytecode.png")
   }),
