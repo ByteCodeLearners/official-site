@@ -13,6 +13,7 @@
 
 <script>
 export default {
+    name:"ByteCodeMemberDetailsCard",
     data:()=>({
             image:require("@/assets/bytecode-original.png"),
         }),

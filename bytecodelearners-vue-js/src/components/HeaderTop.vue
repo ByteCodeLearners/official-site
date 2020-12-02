@@ -2,12 +2,11 @@
  <div>
     <v-app-bar
       app
-      dark
       collapse
       class="bcl-menu-bar"
     >
     <button @click="menu=!menu">
-      <span class="material-icons menu-icon">menu</span>
+      <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
     </v-app-bar>
     <v-navigation-drawer app v-model="menu">
@@ -20,15 +19,18 @@
 
 <script>
 export default {
+  name:"HeaderTop",
   data:()=>({
     menu:false
   }),
-    methods:{
-    test()
-    {
-      console.log("hello")
-    }
-  },
+  mounted(){
+    window.addEventListener("keydown",(e)=>{
+      if(e.keyCode==27)
+      {
+        this.menu=false;
+      }
+    })
+  }
 
 }
 </script>
@@ -37,10 +39,13 @@ export default {
 .menu-icon
 {
   font-size: 2.7em !important;
-  color: #0B0505;
+  color: white;
 }
 .bcl-menu-bar{
   height: 60px !important;
+  outline: 0 !important;
+  background: rgba(0,0,0,0) !important;
+  box-shadow: unset !important;
 }
 
 @media only screen and (max-width: 500px) {

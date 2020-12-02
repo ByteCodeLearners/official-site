@@ -25,12 +25,6 @@ export default {
     {
       console.log("hello")
     }
-  },
-  mounted()
-  {
-    var intro=document.getElementsByClassName("intro")[0];
-    const height=window.outerHeight-150;
-    intro.style.height=height+"px";
   }
 };
 </script>

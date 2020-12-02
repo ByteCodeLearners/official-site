@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "@/views/index"
+import NotFoundPage from "@/views/404"
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,11 @@ const routes = [
     name: 'Home',
     component: Home,
   },
+  {
+    path:"*",
+    name:"not-found",
+    component:NotFoundPage
+  }
 ]
 
 const router = new VueRouter({

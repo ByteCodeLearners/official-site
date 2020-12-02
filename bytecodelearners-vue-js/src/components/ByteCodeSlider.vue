@@ -5,7 +5,9 @@
           <!-- CONTENT for sliding-->
           <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
             <MembersDetailsCard/>
-          </div>
+          </div >
+          <!-- Dummy slide content -->
+          <div class="bcl-group-slider-content dummy-content"></div>
       </div>
   </div>
 </template>
@@ -14,18 +16,49 @@
 import MembersDetailsCard from "@/components/ByteCodeMemberDetailsCard"
 export default {
     data:()=>({
-        sliderContent:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        sliderContent:[1,2,3,4,5,6,7,8,9,10
+        // ,11,12,13,14,15,16,17,18,19,20
+        ],
         show:true
 
     }),
     components:{
         MembersDetailsCard,
+    },
+    mounted()
+    {
+        var animation="translateX:-100px";
+        var childrenCount=$(".bcl-group-slider")[0].childElementCount;
+        var slideElemntWidth=$(".bcl-group-slider-content").outerWidth();
+        var toSlide=window.outerWidth-$(".bcl-group-slider").width();
+        window.addEventListener("resize",()=>
+        {
+            slideElemntWidth=$(".bcl-group-slider-content").outerWidth();
+            toSlide=window.outerWidth-$(".bcl-group-slider").width();
+        })
+        function slideAnimation(to)
+        {
+            $(".bcl-group-slider").animate({
+                marginLeft:to
+            },{
+                duration:childrenCount*1200,
+                easing:"linear"
+            })
+            .animate({
+                marginLeft:20
+            },childrenCount*300,"linear",()=>{
+                /*  for looping animation  */
+                slideAnimation(to)
+            })
+        }
+        slideAnimation(toSlide);
     }
 }
 </script>
 <style scoped>
 .bcl-slider-container
 {
+    overflow: hidden;
     width: 100%;
     height: auto;
     display: flex;
@@ -37,13 +70,7 @@ export default {
     flex-direction: row;
     position: relative;
 }
-.slide{
-    animation: slide 80s ease infinite;
-}
 
-.slide:hover{
-    animation-play-state: paused;
-}
 .align-content-center{
 
     display: flex;
@@ -53,11 +80,6 @@ export default {
 }
 .bcl-group-slider-content{
     margin:10px;
-}
-@keyframes slide {
-    to{
-        transform: translateX(-100%);
-    }
-    
+    min-width: 150px;
 }
 </style>
