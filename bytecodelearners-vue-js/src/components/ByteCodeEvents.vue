@@ -62,9 +62,8 @@ export default {
   }),
 }
 </script>
-
-
 <style scoped>
+
 .bcl-events{
     /* width: 78%; */
 
@@ -89,12 +88,23 @@ export default {
 .bcl-previous-event{
     text-align: center;
 }
+.events-heading
+{
+  text-align: center;
+  font-size: 4em;
+  font-weight: 700;
+
+}
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit; 
+}
+.bcl-events{
+  border:1px solid black;
+  min-height: 50vh;
 }
 @media only screen and (max-width:500px)
 {

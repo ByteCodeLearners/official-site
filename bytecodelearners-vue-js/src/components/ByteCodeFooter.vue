@@ -16,7 +16,9 @@
           <div class="col-xs-6 col-md-3">
             <h6>Contact Us</h6>
             <p>ByteCodeLearners</p>
-            <p>Email- bytecodelearners@gmail.com</p> 
+            <p>Email-
+            <a href="mailto:bytecodelearners@gmail.com"> bytecodelearners@gmail.com</a>
+            </p> 
           </div>
         </div>
         <hr>
