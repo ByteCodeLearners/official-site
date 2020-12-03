@@ -12,7 +12,7 @@
 
   <div class="bcl-menu-drawer-pull-container" @click="showMenu">
     <div class="bcl-menu-drawer-pull-btn ">
-      <div class="material-icons bcl-menu-drawer-pull-btn-icon">
+      <div class="material-icons bcl-menu-drawer-pull-btn-icon" title="press m to toggle menu">
         keyboard_arrow_left
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 
 
-    <v-navigation-drawer class="bcl-menu" app temporary v-model="menu"  right>
+    <v-navigation-drawer class="bcl-menu" app temporary v-model="menu"  right title="press m to toggle menu">
       <!-- Navigation items -->
         <v-container>
           <div class="bcl-menu-item" @click="scrollToEvents">
@@ -76,10 +76,15 @@ export default {
   },
   mounted(){
     window.addEventListener("keydown",(e)=>{
-      if(e.keyCode==27)
+      if(e.keyCode==27 && this.menu)
       {
         this.menu=false;
       }
+      if(e.keyCode==77)
+      {
+        this.menu=!this.menu;
+      }
+
     })
   }
 
@@ -105,6 +110,7 @@ export default {
   justify-content: center;
   align-items: center;
   background: rgb(73, 243, 144);
+  cursor: pointer;
 }
 .bcl-menu-drawer-pull-btn-icon{
   font-size: 2.5em;
