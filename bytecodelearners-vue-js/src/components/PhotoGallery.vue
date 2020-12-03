@@ -1,5 +1,5 @@
 <template>
-  <div class="bcl-container">
+  <div class="bcl-container" id="events-gallery">
     <v-card class="gallery_heading mx-auto mb-4">EVENTS GALLERY</v-card>
             <div class="gallery">
                 <figure class="gallery__item gallery__item--1">
