@@ -30,7 +30,7 @@
 export default {
   name:"HeaderTop",
   data:()=>({
-    menu:true
+    menu:false
   }),
   methods:{
     scrollToEvents(){
@@ -119,33 +119,50 @@ export default {
 
 @media only screen and (max-width: 500px) {
 .bcl-menu-bar{
-  height: 50px !important;
-  width: 70px !important;
   outline: 0 !important;
 }
 
 .bcl-menu-item-icon{
-  height: 100%;
   width: 30%;
-  font-size: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  font-size: 2.5em;
 }
 .bcl-small-text{
-  font-size: 0.5em;
+  font-size: 1em;
   
 }
 .bcl-medium-text{
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .bcl-large-text{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .bcl-menu-item{
   height: 70px;
+}
+
+
+}
+
+
+@media only screen and (max-width: 400px) {
+.bcl-menu-item-icon{
+  width: 20%;
+  font-size: 2em;
+}
+.bcl-small-text{
+  font-size: 0.8em;
+  
+}
+.bcl-medium-text{
+  font-size: 1em;
+}
+
+.bcl-large-text{
+  font-size: 1em;
+}
+.bcl-menu-item{
+  height: 50px;
 }
 
 
