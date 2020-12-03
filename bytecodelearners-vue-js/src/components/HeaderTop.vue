@@ -1,6 +1,6 @@
 <template>
  <div>
-    <v-app-bar
+    <!-- <v-app-bar
       app
       collapse
       class="bcl-menu-bar"
@@ -8,8 +8,22 @@
     <button @click="menu=!menu">
       <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
-    </v-app-bar>
-    <v-navigation-drawer class="bcl-menu" app v-model="menu" bottom mobile-breakpoint="600">
+    </v-app-bar> -->
+
+  <div class="bcl-menu-drawer-pull-container" @click="showMenu">
+    <div class="bcl-menu-drawer-pull-btn ">
+      <div class="material-icons bcl-menu-drawer-pull-btn-icon">
+        keyboard_arrow_left
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <v-navigation-drawer class="bcl-menu" app temporary v-model="menu"  right>
       <!-- Navigation items -->
         <v-container>
           <div class="bcl-menu-item" @click="scrollToEvents">
@@ -42,6 +56,15 @@ export default {
     scrollToEventsGallery(){        
       this.scrollTo("events-gallery");
     },
+    showMenu(e)
+    {
+      // $(e.target).animate({
+      //   marginRight:20
+      // },500,()=>{
+        this.menu=true
+        // e.target.style.marginRight=0;
+      // })
+    },
     scrollTo(e){
       $( 'html, body' ).animate({
           scrollTop: $("#"+e).offset().top
@@ -64,6 +87,28 @@ export default {
 </script>
 
 <style scoped>
+.bcl-menu-drawer-pull-container{
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  width: 30px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent ;
+}
+.bcl-menu-drawer-pull-btn{
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(73, 243, 144);
+}
+.bcl-menu-drawer-pull-btn-icon{
+  font-size: 2.5em;
+}
 .menu-icon
 {
   font-size: 2.7em !important;
@@ -118,6 +163,19 @@ export default {
 }
 
 @media only screen and (max-width: 500px) {
+  .bcl-menu-drawer-pull-container{
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.bcl-menu-drawer-pull-btn-icon{
+  font-size: 2em;
+}
 .bcl-menu-bar{
   outline: 0 !important;
 }
