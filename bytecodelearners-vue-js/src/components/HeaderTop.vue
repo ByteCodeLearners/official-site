@@ -10,7 +10,7 @@
     </button>
     </v-app-bar> -->
 
-  <div class="bcl-menu-drawer-pull-container" @click="showMenu">
+  <div class="bcl-menu-drawer-pull-container" @click="menu=true">
     <div class="bcl-menu-drawer-pull-btn ">
       <div class="material-icons bcl-menu-drawer-pull-btn-icon" title="press m to toggle menu">
         keyboard_arrow_left
@@ -31,10 +31,13 @@
           </div>  
           <div class="bcl-menu-item" @click="scrollToMembers">
            <div class="material-icons bcl-menu-item-icon">groups</div> <div class="bcl-menu-item-title bcl-large-text">Members</div>
-          </div>   
+          </div>
           <div class="bcl-menu-item" @click="scrollToEventsGallery">
            <div class="material-icons bcl-menu-item-icon">insert_photo</div> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
-          </div>  
+          </div>
+          <div class="bcl-menu-item" @click="scrollToContactUs">
+           <div class="material-icons bcl-menu-item-icon">forum</div> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
+          </div> 
         </v-container>   
     </v-navigation-drawer>
  </div>
@@ -56,14 +59,8 @@ export default {
     scrollToEventsGallery(){        
       this.scrollTo("events-gallery");
     },
-    showMenu(e)
-    {
-      // $(e.target).animate({
-      //   marginRight:20
-      // },500,()=>{
-        this.menu=true
-        // e.target.style.marginRight=0;
-      // })
+    scrollToContactUs(){
+      this.scrollTo("contact-us");
     },
     scrollTo(e){
       $( 'html, body' ).animate({
