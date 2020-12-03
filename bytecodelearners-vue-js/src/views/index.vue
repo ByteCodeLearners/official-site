@@ -23,7 +23,7 @@
 
     
     <ByteCodeSlider sliderTitle="MEMBERS">
-      <div id="members">Members</div>
+      <v-card style="width:100%;text-align:center"><div id="members">MEMBERS</div></v-card>
     </ByteCodeSlider>
 
 
