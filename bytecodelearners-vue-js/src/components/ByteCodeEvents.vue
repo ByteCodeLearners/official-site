@@ -1,5 +1,5 @@
 <template>
-    <div class="bcl-events">
+    <div class="bcl-events" id="events">
         
         <v-card class="events-heading  mx-auto mb-4" flat outlined> EVENTS
         </v-card>
@@ -116,7 +116,7 @@ export default {
 @media only screen and (max-width:500px)
 {
   .events-heading{
-    font-size: 2em;
+    font-size: 2em !important;
   }
   .bcl-current-event-img img{
       width:12em;
