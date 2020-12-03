@@ -13,7 +13,7 @@
             <center><img :src="logo"></center>
           </div>
 
-          <div class="col-xs-6 col-md-3">
+          <div class="col-xs-6 col-md-3" id="contact-us">
             <h6>Contact Us</h6>
             <p>ByteCodeLearners</p>
             <p>Email-
