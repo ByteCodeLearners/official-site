@@ -1,7 +1,7 @@
 <template>
     <div class="bcl-events">
         
-        <v-card class="about-us-heading  mx-auto mb-4" flat outlined> About Us </v-card>
+        <v-card class="about-us-heading  mx-auto mb-4" flat outlined> ABOUT US </v-card>
         <vue-typer class="typer" text='We make this happen!'></vue-typer>
        
        <div class="container ">
@@ -112,7 +112,7 @@ export default {
 @media only screen and (max-width:500px)
 {
   .about-us-heading{
-    font-size: 2em;
+    font-size: 2em !important;
   }
   .bcl-about-us-img img{
       width: 10em;
