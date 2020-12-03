@@ -6,7 +6,7 @@
         <vue-typer class="typer" text='Come learn, share and connect with us in person'></vue-typer>
        <div class="container ">
         <div class="row ">
-         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" outlined   color="rgba(0,0,0,0.1)">
+         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500"  outlined   color="rgba(0,0,0,0.1)">
               <center><h1>UPCOMING EVENTS</h1></center>
               <div class="bcl-current-event-img">
                   <center><img :src="logo"></center>
@@ -16,7 +16,7 @@
               </div>
       
          </v-card>
-        <v-card class="col-sm-12  center col-md-6 bcl-small-container-2"  outlined color="rgba(0,0,0,0.1)">
+        <v-card class="col-sm-12  center col-md-6 bcl-small-container-2" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-delay="1500" data-aos-duration="2000" outlined color="rgba(0,0,0,0.1)">
          
            <center><h1>PREVIOUS EVENTS</h1></center>
            <div class="bcl-previous-events">

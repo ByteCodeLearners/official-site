@@ -1,7 +1,7 @@
 <template>
   <div class="bcl-container" id="events-gallery">
     <v-card class="gallery_heading mx-auto mb-4">EVENTS GALLERY</v-card>
-            <div class="gallery">
+            <div class="gallery" data-aos="zoom-in-up" data-aos-duration="1500">
                 <figure class="gallery__item gallery__item--1">
                     <img src="../assets/g1.jpg" alt="Gallery image 1" class="gallery__img">
                 </figure>
