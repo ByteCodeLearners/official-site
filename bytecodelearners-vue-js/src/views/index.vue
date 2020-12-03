@@ -20,7 +20,14 @@
     <v-container>
     <About/>
     <Events/>
-    <ByteCodeSlider sliderTitle="MEMBERS"/>
+
+    
+    <ByteCodeSlider sliderTitle="MEMBERS">
+      <div id="members">Members</div>
+    </ByteCodeSlider>
+
+
+
     <PhotoGallery />
 
     </v-container>
@@ -65,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-.contents{
+/* .contents{
   height: 100vh;
-}
+} */
 </style>
