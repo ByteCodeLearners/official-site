@@ -121,6 +121,7 @@ export default {
 .bcl-menu-bar{
   height: 50px !important;
   width: 70px !important;
+  outline: 0 !important;
 }
 
 .bcl-menu-item-icon{
