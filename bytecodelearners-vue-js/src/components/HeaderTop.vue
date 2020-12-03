@@ -9,7 +9,7 @@
       <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
     </v-app-bar>
-    <v-navigation-drawer class="bcl-menu" app v-model="menu">
+    <v-navigation-drawer class="bcl-menu" app v-model="menu" bottom mobile-breakpoint="600">
       <!-- Navigation items -->
         <v-container>
           <div class="bcl-menu-item" @click="scrollToEvents">
@@ -84,7 +84,7 @@ export default {
   flex-direction: row;
   cursor: pointer;
   border-bottom: 1px solid black;
-  height: 100px;
+  height: 70px;
 }
 
 .bcl-small-text{
@@ -92,17 +92,17 @@ export default {
   
 }
 .bcl-medium-text{
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .bcl-large-text{
-  font-size: 1.8em;
+  font-size: 1.3em;
 }
 
 .bcl-menu-item-icon{
   height: 100%;
   width: 30%;
-  font-size: 3em;
+  font-size: 2.6em;
   display: flex;
   flex-direction: column;
   justify-content: center;
