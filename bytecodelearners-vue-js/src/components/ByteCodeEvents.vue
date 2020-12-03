@@ -12,7 +12,7 @@
                   <center><img :src="logo"></center>
               </div>
               <div class="bcl-current-event">
-               <v-hover close-delay="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dolorem?</v-hover>
+               <v-hover close-delay="200"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dolorem?</span></v-hover>
               </div>
       
          </v-card>
