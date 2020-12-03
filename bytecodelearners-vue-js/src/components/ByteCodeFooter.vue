@@ -119,6 +119,7 @@ export default {
 {
   width:40px;
   height:40px;
+  text-decoration: none;
   line-height:40px;
   margin-left:6px;
   margin-right:0;

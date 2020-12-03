@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .heading{
   font-size: 6em;
   font-weight: 700;
@@ -112,17 +112,22 @@ export default {
   margin: 30%;
 }
 .bcl-social-links{
-  margin-left: 10%;
+  margin: 2% 0 0 10%;
+  width:30%;  
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
 }
+
 .bcl-social-links a{
   text-decoration: none;
+  transition: transform .5s;
 }
 .bcl-social-links a:hover{
   text-decoration:underline;
   color:#fff;
+  transform: scale(1.5);
 }
 
 .slide-btn
