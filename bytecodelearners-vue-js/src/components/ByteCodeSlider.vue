@@ -1,7 +1,7 @@
 <template>
   <div class="bcl-slider">
       <div class="bcl-slider-title">
-          {{sliderTitle}}
+          <slot></slot>
       </div>
       <div class="bcl-slider-container">
           <div class="bcl-group-slider  slide">
@@ -93,9 +93,17 @@ export default {
 .bcl-slider-title{
   font-size: 4em;
   font-weight: 700;
-  /* width: 75%; */
   display: flex;
   justify-content: center;
   align-content: center;
 }
+@media only screen and (max-width:500px)
+{
+  .bcl-slider-title{
+    font-size: 2em !important;
+  }
+
+
+}
+
 </style>
