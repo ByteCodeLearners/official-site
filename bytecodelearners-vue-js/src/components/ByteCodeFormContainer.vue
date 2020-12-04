@@ -1,10 +1,8 @@
 <template>
-<center>
-<form @submit.prevent="$emit('submit',submitForm)">
-    <slot :formData="formData"></slot>
-    <input type="submit" value="submit">
+<form @submit.prevent="formSubmit">
+    <slot></slot>
+    <v-btn  type="submit"> submit</v-btn>
 </form>
-</center>
 
 </template>
 
@@ -14,35 +12,23 @@ import API from '../config/api.js'
 export default {
     name:"ByteCodeContainer",
     data:()=>({
-         formData:{
-            first_name:'',
-            middle_name:'',
-            last_name:'',
-            email:'',
-            mobile_number:'',
-            batch_year:'',
-            image:'',
-            facebook:'',
-            twitter:'',
-            instagram:'',
-            linkedin:'',
-            github:'',
-      }
     }),
-    methods: {
-        
-        submitForm(){
-            let SendformData = new FormData();
+    methods:{
+        formSubmit(e)
+        {
+            let formData=new FormData();
             for(var key in this.formData)
             {
-                SendformData.append(key,this.formData[key])
+                // console.log(key,this.formData[key])
+                formData.append(key,this.formData[key])
             }
-            console.log(SendformData)
-            API.addNewMember(SendformData)
-            return SendformData
+            this.$emit('submit',formData);
         }
 
     },
+    props:{
+        formData:Object,
+    }
     
 }
 </script>
@@ -52,5 +38,9 @@ input{
     display: flex;
     flex-direction: column;
     margin: 5px;
+}
+#submit-btn{
+    border: 2px solid red;
+    height: 2em;
 }
 </style>
