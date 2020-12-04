@@ -2,13 +2,13 @@
     <div class="bcl-events">
         
         <v-card class="about-us-heading  mx-auto mb-4" flat outlined> ABOUT US </v-card>
-        <vue-typer class="typer" text='We make this happen!'></vue-typer>
+        <vue-typer class="typer" :text="['We make this happen!','Come , Learn , Guide , Make Your Network !']" :shuffle='true'></vue-typer>
        
        <div class="container ">
         
         <div class="row ">
          
-         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" outlined   color="rgba(0,0,0,0.1)">
+         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600"  outlined color="rgba(0,0,0,0.1)">
               
               <div class="about-us-content">
               <p> ByteCodeLearners is a coding community at university,
@@ -17,7 +17,7 @@
               </div>
          </v-card>
 
-        <v-card class="col-sm-12   col-md-6 bcl-small-container-2"  outlined color="rgba(0,0,0,0.1)">
+        <v-card class="col-sm-12   col-md-6 bcl-small-container-2" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1600" outlined color="rgba(0,0,0,0.1)">
            <div class="bcl-about-us-img">
               <center><img :src="logo" alt=""></center>
 

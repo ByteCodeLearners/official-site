@@ -1,6 +1,6 @@
 const axios=require("axios");
 const configuration={
-    baseURL:process.env.VUE_APP_SERVER_URL
+    baseURL:"https://www.bytecodelearners.club/bytecodelearners-server-laravel/api"
 }
 const instance=axios.create(configuration);
 export default {
@@ -8,6 +8,6 @@ export default {
            return instance.get("/members/all");
        },
        addNewMember(memberDetails){
-            return instance.post("/members/add",memberDetails);
+            return instance.post("/members/new",memberDetails);
        }
 }
