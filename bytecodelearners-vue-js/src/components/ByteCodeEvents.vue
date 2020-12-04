@@ -29,9 +29,12 @@
                 <div class="bcl-previous-event-content">
                 <img :src="prevEvent[2]">
                </div>
-                <!-- <div class="bcl-previous-event-content">
+                <div class="bcl-previous-event-content">
                 <img :src="prevEvent[3]">
-               </div> -->
+               </div>
+               <div class="bcl-previous-event-content">
+                <img :src="prevEvent[4]">
+               </div>
 
            </div>
        
@@ -57,6 +60,7 @@ export default {
       require("@/assets/prevEvent2.jpg"),
       require("@/assets/prevEvent3.jpg"),
       require("@/assets/prevEvent4.jpg"),
+      require("@/assets/prevEvent5.jpg"),
     ],
     logo:require("@/assets/logo.png"),
   }),
