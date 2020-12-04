@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "@/views/index"
 import NotFoundPage from "@/views/404"
+import register from "@/components/MemberRegistration"
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path:"/register",
+    name:"register",
+    component:register
   },
   {
     path:"*",
