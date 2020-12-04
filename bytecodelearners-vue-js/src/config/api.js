@@ -8,6 +8,6 @@ export default {
            return instance.get("/members/all");
        },
        addNewMember(memberDetails){
-            return instance.post("/members/add",memberDetails);
+            return instance.post("/members/new",memberDetails);
        }
 }
