@@ -9,6 +9,7 @@
       <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
     </v-app-bar> -->
+    <NavigationDrawer :menu="menu" @closeNavigationDrawer="menu=false"/>
 
   <div class="bcl-menu-drawer-pull-container" @click="menu=true">
     <div class="bcl-menu-drawer-pull-btn ">
@@ -18,58 +19,18 @@
     </div>
   </div>
 
-
-
-
-
-
-    <v-navigation-drawer class="bcl-menu" app temporary v-model="menu"  right title="press m to toggle menu">
-      <!-- Navigation items -->
-        <v-container>
-          <div class="bcl-menu-item" @click="scrollToEvents">
-           <div class="material-icons bcl-menu-item-icon">supervisor_account</div> <div class="bcl-menu-item-title bcl-large-text">Events</div>
-          </div>  
-          <div class="bcl-menu-item" @click="scrollToMembers">
-           <div class="material-icons bcl-menu-item-icon">groups</div> <div class="bcl-menu-item-title bcl-large-text">Members</div>
-          </div>
-          <div class="bcl-menu-item" @click="scrollToEventsGallery">
-           <div class="material-icons bcl-menu-item-icon">insert_photo</div> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
-          </div>
-          <div class="bcl-menu-item" @click="scrollToContactUs">
-           <div class="material-icons bcl-menu-item-icon">forum</div> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
-          </div> 
-        </v-container>   
-    </v-navigation-drawer>
  </div>
 </template>
 
 <script>
+import NavigationDrawer from "@/components/ByteCodeNavigationDrawer"
 export default {
   name:"HeaderTop",
   data:()=>({
-    menu:false
+    menu:false,
   }),
-  methods:{
-    scrollToEvents(){
-     this.scrollTo("events")
-    },
-    scrollToMembers(){
-      this.scrollTo("members");
-    },
-    scrollToEventsGallery(){        
-      this.scrollTo("events-gallery");
-    },
-    scrollToContactUs(){
-      this.scrollTo("contact-us");
-    },
-    scrollTo(e){
-      $( 'html, body' ).animate({
-          scrollTop: $("#"+e).offset().top
-        }, 700,()=>{
-          this.menu=false;
-        } );
-    }
-
+  components:{
+    NavigationDrawer,
   },
   mounted(){
     window.addEventListener("keydown",(e)=>{
@@ -77,11 +38,6 @@ export default {
       {
         this.menu=false;
       }
-      if(e.keyCode==77)
-      {
-        this.menu=!this.menu;
-      }
-
     })
   }
 

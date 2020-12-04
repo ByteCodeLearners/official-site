@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "@/views/index"
 import NotFoundPage from "@/views/404"
-import register_member from "@/components/MembersRegister"
+import register from "@/components/MemberRegistration"
 
 Vue.use(VueRouter)
 
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/register',
-    name: 'MembersRegistration',
-    component: register_member,
+    path:"/register",
+    name:"register",
+    component:register
   },
   {
     path:"*",

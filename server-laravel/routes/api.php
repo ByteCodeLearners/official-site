@@ -20,7 +20,7 @@ $controllers_package="App\Http\Controllers\\";
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(["prefix"=>"/member"],function () use ($controllers_package) {
+Route::group(["prefix"=>"/members"],function () use ($controllers_package) {
     $member_controller=$controllers_package."MemberController@";
     Route::get("/all",$member_controller."getAllMembers");
     Route::post("/new",$member_controller."addMember");

@@ -2,11 +2,6 @@
   <div class="homepage">
     
     <Introduction/>
-    <div id="bcl-index-main-content" class="contents">
-
- 
-
-    </div>
     <div id="bcl-index-main-content" class="contents"></div>
     <v-container>
     <About/>
@@ -47,8 +42,6 @@ export default {
     About,
     ByteCodeSlider,
     PhotoGallery,
-    
-    
   },
   methods:{
    
