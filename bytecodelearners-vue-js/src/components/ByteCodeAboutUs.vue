@@ -8,16 +8,16 @@
         
         <div class="row ">
          
-         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600"  outlined color="rgba(0,0,0,0.1)">
+         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600" color="rgba(0,0,0,0)">
               
               <div class="about-us-content">
-              <p> ByteCodeLearners is a coding community at university,
+              <vue-typer class="typer" text="ByteCodeLearners is a coding community at university,
                     where students apply their skills into developing the applications for
-                     the benefit of the sociaty and enhancing their own skills in the process.</p>
+                     the benefit of the sociaty and enhancing their own skills in the process." repeat="0"></vue-typer>
               </div>
          </v-card>
 
-        <v-card class="col-sm-12   col-md-6 bcl-small-container-2" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1600" outlined color="rgba(0,0,0,0.1)">
+        <v-card class="col-sm-12   col-md-6 bcl-small-container-2" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1600" color="rgba(0,0,0,0)">
            <div class="bcl-about-us-img">
               <center><img :src="logo" alt=""></center>
 

@@ -6,32 +6,32 @@
         <vue-typer class="typer" text='Come learn, share and connect with us in person'></vue-typer>
        <div class="container ">
         <div class="row ">
-         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500"  outlined   color="rgba(0,0,0,0.1)">
+         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500" color="rgba(0,0,0,0)">
               <center><h1>UPCOMING EVENTS</h1></center>
               <div class="bcl-current-event-img">
-                  <center><img :src="logo"></center>
+                  <center><img :src="upcomingEvent" width="100%"></center>
               </div>
               <div class="bcl-current-event">
-               <v-hover close-delay="200"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, dolorem?</span></v-hover>
+               <v-hover close-delay="200"><span><b>Interaction With Juniors ,Batch 2k20!!</b></span></v-hover>
               </div>
       
          </v-card>
-        <v-card class="col-sm-12  center col-md-6 bcl-small-container-2" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-delay="1500" data-aos-duration="2000" outlined color="rgba(0,0,0,0.1)">
+        <v-card class="col-sm-12  center col-md-6 bcl-small-container-2" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-delay="1500" data-aos-duration="2000" color="rgba(0,0,0,0)">
          
            <center><h1>PREVIOUS EVENTS</h1></center>
            <div class="bcl-previous-events">
                <div class="bcl-previous-event-content">
-                <img :src="logo">
+                <img :src="prevEvent[0]">
                </div>
                 <div class="bcl-previous-event-content">
-                <img :src="logo">
+                <img :src="prevEvent[1]">
                </div>
                 <div class="bcl-previous-event-content">
-                <img :src="logo">
+                <img :src="prevEvent[2]">
                </div>
-                <div class="bcl-previous-event-content">
-                <img :src="logo">
-               </div>
+                <!-- <div class="bcl-previous-event-content">
+                <img :src="prevEvent[3]">
+               </div> -->
 
            </div>
        
@@ -51,7 +51,14 @@
 <script>
 export default {
           data:()=>({
-    logo:require("@/assets/bytecode.png")
+    upcomingEvent:require("@/assets/ByteCodeLearners_UpcomingEvent1.jpg"),
+    prevEvent:[
+      require("@/assets/prevEvent1.jpg"),
+      require("@/assets/prevEvent2.jpg"),
+      require("@/assets/prevEvent3.jpg"),
+      require("@/assets/prevEvent4.jpg"),
+    ],
+    logo:require("@/assets/logo.png"),
   }),
 }
 </script>
