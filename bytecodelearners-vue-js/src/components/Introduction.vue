@@ -20,8 +20,8 @@
 <!-- background animation end -->
 
 
-      <div class="content">
-        <div class="bcl-intro-text-container align-content-center-column">
+      <div class="content bcl-align-items-center">
+        <div class="bcl-intro-text-container">
           <div class="bcl-intro-text">
             <div class="heading">Coding Community</div>
             <div class="sub-text">create something ctrl + n</div>
@@ -35,11 +35,11 @@
             </div>
          </div>
         </div>
-        <div class="bcl-side-image align-content-center-column ">
+        <div class="bcl-side-image bcl-align-items-center ">
         <img :src="logo">
         </div>
       </div>
-      <div class="slide-btn align-content-center-row" @click="scrollDown">
+      <div class="slide-btn bcl-align-items-center" @click="scrollDown">
         <span class="material-icons " style="font-size:4em;color:white">keyboard_arrow_down</span>
       </div>
     </div>
@@ -139,19 +139,11 @@ export default {
   bottom: 0;
   cursor: pointer;
 }
-.align-content-center-row{
 
+.bcl-align-items-center{
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-content: center;
-}
-.align-content-center-column{
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 .sub-text

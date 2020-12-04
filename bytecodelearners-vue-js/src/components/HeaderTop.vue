@@ -1,6 +1,6 @@
 <template>
  <div>
-    <v-app-bar
+    <!-- <v-app-bar
       app
       collapse
       class="bcl-menu-bar"
@@ -8,8 +8,22 @@
     <button @click="menu=!menu">
       <span class="material-icons menu-icon">{{(!menu)?"menu":"close"}}</span>
     </button>
-    </v-app-bar>
-    <v-navigation-drawer class="bcl-menu" app v-model="menu">
+    </v-app-bar> -->
+
+  <div class="bcl-menu-drawer-pull-container" @click="menu=true">
+    <div class="bcl-menu-drawer-pull-btn ">
+      <div class="material-icons bcl-menu-drawer-pull-btn-icon" title="press m to toggle menu">
+        keyboard_arrow_left
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <v-navigation-drawer class="bcl-menu" app temporary v-model="menu"  right title="press m to toggle menu">
       <!-- Navigation items -->
         <v-container>
           <div class="bcl-menu-item" @click="scrollToEvents">
@@ -17,10 +31,13 @@
           </div>  
           <div class="bcl-menu-item" @click="scrollToMembers">
            <div class="material-icons bcl-menu-item-icon">groups</div> <div class="bcl-menu-item-title bcl-large-text">Members</div>
-          </div>   
+          </div>
           <div class="bcl-menu-item" @click="scrollToEventsGallery">
            <div class="material-icons bcl-menu-item-icon">insert_photo</div> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
-          </div>  
+          </div>
+          <div class="bcl-menu-item" @click="scrollToContactUs">
+           <div class="material-icons bcl-menu-item-icon">forum</div> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
+          </div> 
         </v-container>   
     </v-navigation-drawer>
  </div>
@@ -30,7 +47,7 @@
 export default {
   name:"HeaderTop",
   data:()=>({
-    menu:true
+    menu:false
   }),
   methods:{
     scrollToEvents(){
@@ -41,6 +58,9 @@ export default {
     },
     scrollToEventsGallery(){        
       this.scrollTo("events-gallery");
+    },
+    scrollToContactUs(){
+      this.scrollTo("contact-us");
     },
     scrollTo(e){
       $( 'html, body' ).animate({
@@ -53,10 +73,15 @@ export default {
   },
   mounted(){
     window.addEventListener("keydown",(e)=>{
-      if(e.keyCode==27)
+      if(e.keyCode==27 && this.menu)
       {
         this.menu=false;
       }
+      if(e.keyCode==77)
+      {
+        this.menu=!this.menu;
+      }
+
     })
   }
 
@@ -64,6 +89,29 @@ export default {
 </script>
 
 <style scoped>
+.bcl-menu-drawer-pull-container{
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  width: 30px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent ;
+}
+.bcl-menu-drawer-pull-btn{
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(73, 243, 144);
+  cursor: pointer;
+}
+.bcl-menu-drawer-pull-btn-icon{
+  font-size: 2.5em;
+}
 .menu-icon
 {
   font-size: 2.7em !important;
@@ -84,7 +132,7 @@ export default {
   flex-direction: row;
   cursor: pointer;
   border-bottom: 1px solid black;
-  height: 100px;
+  height: 70px;
 }
 
 .bcl-small-text{
@@ -92,17 +140,17 @@ export default {
   
 }
 .bcl-medium-text{
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .bcl-large-text{
-  font-size: 1.8em;
+  font-size: 1.3em;
 }
 
 .bcl-menu-item-icon{
   height: 100%;
   width: 30%;
-  font-size: 3em;
+  font-size: 2.6em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,34 +166,64 @@ export default {
 }
 
 @media only screen and (max-width: 500px) {
+  .bcl-menu-drawer-pull-container{
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.bcl-menu-drawer-pull-btn-icon{
+  font-size: 2em;
+}
 .bcl-menu-bar{
-  height: 50px !important;
-  width: 70px !important;
   outline: 0 !important;
 }
 
 .bcl-menu-item-icon{
-  height: 100%;
   width: 30%;
-  font-size: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  font-size: 2.5em;
 }
 .bcl-small-text{
-  font-size: 0.5em;
+  font-size: 1em;
   
 }
 .bcl-medium-text{
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .bcl-large-text{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .bcl-menu-item{
   height: 70px;
+}
+
+
+}
+
+
+@media only screen and (max-width: 400px) {
+.bcl-menu-item-icon{
+  width: 20%;
+  font-size: 2em;
+}
+.bcl-small-text{
+  font-size: 0.8em;
+  
+}
+.bcl-medium-text{
+  font-size: 1em;
+}
+
+.bcl-large-text{
+  font-size: 1em;
+}
+.bcl-menu-item{
+  height: 50px;
 }
 
 
