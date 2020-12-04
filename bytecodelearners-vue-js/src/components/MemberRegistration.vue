@@ -9,8 +9,8 @@
                 <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined></v-text-field>
                 <v-text-field label="Last Name" type="text" name="last_name" v-model="forms.last_name" outlined></v-text-field>
                 <v-text-field label="Email" type="email" name="email" v-model="forms.email" outlined></v-text-field>
-                <v-text-field label="Mobile Number" type="number" name="mobile_number" v-model="forms.mobile_number" outlined></v-text-field>
-                <v-text-field label="Batch " type="number" name="batch" v-model="forms.batch" outlined></v-text-field>
+                <v-text-field label="Mobile Number" type="text" name="mobile_number" v-model="forms.mobile_number" outlined></v-text-field>
+                <v-text-field label="Batch " type="text" name="batch" v-model="forms.batch" outlined></v-text-field>
             </template>
       </FormContainer>
      </div>
@@ -32,16 +32,11 @@ export default {
     },
     methods:{
         addNewMember(e){
-            for(var pair of e.entries())
-            {
-                console.log(pair[0],pair[1]);
-            }
             API.addNewMember(e)
             .then(data=>{
-                console.log(data);
+
             })
             .catch(err=>{
-                console.log(err);
 
             })
         },
