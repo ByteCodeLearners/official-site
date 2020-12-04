@@ -3,7 +3,6 @@
     
     <Introduction/>
     <div id="bcl-index-main-content" class="contents"></div>
-    <div id="bcl-index-main-content" class="contents"></div>
     <v-container>
     <About/>
     <Events/>
@@ -45,11 +44,7 @@ export default {
     PhotoGallery,
   },
   methods:{
-    formSubmit(e)
-    {
-      console.log(api)
-
-    }
+   
   }
 
 }
