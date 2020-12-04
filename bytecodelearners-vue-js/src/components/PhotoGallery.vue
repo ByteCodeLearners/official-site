@@ -9,19 +9,19 @@
                     <img src="../assets/g2.jpg" alt="Gallery image 2" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--3">
-                    <img src="../assets/g3.jpg" alt="Gallery image 3" class="gallery__img">
+                    <img src="../assets/g8.jpg" alt="Gallery image 3" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--4">
                     <img src="../assets/g4.jpg" alt="Gallery image 4" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--5">
-                    <img src="../assets/g5.jpg" alt="Gallery image 5" class="gallery__img">
+                    <img src="../assets/g3.jpg" alt="Gallery image 5" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--6">
                     <img src="../assets/g6.jpg" alt="Gallery image 6" class="gallery__img">
                 </figure>
                 
-                    <v-icon class="gallery__item gallery__item--7 plus" x-large>mdi-plus</v-icon>
+                    <v-icon class="gallery__item gallery__item--7 plus" x-large disabled>mdi-plus</v-icon>
                 
             </div>
         </div>
