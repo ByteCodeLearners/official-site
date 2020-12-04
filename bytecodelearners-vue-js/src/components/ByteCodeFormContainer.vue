@@ -1,21 +1,30 @@
 <template>
-<form @submit.prevent="$emit('submit',formData)">
-    <slot :formData="formData"></slot>
-    <input type="submit" value="submit">
+<form @submit.prevent="formSubmit">
+    <slot></slot>
+    <v-btn  type="submit"> submit</v-btn>
 </form>
 </template>
 <script>
 export default {
     name:"ByteCodeContainer",
     data:()=>({
-         formData:{
-            first_name:'',
-            middle_name:'',
-            last_name:'',
-            email:'',
-            mobile_number:'',
-      }
-    })
+    }),
+    methods:{
+        formSubmit(e)
+        {
+            let formData=new FormData();
+            for(var key in this.formData)
+            {
+                // console.log(key,this.formData[key])
+                formData.append(key,this.formData[key])
+            }
+            this.$emit('submit',formData);
+        }
+
+    },
+    props:{
+        formData:Object,
+    }
     
 }
 </script>
@@ -25,5 +34,9 @@ input{
     display: flex;
     flex-direction: column;
     margin: 5px;
+}
+#submit-btn{
+    border: 2px solid red;
+    height: 2em;
 }
 </style>
