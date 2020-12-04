@@ -11,4 +11,13 @@ class MemberDetails extends Model
     protected $table="member_details";
     protected $fillable=["first_name","middle_name","last_name","mobile_number","email","image"];
     public $timestamps=false;
+    protected $casts = [
+        'first_name' => 'string',
+        'middle_name' => 'string',
+        'last_name' => 'string',
+        'mobile_number' => 'int',
+        'email' => 'string',
+        'image' => 'string',
+        'batch' => 'string',
+    ];
 }

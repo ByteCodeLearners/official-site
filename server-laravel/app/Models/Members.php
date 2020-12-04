@@ -12,4 +12,7 @@ class Members extends Model
     protected $table="members";
     protected $primaryKey="id";
     public $timestamps = false;
+    protected $casts = [
+        'member_details_id' => 'int'
+    ];
 }
