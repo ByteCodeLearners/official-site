@@ -3,11 +3,11 @@
       <div class="bcl-slider-title">
           <slot></slot>
       </div>
-      <div class="bcl-slider-container" @mouseenter="timer=0" @mouseleave="timer=6">
+      <div class="bcl-slider-container" @mouseenter="slideContainerMouseEnter" @mouseleave="slideContainerMouseLeave">
           <div class="bcl-group-slider  slide">
           <!-- CONTENT for sliding-->
           <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
-            <MembersDetailsCard :details="i" />
+            <MembersDetailsCard :details="i"/>
           </div>
       </div>
   </div>
@@ -21,16 +21,21 @@ export default {
     data:()=>({
         sliderContent:[],
         show:true,
-        timer:6,
-
+        timer:0,
+        hovered:false,
+        fps:10,
     }),
     components:{
         MembersDetailsCard,
     },
     props:{
         sliderTitle:String
-    }
-    ,
+    },
+    computed:{
+        getFPS(){
+            return this.fps;
+        }
+    },
     mounted()
     {
         API.getAllMembers()
@@ -41,29 +46,48 @@ export default {
             
         })
         let x=3;
+        
         setInterval(()=>{
+            if($(".slide")[0].clientWidth>window.outerWidth)
+            {
+                this.timer=0;
+                if(!this.hovered)
+                {
+                    this.timer=this.getFPS;
+                }
+            }
             x-=this.timer;
-            if(Math.abs(x)>=window.innerWidth)
+            if(Math.abs(x)>=$(".slide")[0].scrollWidth)
             {
                 x=3;
                 this.backwardAnimation();
             }
             this.forwardAnimation(x);
-        },9);
+        },100);
 
     },
     methods:{
         forwardAnimation(x){
             $(".bcl-group-slider").animate({
                 marginLeft:x
-            },10);
+            },50);
 
         },
         backwardAnimation(){
             $(".bcl-group-slider").animate({
                 marginLeft:0
             },1000);
-        }
+        }, 
+        slideContainerMouseEnter()
+        {
+            this.hovered=true
+            this.timer=0;
+        },
+        slideContainerMouseLeave()
+        {
+            this.hovered=false
+            this.timer=this.getFPS
+        },
     }
 }
 </script>
@@ -75,6 +99,7 @@ export default {
     height: auto;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 .bcl-group-slider{
     height: 100%;
