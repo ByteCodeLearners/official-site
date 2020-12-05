@@ -11,9 +11,11 @@
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600" color="rgba(0,0,0,0)">
               
               <div class="about-us-content">
-              <vue-typer class="typer" text="ByteCodeLearners is a coding community at university,
-                    where students apply their skills into developing the applications for
-                     the benefit of the sociaty and enhancing their own skills in the process." repeat="0"></vue-typer>
+              <vue-typer class="typer" text="Bytecode learner is a group of students working together with patience and enthusiasm to create something ctrl + N
+Anyone who is passionate about exploring the technologies or want to learn something new can join the club.
+We believe that learning together is fun.
+Along with academic knowledge, various skills are there , a student should have.
+We are here for you to introduce all those things and build your personality full with required skills." :repeat=0></vue-typer>
               </div>
          </v-card>
 
