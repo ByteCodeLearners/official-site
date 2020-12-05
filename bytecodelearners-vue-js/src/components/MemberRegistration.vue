@@ -6,7 +6,7 @@
             <template>
                 <v-file-input type="file"  @change="filePicked($event)" accept="image/*" prepend-icon="mdi-camera" outlined required></v-file-input>
                 <v-text-field label="First Name" type="text" name="first_name" v-model="forms.first_name" outlined required></v-text-field>
-                <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined required></v-text-field>
+                <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined></v-text-field>
                 <v-text-field label="Last Name" type="text" name="last_name" v-model="forms.last_name" outlined required></v-text-field>
                 <v-text-field label="Email" type="email" name="email" v-model="forms.email" outlined required></v-text-field>
                 <v-text-field label="Mobile Number" type="text" name="mobile_number" v-model="forms.mobile_number" outlined required></v-text-field>
