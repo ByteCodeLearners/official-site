@@ -42,7 +42,7 @@ We are here for you to introduce all those things and build your personality ful
 export default {
     name: 'About',
           data:()=>({
-    logo:require("@/assets/bytecode.png")
+    logo:process.env.VUE_APP_SERVER_STATIC_FILES+"/bytecode.png"
   }),
 }
 </script>
