@@ -3,63 +3,91 @@
       <div class="bcl-slider-title">
           <slot></slot>
       </div>
-      <div class="bcl-slider-container">
+      <div class="bcl-slider-container" @mouseenter="slideContainerMouseEnter" @mouseleave="slideContainerMouseLeave">
           <div class="bcl-group-slider  slide">
           <!-- CONTENT for sliding-->
           <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
-            <MembersDetailsCard/>
-          </div >
-          <!-- Dummy slide content -->
-          <div class="bcl-group-slider-content dummy-content"></div>
+            <MembersDetailsCard :details="i"/>
+          </div>
       </div>
   </div>
   </div>
 </template>
 
 <script>
+import API from "@/config/api"
 import MembersDetailsCard from "@/components/ByteCodeMemberDetailsCard"
 export default {
     data:()=>({
-        sliderContent:[1,2,3,4,5,6,7,8,9,10
-        // ,11,12,13,14,15,16,17,18,19,20
-        ],
-        show:true
-
+        sliderContent:[],
+        show:true,
+        timer:0,
+        hovered:false,
+        fps:10,
     }),
     components:{
         MembersDetailsCard,
     },
     props:{
         sliderTitle:String
-    }
-    ,
+    },
+    computed:{
+        getFPS(){
+            return this.fps;
+        }
+    },
     mounted()
     {
-        var animation="translateX:-100px";
-        var childrenCount=$(".bcl-group-slider")[0].childElementCount;
-        var slideElemntWidth=$(".bcl-group-slider-content").outerWidth();
-        var toSlide=window.outerWidth-$(".bcl-group-slider").width();
-        window.addEventListener("resize",()=>
-        {
-            slideElemntWidth=$(".bcl-group-slider-content").outerWidth();
-            toSlide=window.outerWidth-$(".bcl-group-slider").width();
+        API.getAllMembers()
+        .then(data=>{
+            this.sliderContent=data.data;
         })
-        function slideAnimation(to)
-        {
+        .catch(err=>{
+            
+        })
+        let x=3;
+        
+        setInterval(()=>{
+            if($(".slide")[0].clientWidth>window.outerWidth)
+            {
+                this.timer=0;
+                if(!this.hovered)
+                {
+                    this.timer=this.getFPS;
+                }
+            }
+            x-=this.timer;
+            if(Math.abs(x)>=$(".slide")[0].scrollWidth)
+            {
+                x=3;
+                this.backwardAnimation();
+            }
+            this.forwardAnimation(x);
+        },100);
+
+    },
+    methods:{
+        forwardAnimation(x){
             $(".bcl-group-slider").animate({
-                marginLeft:to
-            },{
-                duration:childrenCount*1200,
-                easing:"linear"
-            })
-            .animate({
-                marginLeft:20
-            },childrenCount*300,"linear",()=>{
-                /*  for looping animation  */
-                slideAnimation(to)
-            })
-        }
-        slideAnimation(toSlide);
+                marginLeft:x
+            },50);
+
+        },
+        backwardAnimation(){
+            $(".bcl-group-slider").animate({
+                marginLeft:0
+            },1000);
+        }, 
+        slideContainerMouseEnter()
+        {
+            this.hovered=true
+            this.timer=0;
+        },
+        slideContainerMouseLeave()
+        {
+            this.hovered=false
+            this.timer=this.getFPS
+        },
     }
 }
 </script>
@@ -71,6 +99,7 @@ export default {
     height: auto;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 .bcl-group-slider{
     height: 100%;
