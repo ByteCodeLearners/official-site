@@ -15,7 +15,7 @@
 Anyone who is passionate about exploring the technologies or want to learn something new can join the club.
 We believe that learning together is fun.
 Along with academic knowledge, various skills are there , a student should have.
-We are here for you to introduce all those things and build your personality full with required skills." repeat="0"></vue-typer>
+We are here for you to introduce all those things and build your personality full with required skills." :repeat=0></vue-typer>
               </div>
          </v-card>
 
