@@ -2,11 +2,16 @@
  <v-card>
       <div class="bcl-members-details-container">
         <div class="bcl-members-image">
-                  <img :src="image" alt="image">
+                  <img :src="details.image |prependImageUrl" :alt="details.first_name+' '+details.middle_name+' '+details.last_name">
               </div>
               <div class="bcl-members-details">
-                  <p>ByteCoder</p>
+                  <p>{{details.first_name}} {{details.middle_name}} {{details.last_name}}</p>
               </div>
+              <!-- <div class="bcl-members-social-icon">
+                  <div class="yt">
+                      <a :href="details.youtube">yt</a>
+                  </div>
+              </div> -->
   </div>
  </v-card>
 </template>
@@ -17,6 +22,23 @@ export default {
     data:()=>({
             image:require("@/assets/bytecode-original.png"),
         }),
+        props:{
+            details:{
+                type:Object,
+                default:()=>({
+                    first_name:"first_name",
+                    middle_name:"middle_name",
+                    last_name:"last_name",
+                    image:"image",
+                })
+            },
+        },
+        filters:{
+            prependImageUrl(e)
+            {
+                return process.env.VUE_APP_IMAGE_URL+e;
+            }
+        }
 }
 </script>
 
@@ -35,6 +57,7 @@ export default {
 }
 
 .bcl-members-image>img{
+    min-height: 50px;
     width: 300px;
 }
 .bcl-members-details{
