@@ -4,13 +4,21 @@
          <img :src="url" alt="">
           <FormContainer @submit="addNewMember" :formData="forms" >
             <template>
-                <v-file-input type="file"  @change="filePicked($event)" accept="image/*" prepend-icon="mdi-camera"></v-file-input>
-                <v-text-field label="First Name" type="text" name="first_name" v-model="forms.first_name" outlined></v-text-field>
-                <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined></v-text-field>
-                <v-text-field label="Last Name" type="text" name="last_name" v-model="forms.last_name" outlined></v-text-field>
-                <v-text-field label="Email" type="email" name="email" v-model="forms.email" outlined></v-text-field>
-                <v-text-field label="Mobile Number" type="text" name="mobile_number" v-model="forms.mobile_number" outlined></v-text-field>
-                <v-text-field label="Batch " type="text" name="batch" v-model="forms.batch" outlined></v-text-field>
+                <v-file-input type="file"  @change="filePicked($event)" accept="image/*" prepend-icon="mdi-camera" outlined required></v-file-input>
+                <v-text-field label="First Name" type="text" name="first_name" v-model="forms.first_name" outlined required></v-text-field>
+                <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined required></v-text-field>
+                <v-text-field label="Last Name" type="text" name="last_name" v-model="forms.last_name" outlined required></v-text-field>
+                <v-text-field label="Email" type="email" name="email" v-model="forms.email" outlined required></v-text-field>
+                <v-text-field label="Mobile Number" type="text" name="mobile_number" v-model="forms.mobile_number" outlined required></v-text-field>
+                <v-text-field label="Batch " type="date" name="batch" v-model="forms.batch" outlined required></v-text-field>
+
+                
+                <v-text-field type="text"  name="linkedin"  outlined  label="Linkedin Profile Link" v-model="forms.linkedin"></v-text-field>
+                <v-text-field type="text"  name="youtube"  outlined  label="Youtube Channel Link" v-model="forms.youtube"></v-text-field>
+                <v-text-field type="text"  name="twitter"  outlined  label="Twitter Profile Link" v-model="forms.twitter"></v-text-field>
+                <v-text-field type="text"  name="facebook"  outlined  label="Facebook Profile Link" v-model="forms.facebook"></v-text-field>
+                <v-text-field type="text"  name="instagram"  outlined  label="Instagram Profile Link" v-model="forms.instagram"></v-text-field>
+                <v-text-field type="text"  name="github"  outlined  label="Github Profile Link" v-model="forms.github"></v-text-field>
             </template>
       </FormContainer>
      </div>
@@ -48,8 +56,8 @@ export default {
             }
             this.forms.image=e;
             this.url=URL.createObjectURL(e);
-        },
-    }
+        }
+    },
 
 }
 </script>
