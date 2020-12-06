@@ -1,11 +1,11 @@
 <template>
  <v-card>
       <div class="bcl-members-details-container">
-        <div class="bcl-members-image">
-                  <img :src="details.image |prependImageUrl" :alt="details.first_name+' '+details.middle_name+' '+details.last_name">
+        <div class="bcl-members-image" :title="getFullName">
+                  <img :src="details.image |prependImageUrl" :alt="getFullName">
               </div>
               <div class="bcl-members-details">
-                  <p>{{details.first_name}} {{details.middle_name}} {{details.last_name}}</p>
+                  <p>{{getFullName}}</p>
               </div>
               <div class="bcl-members-social-icon">
                   
@@ -41,12 +41,23 @@ export default {
                 })
             },
         },
+        computed:{
+          getFullName(){
+            if(this.details.middle_name)
+            {
+            return (this.details.first_name.trim()+" "+this.details.middle_name.trim()+" "+this.details.last_name.trim()).toUpperCase()
+            }
+            return (this.details.first_name.trim()+" "+this.details.last_name.trim()).toUpperCase();
+
+          }
+
+        },
         filters:{
             prependImageUrl(e)
             {
                 return process.env.VUE_APP_IMAGE_URL+e;
             }
-        }
+        },
 }
 </script>
 
@@ -76,6 +87,9 @@ export default {
     text-align: center;
     font-weight: 600;
 
+}
+.bcl-social-links{
+  min-height: 50px;
 }
 @media only screen and (max-width:500px)
 {
@@ -113,19 +127,19 @@ export default {
   justify-content: center;
 
 }
-.bcl-social-links li
+/* .bcl-social-links li
 {
   display:inline-block;
   margin-bottom:4px
-}
-.bcl-social-links li.title
+} */
+/* .bcl-social-links li.title
 {
   margin-right:15px;
   text-transform:uppercase;
   color:#96a2b2;
   font-weight:700;
   font-size:13px
-}
+} */
 .bcl-social-links a{
   background-color:#eceeef;
   color:#818a91;
