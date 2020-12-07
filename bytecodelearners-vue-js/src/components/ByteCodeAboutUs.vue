@@ -1,5 +1,5 @@
 <template>
-    <div class="bcl-events">
+    <div class="bcl-about-us">
         
         <v-card class="about-us-heading  mx-auto mb-4" flat outlined> ABOUT US </v-card>
         <vue-typer class="typer" :text="['We make this happen!','Come , Learn , Guide , Make Your Network !']" :shuffle='true'></vue-typer>
@@ -53,11 +53,11 @@ export default {
   font-size: 4em;
   font-weight: 700;
 }
-.bcl-events{
+.bcl-about-us{
   /* border:1px solid black; */
   min-height: 50vh;
 }
-.bcl-events .about-us-heading{
+.bcl-about-us .about-us-heading{
       text-align: center;
       /* border: 1px solid black; */
       font-size: 4em;
@@ -65,7 +65,7 @@ export default {
       margin: 0;
       /* width: 78%; */
 }
-.bcl-events  .typer{
+.bcl-about-us  .typer{
     font-size: 1em;
     margin: 0;
     /* border: 1px solid black; */
