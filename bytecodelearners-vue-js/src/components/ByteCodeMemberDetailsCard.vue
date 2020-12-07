@@ -2,7 +2,7 @@
  <v-card>
       <div class="bcl-members-details-container">
         <div class="bcl-members-image" :title="getFullName">
-                  <img :src="details.image |prependImageUrl" :alt="getFullName">
+                  <img :src="details.user_details.image |prependImageUrl" :alt="getFullName">
               </div>
               <div class="bcl-members-details">
                   <p>{{getFullName}}</p>
@@ -11,12 +11,12 @@
                   
                 
                 <div class="bcl-social-links">
-                    <a class="instagram" v-if="details.instagram" :href="details.instagram" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
-                    <a class="twitter" v-if="details.twitter" :href="details.twitter"  target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-twitter</v-icon></a>
-                    <a class="facebook" v-if="details.facebook" :href="details.facebook" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
-                    <a class="github" v-if="details.github" :href="details.github" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
-                    <a class="youtube" v-if="details.youtube" :href="details.youtube" target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-youtube</v-icon></a>
-                    <a class="linkedin" v-if="details.linkedin" :href="details.linkedin" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-linkedin</v-icon></a>
+                    <a class="instagram" v-if="details.user_details.social_media_links.instagram" :href="details.instagram" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
+                    <a class="twitter" v-if="details.user_details.social_media_links.twitter" :href="details.twitter"  target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-twitter</v-icon></a>
+                    <a class="facebook" v-if="details.user_details.social_media_links.facebook" :href="details.facebook" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
+                    <a class="github" v-if="details.user_details.social_media_links.github" :href="details.github" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
+                    <a class="youtube" v-if="details.user_details.social_media_links.youtube" :href="details.youtube" target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-youtube</v-icon></a>
+                    <a class="linkedin" v-if="details.user_details.social_media_links.linkedin" :href="details.linkedin" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-linkedin</v-icon></a>
                 </div>
                 
               </div>
@@ -45,9 +45,9 @@ export default {
           getFullName(){
             if(this.details.middle_name)
             {
-            return (this.details.first_name.trim()+" "+this.details.middle_name.trim()+" "+this.details.last_name.trim()).toUpperCase()
+            return (this.details.user_details.first_name.trim()+" "+this.details.user_details.middle_name.trim()+" "+this.details.user_details.last_name.trim()).toUpperCase()
             }
-            return (this.details.first_name.trim()+" "+this.details.last_name.trim()).toUpperCase();
+            return (this.details.user_details.first_name.trim()+" "+this.details.user_details.last_name.trim()).toUpperCase();
 
           }
 

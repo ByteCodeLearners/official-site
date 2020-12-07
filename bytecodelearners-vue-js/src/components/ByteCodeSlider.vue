@@ -47,14 +47,15 @@ export default {
         API.getAllMembers()
         .then(data=>{
             this.sliderContent=data.data;
-            // console.log(data.data);
+            console.log(data.data);
         })
         .catch(err=>{
             
         })
         this.currentPos=3;
         
-        setInterval(()=>{
+       $(".bcl-slider-container").ready(()=>{
+            setInterval(()=>{
             if($(".slide")[0].clientWidth>window.outerWidth)
             {
                 this.timer=0;
@@ -68,9 +69,11 @@ export default {
             {
                 this.currentPos=3;
                 this.backwardAnimation();
+                return;
             }
             this.forwardAnimation(this.getCurrentPos);
         },100);
+       })
 
     },
     methods:{
