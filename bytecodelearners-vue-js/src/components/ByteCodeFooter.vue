@@ -47,7 +47,7 @@
 <script>
 export default {
       data:()=>({
-    logo:require("@/assets/bytecode.png")
+    logo:process.env.VUE_APP_SERVER_STATIC_FILES+"/bytecode.png"
   }),
 
 }

@@ -36,7 +36,7 @@
          </div>
         </div>
         <div class="bcl-side-image bcl-align-items-center ">
-        <img :src="logo">
+        <img :src="logo|staticFile">
         </div>
       </div>
       <div class="slide-btn bcl-align-items-center" @click="scrollDown">
@@ -50,7 +50,7 @@
 export default {
   name:"Introduction",
   data:()=>({
-    logo:require("@/assets/bytecode.png")
+    logo:"/bytecode.png"
 
   }),
   name:"Introduction"
@@ -66,6 +66,12 @@ export default {
       })
     }
   },
+  filters:{
+    staticFile(e)
+    {
+      return process.env.VUE_APP_SERVER_STATIC_FILES+e;
+    }
+  }
 }
 </script>
 

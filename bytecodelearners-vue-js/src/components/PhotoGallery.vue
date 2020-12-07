@@ -3,22 +3,22 @@
     <v-card class="gallery_heading mx-auto mb-4">EVENTS GALLERY</v-card>
             <div class="gallery" data-aos="zoom-in-up" data-aos-duration="1500">
                 <figure class="gallery__item gallery__item--1">
-                    <img src="../assets/g1.jpg" alt="Gallery image 1" class="gallery__img">
+                    <img :src="'/g1.jpg' | staticFile" alt="Gallery image 1" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--2">
-                    <img src="../assets/g2.jpg" alt="Gallery image 2" class="gallery__img">
+                    <img :src="'/g2.jpg' | staticFile" alt="Gallery image 2" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--3">
-                    <img src="../assets/g8.jpg" alt="Gallery image 3" class="gallery__img">
+                    <img :src="'/g8.jpg' | staticFile" alt="Gallery image 3" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--4">
-                    <img src="../assets/g4.jpg" alt="Gallery image 4" class="gallery__img">
+                    <img :src="'/g4.jpg' | staticFile" alt="Gallery image 4" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--5">
-                    <img src="../assets/g3.jpg" alt="Gallery image 5" class="gallery__img">
+                    <img :src="'/g3.jpg' | staticFile" alt="Gallery image 5" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--6">
-                    <img src="../assets/g6.jpg" alt="Gallery image 6" class="gallery__img">
+                    <img :src="'/g6.jpg' | staticFile" alt="Gallery image 6" class="gallery__img">
                 </figure>
                 
                     <v-icon class="gallery__item gallery__item--7 plus" x-large disabled>mdi-plus</v-icon>
@@ -30,7 +30,12 @@
 <script>
 export default {
   name:"PhotoGallery",
-
+  filters:{
+      staticFile(e)
+      {
+        return process.env.VUE_APP_SERVER_STATIC_FILES+e;
+      }
+    }
 }
 </script>
 

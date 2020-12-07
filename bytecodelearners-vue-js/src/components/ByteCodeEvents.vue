@@ -9,7 +9,7 @@
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500" color="rgba(0,0,0,0)">
               <center><h1>UPCOMING EVENTS</h1></center>
               <div class="bcl-current-event-img">
-                  <center><img :src="upcomingEvent" width="100%"></center>
+                  <center><img :src="upcomingEvent | staticFile" width="100%"></center>
               </div>
               <div class="bcl-current-event">
                <v-hover close-delay="200"><span><b>Interaction With Juniors ,Batch 2k20!!</b></span></v-hover>
@@ -20,10 +20,10 @@
          
            <center><h1>PREVIOUS EVENTS</h1></center>
            <div class="bcl-previous-events">
-               <div class="bcl-previous-event-content">
-                <img :src="prevEvent[0]">
+               <div class="bcl-previous-event-content" v-for="(i,key) in prevEvent" :key="key">
+                <img :src="i |staticFile">
                </div>
-                <div class="bcl-previous-event-content">
+                <!-- <div class="bcl-previous-event-content">
                 <img :src="prevEvent[1]">
                </div>
                 <div class="bcl-previous-event-content">
@@ -34,7 +34,7 @@
                </div>
                <div class="bcl-previous-event-content">
                 <img :src="prevEvent[4]">
-               </div>
+               </div> -->
 
            </div>
        
@@ -54,16 +54,22 @@
 <script>
 export default {
           data:()=>({
-    upcomingEvent:require("@/assets/ByteCodeLearners_UpcomingEvent1.jpg"),
+    upcomingEvent:"/ByteCodeLearners_UpcomingEvent1.jpg",
     prevEvent:[
-      require("@/assets/prevEvent1.jpg"),
-      require("@/assets/prevEvent2.jpg"),
-      require("@/assets/prevEvent3.jpg"),
-      require("@/assets/prevEvent4.jpg"),
-      require("@/assets/prevEvent5.jpg"),
-    ],
-    logo:require("@/assets/logo.png"),
+                "/prevEvent1.jpg",
+                "/prevEvent2.jpg",
+                "/prevEvent3.jpg",
+                "/prevEvent4.jpg",
+                "/prevEvent5.jpg",
+              ],
+    // logo:"/logo.png",
   }),
+  filters:{
+    staticFile(e)
+    {
+      return process.env.VUE_APP_SERVER_STATIC_FILES+e;
+    }
+  }
 }
 </script>
 <style scoped>
