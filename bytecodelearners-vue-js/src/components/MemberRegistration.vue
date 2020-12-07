@@ -1,5 +1,8 @@
 <template>
   <div class="bcl-member-regstration-container">
+      <div class="registration-form-title">
+          New ByteCoder
+      </div>
      <div class="bcl-member-registration-form">
          <center><img :src="url" width="200px" alt=""></center>
           <FormContainer @submit="addNewMember" :formData="forms" >
@@ -11,7 +14,7 @@
                 <v-text-field label="Email" type="email" name="email" v-model="forms.email" outlined required></v-text-field>
                 <v-text-field label="Mobile Number" type="text" name="mobile_number" v-model="forms.mobile_number" outlined required></v-text-field>
                 <v-text-field label="Select Date Of Joining College" v-model="forms.selected_date" type="date" name="batch"  outlined required></v-text-field>
-                <v-text-field outlined label="Batch" v-model="getBatchYear" required disabled/>
+                <v-text-field outlined label="Batch" v-model="getBatchYear" required readonly/>
                 <v-text-field outlined label="Password" v-model="forms.password"
                 :type="showPassword ? 'text':'password'" 
                 :append-icon="showPassword ? 'mdi-eye':'mdi-eye-off'"
@@ -87,10 +90,11 @@ export default {
             API.addNewMember(e)
             .then(data=>{
                 for(var key in this.forms){
-                    console.log(key)
                     this.forms[key]='';
                 }
                 this.result = "Welcome To ByteCodeLearners Community , you has been registered Successfully"
+                URL.revokeObjectURL(this.url);
+                this.url=''
 
             })
             .catch(err=>{
@@ -124,5 +128,22 @@ export default {
 .bcl-member-registration-form{
     margin: 5%;
     width: 60%;
+}
+.registration-form-title{
+    color:rgb(8, 112, 4);
+    font-size: 2.6em;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+@media only screen and (max-width:450px) {
+    
+.registration-form-title{
+    color:rgb(8, 112, 4);
+    font-size: 2.3em;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
 }
 </style>

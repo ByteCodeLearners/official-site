@@ -196,6 +196,7 @@ export default {
   animation: square 25s infinite;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
+  border:1px solid white
 }
 .bg-bubbles li:nth-child(1) {
   left: 10%;

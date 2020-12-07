@@ -26,6 +26,7 @@ export default {
         fps:10,
         animate:true,
         currentPos:0,
+        repeatTimer:'',
     }),
     components:{
         MembersDetailsCard,
@@ -54,7 +55,7 @@ export default {
         this.currentPos=3;
         
        $(".bcl-slider-container").ready(()=>{
-            setInterval(()=>{
+            this.repeatTimer=setInterval(()=>{
             if($(".slide")[0].clientWidth>window.outerWidth)
             {
                 this.timer=0;
@@ -73,6 +74,10 @@ export default {
             this.forwardAnimation(this.getCurrentPos);
         },100);
        })
+
+    },
+    destroyed(){
+        clearInterval(this.repeatTimer)
 
     },
     methods:{
