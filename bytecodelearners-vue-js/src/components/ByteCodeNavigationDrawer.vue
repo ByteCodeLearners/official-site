@@ -3,16 +3,19 @@
       <!-- Navigation items -->
         <v-container>
           <div class="bcl-menu-item" @click="scrollToEvents">
-           <div class="material-icons bcl-menu-item-icon">supervisor_account</div> <div class="bcl-menu-item-title bcl-large-text">Events</div>
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-party-popper</v-icon> <div class="bcl-menu-item-title bcl-large-text">Events</div>
           </div>  
           <div class="bcl-menu-item" @click="scrollToMembers">
-           <div class="material-icons bcl-menu-item-icon">groups</div> <div class="bcl-menu-item-title bcl-large-text">Members</div>
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-account-group-outline</v-icon> <div class="bcl-menu-item-title bcl-large-text">Members</div>
           </div>
           <div class="bcl-menu-item" @click="scrollToEventsGallery">
-           <div class="material-icons bcl-menu-item-icon">insert_photo</div> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-projector-screen</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
           </div>
           <div class="bcl-menu-item" @click="scrollToContactUs">
-           <div class="material-icons bcl-menu-item-icon">forum</div> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-human-greeting-proximity</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
+          </div> 
+          <div class="bcl-menu-item" @click="routerView">
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-file-document-edit-outline</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Fresher's Registration</div>
           </div> 
         </v-container>   
     </v-navigation-drawer>
@@ -40,6 +43,11 @@ export default {
             }, 700,()=>{
             this.$emit("closeNavigationDrawer")
             } );
+        },
+
+        routerView(){
+          console.log("gg")
+          this.$router.replace("/freshers_register")
         },
         
         closeNavBar(e){
