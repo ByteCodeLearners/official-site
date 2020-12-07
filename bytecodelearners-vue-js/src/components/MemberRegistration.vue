@@ -1,20 +1,28 @@
 <template>
   <div class="bcl-member-regstration-container">
      <div class="bcl-member-registration-form">
-         <img :src="url" alt="">
+         <center><img :src="url" width="200px" alt=""></center>
           <FormContainer @submit="addNewMember" :formData="forms" >
             <template>
                 <v-file-input type="file"  @change="filePicked($event)" accept="image/*" prepend-icon="mdi-camera" outlined required></v-file-input>
-                <v-text-field label="First Name" type="text" name="first_name" :rules="rules" v-model="forms.first_name" outlined required></v-text-field>
-                <v-text-field label="Middle Name" type="text" name="middle_name" :rules="rules" v-model="forms.middle_name" outlined></v-text-field>
-                <v-text-field label="Last Name" type="text" name="last_name" :rules="rules" v-model="forms.last_name" outlined required></v-text-field>
-                <v-text-field label="Email" type="email" name="email" :rules="rules" v-model="forms.email" outlined required></v-text-field>
-                <v-text-field label="Mobile Number" type="text" :rules="rules" name="mobile_number" v-model="forms.mobile_number" outlined required></v-text-field>
-                <v-text-field label="Select Year of joining college" :rules="rules" v-model="forms.selected_date" type="date" name="batch"  outlined required></v-text-field>
-                <v-text-field outlined label="Batch" :rules="rules" v-model="getBatchYear" required/>
-                <v-text-field outlined label="Password" :rules="rules"  v-model="forms.password" required/>
-                <v-text-field outlined label="Re-Enter your password" :rules="rules" v-model="forms.rePassword" required/>
-
+                <v-text-field label="First Name" type="text" name="first_name" v-model="forms.first_name" outlined required></v-text-field>
+                <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined></v-text-field>
+                <v-text-field label="Last Name" type="text" name="last_name" v-model="forms.last_name" outlined required></v-text-field>
+                <v-text-field label="Email" type="email" name="email" v-model="forms.email" outlined required></v-text-field>
+                <v-text-field label="Mobile Number" type="text" name="mobile_number" v-model="forms.mobile_number" outlined required></v-text-field>
+                <v-text-field label="Select Date Of Joining College" v-model="forms.selected_date" type="date" name="batch"  outlined required></v-text-field>
+                <v-text-field outlined label="Batch" v-model="getBatchYear" required disabled/>
+                <v-text-field outlined label="Password" v-model="forms.password"
+                :type="showPassword ? 'text':'password'" 
+                :append-icon="showPassword ? 'mdi-eye':'mdi-eye-off'"
+                @click:append="showPassword = !showPassword"
+                required/>
+                <v-text-field outlined label="Re-Enter your password" v-model="forms.rePassword"
+                :type="showPassword ? 'text':'password'" 
+                :append-icon="showPassword ? 'mdi-eye':'mdi-eye-off'"
+                @click:append="showPassword = !showPassword"
+                required/>
+                <p>{{result}}</p>
                 
                 <!-- <v-text-field type="text"  name="linkedin"  outlined  label="Linkedin Profile Link" v-model="forms.linkedin"></v-text-field>
                 <v-text-field type="text"  name="youtube"  outlined  label="Youtube Channel Link" v-model="forms.youtube"></v-text-field>
@@ -34,10 +42,10 @@ import FormContainer from "@/components/ByteCodeFormContainer"
 export default {
     data(){
         return{
+            result:'',
+            showPassword:false,
             url:"",
-            rules:[
-                    value=>!!value||"don't forget this."
-                ],
+            
             forms:{
                 "first_name":'',
                 "middle_name":'',
@@ -81,10 +89,11 @@ export default {
                 for(var key in this.forms){
                     this.forms[key]='';
                 }
+                this.result = "Welcome To ByteCodeLearners Community , you has been registered Successfully"
 
             })
             .catch(err=>{
-
+                this.result = "Registration Failed . Please Re-submit or try again later ."
             })
         },
         batchSelected(e){
