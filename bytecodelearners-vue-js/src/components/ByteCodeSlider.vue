@@ -47,7 +47,6 @@ export default {
         API.getAllMembers()
         .then(data=>{
             this.sliderContent=data.data;
-            console.log(data.data);
         })
         .catch(err=>{
             
