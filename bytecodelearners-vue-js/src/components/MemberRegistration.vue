@@ -79,7 +79,6 @@ export default {
             API.addNewMember(e)
             .then(data=>{
                 for(var key in this.forms){
-                    console.log(key)
                     this.forms[key]='';
                 }
 
