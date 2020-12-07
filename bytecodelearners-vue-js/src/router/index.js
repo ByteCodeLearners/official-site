@@ -13,8 +13,8 @@ const routes = [
     component: Home,
   },
   {
-    path:"/register",
-    name:"register",
+    path:"/freshers_register",
+    name:"freshers_register",
     component:register
   },
   {
