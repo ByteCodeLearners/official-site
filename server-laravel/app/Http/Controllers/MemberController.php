@@ -21,8 +21,8 @@ class MemberController extends Controller
             "email"=>$request["email"],
             "mobile_number"=>$request["mobile_number"],
             "user_name"=>$request["email"],
+            "password"=>$request["password"],
             "role"=>($request["role"])?$request["role"]:'user',
-            /* for profile picture upload (PS: No column in database to store url)*/
             "image"=>$url=$request->file("image")->storeAs("/public/members-image",$request["email"].".jpg"),
             "facebook"=>$request["facebook"],
             "linkedin"=>$request["linkedin"],
