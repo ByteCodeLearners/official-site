@@ -67,8 +67,6 @@ export default {
                 
                 var date=this.forms.selected_date.split("-");
                 this.forms.selected_date=e+"-"+date[1]+"-"+date[2]
-                console.log("changed")
-
             }
         }
     },

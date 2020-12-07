@@ -11,12 +11,12 @@
                   
                 
                 <div class="bcl-social-links">
-                    <a class="instagram" v-if="details.user_details.social_media_links.instagram" :href="details.instagram" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
-                    <a class="twitter" v-if="details.user_details.social_media_links.twitter" :href="details.twitter"  target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-twitter</v-icon></a>
-                    <a class="facebook" v-if="details.user_details.social_media_links.facebook" :href="details.facebook" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
-                    <a class="github" v-if="details.user_details.social_media_links.github" :href="details.github" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
-                    <a class="youtube" v-if="details.user_details.social_media_links.youtube" :href="details.youtube" target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-youtube</v-icon></a>
-                    <a class="linkedin" v-if="details.user_details.social_media_links.linkedin" :href="details.linkedin" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-linkedin</v-icon></a>
+                    <a class="instagram" v-if="details.user_details.social_media_links.instagram" :href="details.user_details.social_media_links.instagram" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
+                    <a class="twitter" v-if="details.user_details.social_media_links.twitter" :href="details.user_details.social_media_links.twitter"  target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-twitter</v-icon></a>
+                    <a class="facebook" v-if="details.user_details.social_media_links.facebook" :href="details.user_details.social_media_links.facebook" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
+                    <a class="github" v-if="details.user_details.social_media_links.github" :href="details.user_details.social_media_links.github" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
+                    <a class="youtube" v-if="details.user_details.social_media_links.youtube" :href="details.user_details.social_media_links.youtube" target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-youtube</v-icon></a>
+                    <a class="linkedin" v-if="details.user_details.social_media_links.linkedin" :href="details.user_details.social_media_links.linkedin" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-linkedin</v-icon></a>
                 </div>
                 
               </div>
