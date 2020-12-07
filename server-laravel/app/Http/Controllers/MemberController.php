@@ -1,17 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\MemberDetails;
+use App\Models\UserDetails;
+use App\Models\Users;
 use App\Models\SocialMediaLinks;
 use App\Models\Members;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Throwable;
 
 class MemberController extends Controller
 {
-    private $member_image_location="/members-image";
     public function addMember(Request $request){
         $request_details=[
             "first_name"=>$request["first_name"],
@@ -19,44 +20,59 @@ class MemberController extends Controller
             "last_name"=>$request["last_name"],
             "email"=>$request["email"],
             "mobile_number"=>$request["mobile_number"],
+            "user_name"=>$request["email"],
+            "role"=>($request["role"])?$request["role"]:'user',
             /* for profile picture upload (PS: No column in database to store url)*/
-            "image"=>$url=$request->file("image")->store("/members-image","public"),
+            "image"=>$url=$request->file("image")->storeAs("/public/members-image",$request["email"].".jpg"),
             "facebook"=>$request["facebook"],
             "linkedin"=>$request["linkedin"],
             "instagram"=>$request["instagram"],
             "twitter"=>$request["twitter"],
             "github"=>$request["github"],
             "youtube"=>$request["youtube"],
-//            GET URL http://localhost:8000/storage/members-image/{image_url} (Development)
-//        http://bytecodelearners.club/bytecodelearners-server-laravel/storage/app/public/members-image/WkEjCTCYUmifXWLsKI49VqXHFYCqDGpWlL1axhiF.png
-        ];
-        $member_details=new MemberDetails($request_details);
-        try{
-            /* transaction for safety of writing in member_details table along with members table */
-            $member_details->save();
+            ];
 
-            $request_details["member_details_id"]=$member_details["id"];
-            $member=new Members($request_details);
+
+
+
+
+        try{
+            DB::beginTransaction();
             $social_media=new SocialMediaLinks($request_details);
             $social_media->save();
-            $member->save();
-            return response()->json($member,202);
+            $request_details["social_media_links_id"]=$social_media["id"];
+
+            $user_details=new UserDetails($request_details);
+            $user_details->save();
+            $request_details["user_details_id"]=$user_details["id"];
+
+            $user=new Users($request_details);
+            $user->save();
+            DB::commit();
+
+            return response()->json($user,202);
         }
         catch (Throwable $ex){
+            Storage::delete("/public/members-image/".$request_details["email"].".jpg");
             if($ex instanceof QueryException) {
-                return response()->json($ex->errorInfo[2], 500);
+                return response()->json($ex->errorInfo[2], 200);
             }
-            return response()->json([$ex,"member not added"],500);
+            return response()->json([$ex,"member not added"],200);
         }
     }
     public function getAllMembers()
     {
-        $query="SELECT * FROM `members` JOIN `member_details` 
-                    ON member_details.id=members.id 
-                        JOIN social_media_links 
-                            ON members.id=social_media_links.member_details_id";
-        return response()->json(DB::select($query),200);
+
+        $memberDetails=Users::with("userDetails.socialMediaLinks")
+            ->where("role","member")
+            ->get();
+        return response()->json($memberDetails
+            ,200);
     }
+
+
+
+
     public function getMemberDetails($id)
     {
         $member=Members::find($id);
@@ -64,7 +80,7 @@ class MemberController extends Controller
         {
             return response()->json("no member found", 400);
         }
-        $member_details=MemberDetails::find($member["member_details_id"]);
+        $member_details=UserDetails::find($member["member_details_id"]);
         if(!$member_details)
         {
             return response()->json("no details found", 400);

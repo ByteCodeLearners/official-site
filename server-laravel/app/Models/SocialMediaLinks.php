@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SocialMediaLinks extends Model
 {
     use HasFactory;
-    protected $fillable=["facebook","instagram","linkedin","twitter","github","youtube","member_details_id"];
+    protected $fillable=["facebook","instagram","linkedin","twitter","github","youtube"];
     protected $table="social_media_links";
     protected $primaryKey="id";
     public $timestamps = false;
@@ -19,6 +19,8 @@ class SocialMediaLinks extends Model
         "twitter" => "string",
         "github" => "string",
         "youtube" => "string",
-        "member_details_id"=> "int"
     ];
+
+    protected $hidden=["id"];
+
 }
