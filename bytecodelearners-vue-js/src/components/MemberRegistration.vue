@@ -7,7 +7,7 @@
          <center><img :src="url" width="200px" alt=""></center>
           <FormContainer @submit="addNewMember" :formData="forms" >
             <template>
-                <v-file-input type="file"  @change="filePicked($event)" accept="image/*" prepend-icon="mdi-camera" outlined required></v-file-input>
+                <v-file-input type="file" @click:clear.prevent="fileFieldCleared" @change="filePicked($event)" accept="image/*" prepend-icon="mdi-camera" outlined required></v-file-input>
                 <v-text-field label="First Name" type="text" name="first_name" v-model="forms.first_name" outlined required></v-text-field>
                 <v-text-field label="Middle Name" type="text" name="middle_name" v-model="forms.middle_name" outlined></v-text-field>
                 <v-text-field label="Last Name" type="text" name="last_name" v-model="forms.last_name" outlined required></v-text-field>
@@ -101,7 +101,9 @@ export default {
                 this.result = "Registration Failed . Please Re-submit or try again later ."
             })
         },
-        batchSelected(e){
+        fileFieldCleared(e){
+            URL.revokeObjectURL(this.url);
+            this.url=''
         },
         filePicked(e)
         {
