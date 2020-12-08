@@ -20,10 +20,12 @@ class MemberController extends Controller
             "last_name"=>$request["last_name"],
             "email"=>$request["email"],
             "mobile_number"=>$request["mobile_number"],
+            "image"=>$url=$request->file("image")->storeAs("/public/members-image",$request["email"].".jpg"),
+
             "user_name"=>$request["email"],
             "password"=>$request["password"],
             "role"=>($request["role"])?$request["role"]:'user',
-            "image"=>$url=$request->file("image")->storeAs("/public/members-image",$request["email"].".jpg"),
+
             "facebook"=>$request["facebook"],
             "linkedin"=>$request["linkedin"],
             "instagram"=>$request["instagram"],
