@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
 class Users extends Model
 {
@@ -24,5 +25,8 @@ class Users extends Model
     public function userDetails()
     {
         return $this->belongsTo(UserDetails::class,"user_details_id","id");
+    }
+    public function  setPasswordAttribute($value){
+        return $this->attributes['password']=Hash::make($value);
     }
 }
