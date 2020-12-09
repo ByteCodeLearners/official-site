@@ -22,9 +22,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::group(["prefix"=>"/members"],function () use ($controllers_package) {
     $member_controller=$controllers_package."MemberController@";
+
+
+
+    Route::post("/login",$member_controller."makeLogin");
     Route::get("/all",$member_controller."getAllMembers");
     Route::post("/new",$member_controller."addMember");
     Route::get("/details/{id}",$member_controller."getMemberDetails");
+    Route::get("/user",$member_controller."getLoggedUser")->middleware("auth:api");
+
+});
+Route::group(["prefix"=>"/users"],function () use ($controllers_package) {
+    $user_controller=$controllers_package."UserController@";
+    Route::post("/login",$user_controller."makeLogin");
+    Route::get("/all",$user_controller."getAllUsers");
 
 });
 Route::group(["prefix"=>"/events"],function () use($controllers_package){

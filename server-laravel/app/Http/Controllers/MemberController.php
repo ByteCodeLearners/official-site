@@ -7,7 +7,9 @@ use App\Models\SocialMediaLinks;
 use App\Models\Members;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
 
@@ -72,9 +74,6 @@ class MemberController extends Controller
             ,200);
     }
 
-
-
-
     public function getMemberDetails($id)
     {
         $member=Members::find($id);
@@ -88,5 +87,30 @@ class MemberController extends Controller
             return response()->json("no details found", 400);
         }
         return $member_details;
+    }
+    public function makeLogin(Request $request)
+    {
+        $login_data=[
+            "user_name"=>$request["user_name"],
+            "password"=>$request["password"],
+            "role"=>"member"
+        ];
+        $loginAttempt=Auth::attempt($login_data);
+        if(empty($loginAttempt))
+        {
+            return response()->json("invalid credentials",401);
+        }
+        $token=Auth::user()->createToken("member")->accessToken;
+        return response()->json(["token"=>$token], 202);
+    }
+    public  function  getLoggedUser(Request $request)
+    {
+        $tokenName=Auth::guard("api")->user()->token()->name;
+        if($tokenName=="member")
+        {
+            return "member";
+        }
+        return response()->json("not member",401);
+
     }
 }

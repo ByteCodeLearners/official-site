@@ -25,10 +25,7 @@ class UserDetails extends Model
 
     ];
     private $nullable=["middle_name"];
-    protected $hidden=["id","users_id","social_media_links_id"];
-    public function userRole(){
-        return $this->hasOne(Roles::class,"id","role_id");
-    }
+    protected $hidden=["id","users_id","social_media_links_id","image"];
     public function socialMediaLinks(){
         return $this->hasOne(SocialMediaLinks::class,"id","social_media_links_id");
     }
