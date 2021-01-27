@@ -7,6 +7,8 @@
              <h2>ByteCodeLearners</h2> 
             <h6>About us</h6>
             <p class="about-us-content">ByteCodeLearners <i>CLUB</i> is an initiative  to help the upcoming programmers with the code. </p>
+            <h6><v-icon color="white">mdi-chevron-right-box</v-icon><router-link to="/initiator"> Initiator</router-link></h6>
+            
           </div>
 
           <div class="col-xs-6 col-md-3">

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from "@/views/index"
 import NotFoundPage from "@/views/404"
 import register from "@/components/MemberRegistration"
+import ByteCodeInitiator from "@/components/ByteCodeInitiator"
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     path:"/register",
     name:"register",
     component:register
+  },
+  {
+    path:"/initiator",
+    name:"initiator",
+    component:ByteCodeInitiator,
   },
   {
     path:"*",
