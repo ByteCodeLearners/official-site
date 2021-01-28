@@ -20,7 +20,7 @@
           <img src="@/assets/logo.png"  style="height:320px;"/>
         </div>
         <div class="name">
-          Dipu Kumar Shah
+          Dipu Kumar Sah
         </div>
         <div class="social">
            <a href="#" class="fa fa-facebook"></a>
@@ -49,7 +49,7 @@
       <!--cards -->
       <div id="container2" class="box">
         <div class="photo">
-          <img src="@/assets/logo.png"  style="height:320px;"/>
+          <img src="http://bytecodelearners.club/initiators-image/shantanu.jpg"  style="height:320px;"/>
         </div>
         <div class="name">
           Shantanu Pratap
@@ -80,7 +80,7 @@
       <div id="container3" class="box">
         <div class="photo">
           <img
-            src="@/assets/logo.png"  style="height:320px;"/>
+            src="http://bytecodelearners.club/initiators-image/yash-raj.jpg"  style="height:320px;"/>
         </div>
         <div class="name">
           Yash Raj
@@ -110,7 +110,7 @@
       <!--cards -->
       <div id="container4" class="box">
         <div class="photo">
-          <img src="@/assets/logo.png" style="height:320px;"/>
+          <img src="http://bytecodelearners.club/initiators-image/raj.jpg" style="height:320px;"/>
         </div>
         <div class="name">
            Raj Patel
