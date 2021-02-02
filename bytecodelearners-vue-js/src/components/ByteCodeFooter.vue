@@ -6,13 +6,12 @@
           <div class="col-sm-12 col-md-6">
              <h2>ByteCodeLearners</h2> 
             <h6>About us</h6>
-            <p class="about-us-content">ByteCodeLearners <i>CLUB</i> is an initiative  to help the upcoming programmers with the code. </p>
+            <p class="about-us-content">ByteCodeLearners <i>Community</i> is an initiative to promote Project based learning .</p>
             <h6><v-icon color="white">mdi-chevron-right-box</v-icon><router-link to="/initiator"> Initiator</router-link></h6>
-            
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <center><img :src="logo"></center>
+            <center><img id="logo_img" :src="logo"></center>
           </div>
 
           <div class="col-xs-6 col-md-3" id="contact-us">
@@ -49,13 +48,29 @@
 <script>
 export default {
       data:()=>({
-    logo:require("@/assets/bytecode.png")
+    logo:process.env.VUE_APP_SERVER_STATIC_FILES+"/bytecode.png"
   }),
 
 }
 </script>
 
 <style scoped>
+
+#logo_img
+{ 
+  animation: mymove 3s infinite;
+}
+
+@keyframes mymove {
+  from {
+			  transform: rotate(0deg);
+		}
+		to {
+				transform: rotate(359deg);
+		}
+}
+
+
 .site-footer
 {
   background-color:#26272b;

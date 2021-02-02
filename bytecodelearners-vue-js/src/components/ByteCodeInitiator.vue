@@ -3,17 +3,24 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>    
         <!-- <Bs /> -->
         <div class="heading">
-           <img class="logo mx-auto mb-4 v-card v-card--flat v-sheet v-sheet--outlined theme--none" src="@/assets/bytecode.png" width="100px;" height="100px;">    
+           <img class="logo mx-auto mb-4 v-card v-card--flat v-sheet v-sheet--outlined theme--none" src="http://bytecodelearners.club/statics/byte-code-learners.svg" width="110px;" height="110px;">    
            <h1 class="initiators-head mx-auto mb-4 v-card v-card--flat v-sheet v-sheet--outlined theme--light">FOUNDERS OF THE CLUB</h1>
         </div>
-        <p class="text mx-auto mb-3 v-card v-card--flat v-sheet v-sheet--outlined theme--light"><span>BytecodeLearners Club</span> was founded in 2019  by 4 CSE students when they were in their 2nd year of college.<br>
+        <div class="part-2">
+          <div class="headline">
+            <div class="photo">
+            <img src="@/assets/img.jpg" height="300px;" width="250px;"/>
+           </div>
+           <div class="name">Come Learn And Share </div>
+          </div>
+          <p class="text mx-auto mb-3 v-card v-card--flat v-sheet v-sheet--outlined theme--light"><span>BytecodeLearners Club</span> was founded in 2019  by 4 CSE students when they were in their 2nd year of college.<br>
           The main motivation to start such a community was that being from Computer Science background they were very much interested in coding and development.<br>
           In the beginning, when they started their development and coding they found themselves stuck at so many points. And there was no such community in their college to help them.<br>
           They all decided to start a coding community for the coming freshers So that they should not have to face all those difficulties and problems again.<br>
           They came up with a solution to their juniors known as BYTECODELEARNERS.<br>
           The club was just started with 4 members from a classroom of the CENTRAL UNIVERSITY OF HARYANA.
-        </p>
-
+          </p>
+        </div>
          <div class="galary">
       <div id="container1" class="box">
         <div class="photo">
@@ -160,16 +167,15 @@
 <style scoped>
 
 /* header and about */
-p{
-  text-align: center;
-  margin: 50px;
-  width: 90%;
+
+
+.logo{
+
+    position: relative;
+    left:5%;
+    float: left;
 }
-span{
-  background: chartreuse;
-  font-family: monospace;
-  font-weight: 700;
-}
+
 .initiators-head{
     margin-top: 50px;
     text-align:center;
@@ -177,19 +183,34 @@ span{
     width:70%;
     position: relative;
     left: 10%;
-}
-.logo{
+ }
 
-    position: relative;
-    left:5%;
-    float: left;
+.headline{
+  position: relative;
+  float: left;
+  border-radius: 5px;
+  width: 250px;
+  margin-left: 50px;
+
 }
+
+
 .text{
     font-size: 25px;
     padding-top: 0;
-    word-wrap: break-word;
-
+    text-align: left;
+    word-break: break-all;
+    position: relative;
+    margin-top: 50px;
+    left: 10%;
+    width: 70%;
+    padding: 10px;
 }
+span{
+   color: #53b38b;
+  font-family: monospace;
+  font-weight: 700;
+ }
 
 
 /* image box */
@@ -362,9 +383,19 @@ span{
  transform: translateY(-50%) translateX(100vw);
 }
 
- @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 1520px) {
   #container4{
     margin-right: 0;
+  }
+ } 
+ @media screen and (max-width: 1400px) {
+  .headline{
+    display: none;
+  }
+  .text{
+    width: 90%;
+    justify-content: center;
+    left: 0;
   }
  
 } 
@@ -374,13 +405,16 @@ span{
   }
   .initiators-head{
     font-size: 30px;
+    left: 12%;
+    
   }
   .logo{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
   #container1{
     margin-top: 30px;
   }
 }
-</style>
+ </style>
+ 
