@@ -2,17 +2,23 @@
    <v-navigation-drawer class="bcl-menu" app temporary v-model="menu" stateless right title="press m to toggle menu">
       <!-- Navigation items -->
         <v-container>
-          <div class="bcl-menu-item" @click="scrollToEvents">
-           <div class="material-icons bcl-menu-item-icon">supervisor_account</div> <div class="bcl-menu-item-title bcl-large-text">Events</div>
+          <div class="bcl-menu-item" @click="scrollToEvents" v-if="getCurrentRoute=='/'">
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-party-popper</v-icon> <div class="bcl-menu-item-title bcl-large-text">Events</div>
           </div>  
-          <div class="bcl-menu-item" @click="scrollToMembers">
-           <div class="material-icons bcl-menu-item-icon">groups</div> <div class="bcl-menu-item-title bcl-large-text">Members</div>
+          <div class="bcl-menu-item" @click="scrollToMembers"  v-if="getCurrentRoute=='/'">
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-account-group-outline</v-icon> <div class="bcl-menu-item-title bcl-large-text">Members</div>
           </div>
-          <div class="bcl-menu-item" @click="scrollToEventsGallery">
-           <div class="material-icons bcl-menu-item-icon">insert_photo</div> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
+          <div class="bcl-menu-item" @click="scrollToEventsGallery" v-if="getCurrentRoute=='/'" >
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-projector-screen</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Events Gallery</div>
           </div>
-          <div class="bcl-menu-item" @click="scrollToContactUs">
-           <div class="material-icons bcl-menu-item-icon">forum</div> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
+          <div class="bcl-menu-item" @click="scrollToContactUs" v-if="getCurrentRoute=='/'" >
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-human-greeting-proximity</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
+          </div> 
+          <div class="bcl-menu-item" @click="routerView" v-if="getCurrentRoute!='/freshers_register'">
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-file-document-edit-outline</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Fresher's Registration</div>
+          </div> 
+          <div class="bcl-menu-item" @click="$router.replace('/'), $emit('closeNavigationDrawer')"  v-if="getCurrentRoute!='/'">
+           <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large>mdi-home-assistant</v-icon> <div class="bcl-menu-item-title bcl-medium-text">Home</div>
           </div> 
         </v-container>   
     </v-navigation-drawer>
@@ -20,6 +26,14 @@
 
 <script>
 export default {
+  computed:{
+    getCurrentRoute()
+    {
+      var current=this.$route.path;
+      return current;
+    }
+
+  },
     methods:
     {
         scrollToEvents(){
@@ -40,6 +54,11 @@ export default {
             }, 700,()=>{
             this.$emit("closeNavigationDrawer")
             } );
+        },
+
+        routerView(){
+          this.$router.replace("/freshers_register")
+          this.$emit("closeNavigationDrawer")
         },
         
         closeNavBar(e){

@@ -20,11 +20,13 @@ const routes = [
     component:register
   },
   {
+
     path:"/initiator",
     name:"initiator",
     component:ByteCodeInitiator,
   },
   {
+
     path:"/login",
     name:"login",
     component:login

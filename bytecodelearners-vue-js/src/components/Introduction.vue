@@ -29,14 +29,14 @@
          <div class="bcl-social-link-container">
             <div class="bcl-social-links">
                 <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
-                <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-twitter</v-icon></a>
-                <a href="https://www.facebook.com/Bytecode-Learners-103644071079006" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
+                <a href="https://twitter.com/BytecodeL" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-twitter</v-icon></a>
+                <a href="https://www.facebook.com/groups/bytecodelearners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
                 <a href="https://github.com/ByteCodeLearners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
             </div>
          </div>
         </div>
         <div class="bcl-side-image bcl-align-items-center ">
-        <img :src="logo">
+        <img :src="logo|staticFile">
         </div>
       </div>
       <div class="slide-btn bcl-align-items-center" @click="scrollDown">
@@ -50,7 +50,7 @@
 export default {
   name:"Introduction",
   data:()=>({
-    logo:require("@/assets/bytecode.png")
+    logo:"/bytecode.png"
 
   }),
   name:"Introduction"
@@ -66,6 +66,12 @@ export default {
       })
     }
   },
+  filters:{
+    staticFile(e)
+    {
+      return process.env.VUE_APP_SERVER_STATIC_FILES+e;
+    }
+  }
 }
 </script>
 
@@ -190,6 +196,7 @@ export default {
   animation: square 25s infinite;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
+  border:1px solid white
 }
 .bg-bubbles li:nth-child(1) {
   left: 10%;

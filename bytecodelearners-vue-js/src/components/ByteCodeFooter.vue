@@ -8,6 +8,7 @@
             <h6>About us</h6>
             <p class="about-us-content">ByteCodeLearners <i>Community</i> is an initiative to promote Project based learning .</p>
             <h6><v-icon color="white">mdi-chevron-right-box</v-icon><router-link to="/initiator"> Initiator</router-link></h6>
+
           </div>
 
           <div class="col-xs-6 col-md-3">

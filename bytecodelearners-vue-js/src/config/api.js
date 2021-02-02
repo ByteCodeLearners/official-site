@@ -1,6 +1,6 @@
 const axios=require("axios");
 const configuration={
-    baseURL:"https://www.bytecodelearners.club/bytecodelearners-server-laravel/api"
+    baseURL:process.env.VUE_APP_SERVER_URL
 }
 const instance=axios.create(configuration);
 export default {
