@@ -1,6 +1,5 @@
 <template>
-  <v-app
-  dark>
+  <v-app>
     <HeaderComponent/>
     <router-view/>
     <ByteCodeFooter/>
@@ -8,8 +7,8 @@
 </template>
 
 <script>
-import HeaderComponent from "@/components/HeaderTop"
-import ByteCodeFooter from "@/components/ByteCodeFooter"
+import HeaderComponent from "./components/Layout/HeaderTop"
+import ByteCodeFooter from "./components/Layout/ByteCodeFooter"
 export default {
   name: 'App', 
 

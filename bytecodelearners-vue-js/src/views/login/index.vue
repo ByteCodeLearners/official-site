@@ -50,7 +50,7 @@
 <script>
 
 import axios from 'axios'
-import API from '../config/api.js'
+import API from '../../config/api.js'
 
 
 

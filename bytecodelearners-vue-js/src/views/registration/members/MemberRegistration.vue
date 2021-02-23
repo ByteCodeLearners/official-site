@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import API from "@/config/api.js"
-import FormContainer from "@/components/ByteCodeFormContainer"
+import API from "../../../config/api.js"
+import FormContainer from "../../../components/UI/ByteCodeFormContainer"
 export default {
     data(){
         return{
