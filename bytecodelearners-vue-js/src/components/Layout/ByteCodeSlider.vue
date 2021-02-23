@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import API from "@/config/api"
-import MembersDetailsCard from "@/components/ByteCodeMemberDetailsCard"
+import API from "../../config/api"
+import MembersDetailsCard from "../UI/ByteCodeMemberDetailsCard"
 export default {
     data:()=>({
         sliderContent:[],

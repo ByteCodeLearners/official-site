@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import API from '../config/api.js'
+import API from '../../config/api.js'
 
 export default {
     name:"ByteCodeContainer",
