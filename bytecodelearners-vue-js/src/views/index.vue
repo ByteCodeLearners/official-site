@@ -21,12 +21,11 @@
 </template>
 
 <script>
-import ByteCodeSlider from "@/components/ByteCodeSlider"
-import Introduction from "@/components/Introduction"
-import PhotoGallery from "@/components/PhotoGallery"
-import api from "@/config/api"
-import Events from "@/components/ByteCodeEvents"
-import About from "@/components/ByteCodeAboutUs"
+import ByteCodeSlider from "../components/Layout/ByteCodeSlider";
+import Introduction from "../components/Layout/Introduction"
+import PhotoGallery from "../components/Layout/PhotoGallery"
+import Events from "../components/Layout/ByteCodeEvents"
+import About from "../components/Layout/ByteCodeAboutUs"
 
 
 
