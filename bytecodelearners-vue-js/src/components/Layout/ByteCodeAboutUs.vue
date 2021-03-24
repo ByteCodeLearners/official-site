@@ -2,7 +2,7 @@
     <div class="bcl-about-us">
         
         <v-card class="about-us-heading  mx-auto mb-4" flat outlined> ABOUT US </v-card>
-        <vue-typer class="typer" :text="['We make this happen!','Come , Learn , Guide , Make Your Network !']" :shuffle='true'></vue-typer>
+        <vue-typer class="typer" :text="['We make this happen!!!','Come, Learn, Guide, Make Your Network!!!']" :shuffle='true'></vue-typer>
        
        <div class="container ">
         
@@ -11,7 +11,7 @@
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600" color="rgba(0,0,0,0)">
               
               <div class="about-us-content">
-              <vue-typer class="typer" text="Bytecode learner is a group of students working together with patience and enthusiasm to create something ctrl + N
+              <vue-typer class="typer" text="ByteCodeLearner is a group of students working together with patience and enthusiasm to create something Ctrl + N.
 Anyone who is passionate about exploring the technologies or want to learn something new can join the club.
 We believe that learning together is fun.
 Along with academic knowledge, various skills are there , a student should have.
