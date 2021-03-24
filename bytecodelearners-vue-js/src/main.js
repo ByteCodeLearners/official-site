@@ -11,8 +11,8 @@ import 'aos/dist/aos.css'
 
 
 
-Vue.use(VueTyperPlugin)
-Vue.config.productionTip = false
+Vue.use(VueTyperPlugin);
+Vue.config.productionTip = false;
 
 new Vue({
   created() {
