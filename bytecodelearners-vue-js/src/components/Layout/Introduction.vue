@@ -29,8 +29,8 @@
          <div class="bcl-social-link-container">
             <div class="bcl-social-links">
                 <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
-                <a href="https://www.instagram.com/bytecode_learners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-twitter</v-icon></a>
-                <a href="https://www.facebook.com/Bytecode-Learners-103644071079006" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
+                <a href="https://twitter.com/BytecodeL" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-twitter</v-icon></a>
+                <a href="https://www.facebook.com/groups/bytecodelearners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
                 <a href="https://github.com/ByteCodeLearners/" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
             </div>
          </div>

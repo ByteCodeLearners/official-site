@@ -8,7 +8,11 @@
             <h6>About us</h6>
             <p class="about-us-content">ByteCodeLearners <i>Community</i> is an initiative to promote Project based learning .</p>
             <h6><v-icon color="white">mdi-chevron-right-box</v-icon><router-link to="/initiator"> Initiator</router-link></h6>
+<<<<<<< HEAD:bytecodelearners-vue-js/src/components/ByteCodeFooter.vue
           
+=======
+
+>>>>>>> 980929086d8ddd68a135d5ee43591c575de1e6ce:bytecodelearners-vue-js/src/components/Layout/ByteCodeFooter.vue
           </div>
 
           <div class="col-xs-6 col-md-3">

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import NavigationDrawer from "@/components/ByteCodeNavigationDrawer"
+import NavigationDrawer from "./ByteCodeNavigationDrawer"
 export default {
   name:"HeaderTop",
   data:()=>({
