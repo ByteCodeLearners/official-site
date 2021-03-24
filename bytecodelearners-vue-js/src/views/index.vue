@@ -15,7 +15,7 @@
 
 
     <PhotoGallery />
-
+    <SocialFeed/>
     </v-container>
   </div>
 </template>
@@ -26,7 +26,8 @@ import Introduction from "../components/Layout/Introduction"
 import PhotoGallery from "../components/Layout/PhotoGallery"
 import Events from "../components/Layout/ByteCodeEvents"
 import About from "../components/Layout/ByteCodeAboutUs"
-
+import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
+ 
 
 
 export default {
@@ -41,6 +42,7 @@ export default {
     About,
     ByteCodeSlider,
     PhotoGallery,
+    SocialFeed,
   },
   methods:{
    
