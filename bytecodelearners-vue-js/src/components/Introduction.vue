@@ -23,7 +23,7 @@
       <div class="content bcl-align-items-center">
         <div class="bcl-intro-text-container">
           <div class="bcl-intro-text">
-            <div class="heading">Coding Community</div>
+            <div class="heading">CODING COMMUNITY</div>
             <div class="sub-text">create something ctrl + n</div>
           </div> 
          <div class="bcl-social-link-container">

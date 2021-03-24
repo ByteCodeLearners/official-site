@@ -6,6 +6,7 @@
     <v-container>
     <About/>
     <Events/>
+    
 
     
     <ByteCodeSlider sliderTitle="MEMBERS">
@@ -15,6 +16,7 @@
 
 
     <PhotoGallery />
+    
 
     </v-container>
   </div>
@@ -27,6 +29,7 @@ import PhotoGallery from "@/components/PhotoGallery"
 import api from "@/config/api"
 import Events from "@/components/ByteCodeEvents"
 import About from "@/components/ByteCodeAboutUs"
+
 
 
 
@@ -45,7 +48,7 @@ export default {
   },
   methods:{
    
-  }
+ }
 
 }
 </script>
