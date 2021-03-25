@@ -1,7 +1,7 @@
 <template>
 <form @submit.prevent="formSubmit">
     <slot></slot>
-    <v-btn  type="submit"> submit</v-btn>
+    <v-btn class="submit-btn" type="submit"> submit</v-btn>
 </form>
 
 </template>
@@ -34,13 +34,25 @@ export default {
 </script>
 <style scoped>
 input{
-    border:1px solid black;
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
+    /* border:1px solid black; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* margin: 5px; */
 }
-#submit-btn{
-    border: 2px solid red;
-    height: 2em;
+form{
+    text-align:center;
 }
+.submit-btn{
+    width: 10vw;
+    text-shadow: 1px 1px 1px black;
+    border-radius: 13px;
+    font-weight: 600;
+    margin-top: -15px;
+}
+@media only screen and (max-width: 426px){
+    .submit-btn{
+        width: 25vw;
+    }
+}
+
 </style>
