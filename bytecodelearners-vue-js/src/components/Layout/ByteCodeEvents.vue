@@ -9,11 +9,34 @@
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500" color="rgba(0,0,0,0)">
               <center><h1>UPCOMING EVENTS</h1></center>
               <div class="bcl-current-event-img">
-                  <center><img :src="upcomingEvent | staticFile" width="100%"></center>
+                  <center><img :src='results.image |storageFile ' width="100%"></center>
+                  <!-- upcomingEvent | staticFile -->
+                  <br><br>    
+              </div>
+              
+           
+            <div class="eventdetails">
+              <center><h1>DETAILS OF UPCOMING EVENT</h1></center>
+              <!-- Interaction With Juniors ,Batch 2k20!! -->
+              <br>
+               <div class="bcl-current-event">
+                 
+               <v-hover close-delay="200"><span><p> Topic: </p><h4> {{results.topic}}</h4></span></v-hover>
+
+             </div> 
+            
+            <div class="bcl-current-event">
+               <v-hover close-delay="200"><span><p> Link: </p><h4><a :href="results.link_details" target="_blank">{{results.link_details}}</a></h4></span></v-hover>
+              
               </div>
               <div class="bcl-current-event">
-               <v-hover close-delay="200"><span><b>Interaction With Juniors ,Batch 2k20!!</b></span></v-hover>
+               <v-hover close-delay="200"><span><p>Details:</p><h4> {{results.note}}</h4></span></v-hover>
+               
               </div>
+              
+              
+
+            </div>  
       
          </v-card>
         <v-card class="col-sm-12  center col-md-6 bcl-small-container-2" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-delay="1500" data-aos-duration="2000" color="rgba(0,0,0,0)">
@@ -52,9 +75,14 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
           data:()=>({
-    upcomingEvent:"/ByteCodeLearners_UpcomingEvent1.jpg",
+            
+            
+        ///storage/sdf.jpg /ByteCodeLearners_UpcomingEvent1.jpg
+   
+    results:'',
     prevEvent:[
                 "/prevEvent1.jpg",
                 "/prevEvent2.jpg",
@@ -65,11 +93,23 @@ export default {
     // logo:"/logo.png",
   }),
   filters:{
+    storageFile(e)
+    {
+      return process.env.VUE_APP_SERVER_STORAGE_FILES+e.split("public")[1];
+    },
     staticFile(e)
     {
       return process.env.VUE_APP_SERVER_STATIC_FILES+e;
     }
-  }
+  },
+  created() {
+          axios.get('http://localhost:8000/api/getevents').then(response => {
+            this.results = response.data;
+            console.log(response.data);
+            
+          })
+        },
+  
 }
 </script>
 <style scoped>
@@ -97,7 +137,31 @@ export default {
     justify-content: center;
 }
 .bcl-current-event{
+    text-align: left;
+     margin-left: 10%;
+  
+
+}
+p{
+  font-weight: 600;
+  display: inline;
+}
+h4{
+  font-weight: 400;
+  display: inline;
+}
+.bcl-current-event a{
     text-align: center;
+   color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+.eventdetails{
+  color: white;
+  border: rgba(5, 5, 5, 0.966) solid;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding:20px ;
+  height: 30%;
 }
 
 .bcl-previous-events{
@@ -118,6 +182,7 @@ export default {
     margin: 2%;
 }
 
+
 @media only screen and (max-width:500px)
 {
   .events-heading{
@@ -125,6 +190,9 @@ export default {
   }
   .bcl-current-event-img img{
       width:12em;
+  }
+  .eventdetails{
+    height: 50%;
   }
   
 .bcl-previous-event-content{
