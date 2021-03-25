@@ -14,10 +14,10 @@
                         </div>
                         <div class="texts">
                             <span>ByteCodeLearners Club</span> was founded in 2019  by 4 CSE students when they were in their 2nd year of college.<br>
-                            The main motivation to start such a community was that being from Computer Science background they were very much interested in coding and development.<br>
-                            In the beginning, when they started their development and coding they found themselves stuck at so many points. And there was no such community in their college to help them.<br>
-                            They all decided to start a coding community for the coming freshers So that they should not have to face all those difficulties and problems again.<br>
-                            They came up with a solution to their juniors known as BYTECODELEARNERS.<br>
+                            The main motive to start such a community was that being from a Computer Science background they were very much interested in coding and development.<br>
+                            In the beginning, when they started their development and coding they found themselves confused at so many places and there was no such community in their college to help them.<br>
+                            They all decided to start a coding community for the coming freshers. So that they should not have to face all those difficulties and problems again that their seniors faced.<br>
+                            They came up with a solution for their juniors known as BYTECODELEARNERS.<br>
                             The club was just started with 4 members from a classroom of the CENTRAL UNIVERSITY OF HARYANA.
                         </div>
                     </div>
