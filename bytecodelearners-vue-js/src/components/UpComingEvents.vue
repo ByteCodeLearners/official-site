@@ -66,6 +66,10 @@ methods:{
        axios.post('http://localhost:8000/api/addevents',fd)
        .then(res=>{
            console.log(res);
+           this.topic="";
+           this.link_details="";
+           this.image=" ";
+           this.note="";
        })
    }
 
