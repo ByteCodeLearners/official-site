@@ -63,7 +63,7 @@ methods:{
        fd.append('link_details',this.link_details)
        fd.append('note',this.note)
 
-       axios.post('http://localhost:8000/api/addevents',fd)
+       axios.post(process.env.VUE_APP_SERVER_URL+'/addevents',fd)
        .then(res=>{
            console.log(res);
            this.topic="";
