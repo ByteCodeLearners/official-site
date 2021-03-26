@@ -1,14 +1,14 @@
-
 <template>
-  <div class="mainContainer">
+  <div class="form">
       <div class="bytecodeLogo"><img src="../../../assets/bytecode.png" alt=""></div>
       <div class="container">
-          <h1 class="heading">~: Registration :~</h1>
+        <fieldset>
+          <legend>~: Registration :~</legend>
             <FormContainer @submit="addNewMember" :formData="forms" >
                <div class="main">
-                  <div  class="row">
+                  <div id="side" class="name">
+                    <div class="box" id="space1">
                         <span class="material-icons">person</span>
-                          <div class="inputname">
                           <input
                             type="text"
                             required
@@ -16,17 +16,19 @@
                             class="f_name" 
                             v-model="forms.first_name"
                           />
+                    </div>
+                    <div class="box">
+                       <!-- <span id="space"></span> -->
                          <input type="text" 
                             placeholder="Last Name" 
                             class="l_name" 
                             v-model="forms.last_name" 
                          />
-                         </div>
-                    
+                    </div>
                   </div>
 
-            
-              <div class="row">
+            <div id="side" class="name">
+              <div class="box" id="camera">
                 <span class="material-icons">call</span>
                 <input
                   type="tel"
@@ -37,7 +39,7 @@
                   v-model="forms.mobile_number"
                 />
               </div>
-              <div class="row">
+              <div class="box" id="camera">
                 <span class="material-icons">photo_camera</span>
                 <input
                   type="file"
@@ -49,8 +51,8 @@
                   accept="image/*"
                 />
               </div>
-           
-            <div class="row">
+            </div>
+            <div class="box">
               <span class="material-icons">event_note</span>
               <input
                 type="date"
@@ -61,12 +63,12 @@
               />
             </div>
 
-            <div class="row">
+            <div class="box">
               <span class="material-icons">school</span>
               <input type="number" placeholder="Batch" class="for_" v-model="getBatchYear" />
             </div>
 
-            <div class="row">
+            <div class="box">
               <span class="material-icons">person_pin_circle</span>
               <input
                 type="text"
@@ -76,13 +78,13 @@
               />
             </div>
 
-            <div class="row">
+            <div class="box">
               <span class="material-icons">mail_outline</span>
               <input type="email" required placeholder="Email" class="for_" 
               v-model="forms.email"/>
             </div>
 
-            <div class="row">
+            <div class="box">
               <span class="material-icons">security</span>
               <input
                 type="password"
@@ -97,7 +99,7 @@
               >
             </div>
 
-            <div class="row">
+            <div class="box">
               <span class="material-icons">security</span>
               <input
                 type="password"
@@ -112,12 +114,17 @@
                 >visibility_off</span
               >
             </div>
-            <!-- <div class="for_button">
-              <button class="submit" type="submit">Submit</button>
-          </div> -->
           </div>
+          <!-- <div class="for_button">
+          <button class="submit">Submit</button>
+        </div> -->
         </FormContainer>
-        <p>{{result}}</p> 
+        <p>{{result}}</p>
+
+        </fieldset>
+
+        
+        
       </div>
       
 <!-- for animation -->
@@ -233,29 +240,34 @@ export default {
 </script>
 
 <style scoped>
+::placeholder{
+    color:rgb(224, 19, 146);
+    text-shadow: 0.5px 0.5px 1px rgb(80, 79, 79);
+    font-family: 'Playfair Display', serif;
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.mainContainer{
+.form{
     font-family: 'Playfair Display', serif;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    place-items: center ;
+    place-items:center ;
     border: 2px solid black;
     background-image: url( "../../../assets/9.jpg") ;
     background-size: 100% 100%;
     z-index: index -10; 
-   
+    background-color: rgb(88, 88, 86);    
 }
 .bytecodeLogo{
-    height: 6rem;
-    width:  7rem;
+    height: 7rem;
+    width: 8rem;
     animation: logo_animation 5s infinite;
     margin-bottom: 10px;
     margin-top: 0;
@@ -271,67 +283,91 @@ export default {
 }
 
 .container{
+    padding: 1vh;
     width: 45vw;
-    height: 75vh;
+    height: 65vh;
+    /* background: linear-gradient(to bottom right, #9966ff -17%, #ff66cc 124%); */
     background: linear-gradient(to bottom right, rgba(153, 102, 255,0.4) -17%, rgba(255,102,204,0.9) 124%);
+    opacity: 1;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 35px;
+    
 }
-.heading{
+
+fieldset{
+    width: 94%;
+    height: 85%;
+    border-color: white;
+    border: none;
+    text-align: center;
+    opacity: 1;
+}
+legend{
     color: white;
     font-weight: 800;
-    font-size: 2.6rem;
-    margin-bottom:1vh;
-    margin-top: -15vh;
-    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom:3vh;
 }
 .main{
+    display:grid;
     width: 100%;
     height: 100%;
-    padding-bottom: 0;
+    align-items: center;
+    margin-left: 4.5vw;
 }
-.row{
-    width: 90%;
-    display: flex;
-    /* flex-direction: column; */
-    margin: 5px;
-    /* border: 1px solid red; */
+.box{
+    width: auto;
+    height:4vh;
+    display: inline-flex;
+    
 }
-.inputname{
-    width: 80%;
+
+#side{
+    width: 70%;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid black; */
-}
-.f_name{
-    width: 40%;
-}
-.l_name{
-    width: 37%;
-    margin-left: 20px;
+    
 }
 input{
     padding-left: 5px;
     color: rgb(224, 19, 146);
     background-color: white;
+    height: 1.5rem;
+    line-height: 1.5rem;
     font-size: 1.2rem;
     box-shadow: 2px 2px 4px rgb(110, 110, 116);
+    border:transparent;
     border-radius: 8px;
-    width: 80%;
+    margin-bottom:  20px ;
 }
-::placeholder{
-    color:rgb(224, 19, 146);
-    text-shadow: 0.5px 0.5px 1px rgb(80, 79, 79);
-    font-family: 'Playfair Display', serif;
+.f_name{
+    width: 50%;
+    margin-right: auto;
 }
+.l_name{
+    width: 40%;
+}
+.for_mobile{
+    width: 35%;
+    margin-right: auto;
+}
+.for_image{
+   width: 40%;
+   /* color: rgb(245, 235, 238); */
+   /* margin:  auto 0; */
 
-.for_button{
-    text-align: center;
-} 
-.submit{
+}
+#space{
+    margin-left: 4vw;
+}
+.for_{
+    width: 70%;
+}
+/* .for_button{
+    display: grid;
+    place-items: center;
+    margin:2vh 0;
+} */
+/* .submit{
     width: 10vw;
     height: 4.5vh;
     box-shadow: 2px 2px 2px rgb(100, 100, 100);
@@ -340,12 +376,13 @@ input{
     color: white;
     background: rgb(224, 19, 146);
     text-shadow: 1px 1px 1px black;
+    margin:auto 0;
     border-radius: 13px;
     font-weight: 600;
-} 
-.submit:hover{
+} */
+/* .submit:hover{
     background-color: blue;
-}
+} */
 .material-icons{
     color:white;
     text-shadow: 1px 1px 1px black;
@@ -357,60 +394,254 @@ input{
     color: rgb(161, 68, 248);
     text-shadow: 1px 1px 1px rgb(15, 15, 19);
 }
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  
-  .container{
-      padding-left: 10px;
-  }
-  
-  .heading{
-      font-size: 1.9rem;
-  }
-  input{
-      font-size: 1rem;
-  }
-}
-@media only screen and (max-width: 426px){
-    .mainContainer{
-      background-image: url("../../../assets/mob_back1.jpg");
-  }
-  .one,.two{
-      display: none;
-  }
-    .container{
-        width: 87vw;
-        padding-left: 0px;
-        padding-right: 0px;
-        background: none;
-    }
-    input{
-        color: lightseagreen;
-    }
-    ::placeholder{
-        color: lightseagreen;
-    }
-
-    .row{
-        width: 100%;
-    }
-    .inputname{
-        flex-direction: column;
-    }
-    .f_name{
-        width: 100%;
-    }
-    .l_name{
-        width: 100%;
-        margin-left: 0;
-        margin-top: 5px;
-    }
-    .submit{
-        width: 40vw;
-        background: lightseagreen;
-    }
+#break{
+    display: none;
 }
  
+  @media screen and (max-width:387.9px) and (min-width:200px){
+    .name{
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        line-height: 1rem;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .f_name,.l_name{
+        /* margin-top: 1vh; */
+        width: 70%;
+    }
+    .l_name{
+        margin-top: 1.8vh;
+        height: 3vh;
+    }
+    legend{
+        font-size: 1.2rem;
+    }
+    
+    #space{
+        margin-left: 8vw;
+    }
+    .for_mobile,.for_image{
+        width: 70%;
+    }
+    .one,.two{
+        display: none;
+    }
+    .form{
+        background: none;
+    }
+    .container{
+        width: 80vw;
+        height: 70vh;
+        
+    }
+    .box{
+        /* margin-top: -.5vh; */
+        height: 3vh;
+    }
+    .submit{
+        width: 20vw;
+        margin-top: 2vh;
+    }
+    .main{
+        margin-left: 5vw;
+    }
+    ::placeholder{
+        font-size: 0.8rem;
+    }
+    .for_mobile{
+        margin-bottom: 1vh;
+        height: 3vh;
+    }
+    /* #camera{
+        margin-top: 2vh;
+    } */
+    
+}
+  @media screen and (max-width:632px) and (min-width:388px){
+      .name{
+          display: flex;
+          flex-direction: column;
+      }
+      input{
+          line-height: 1rem;
+          font-size: 1rem;
+          margin: 5px;
+      }
+      .f_name,.l_name{
+          width: 70%;
+      }
+      
+      #space{
+          margin-left: 6.5vw;
+      }
+      .for_mobile,.for_image{
+          width: 70%;
+      }
+      .one,.two{
+          display: none;
+      }
+      .form{
+        background: none;
+      }
+      .container{
+          width: 70vw;
+          height: 70vh;
+          
+      }
+      .box{
+          margin-top: 1vh;
+      }
+      .submit{
+          width: 20vw;
+          margin-top: 2vh;
+      }
+      .main{
+          margin-left: 5vw;
+      }
+      
+  }
+
+
+  @media screen and (max-width:729.9px)and (min-width:630px){
+ 
+    .container{
+        width: 49vw;
+        height: 65vh;
+        
+    }
+    fieldset{
+        width: 90%;
+        height: 85%;
+    }
+    legend{
+        font-size: 1.1rem;
+    }
+    .box{
+        width: auto;
+        height:3vh;
+        font-size: 0.8rem;
+    }
+    input{
+        line-height: 1rem;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .f_name{
+        width: 12.9vw;
+    }
+    .l_name{
+        width: 12.9vw;
+    }
+    .for_mobile{
+        width: 12vw;
+        margin-right: 1vw;
+    }
+    .for_image{
+        width: 12.4vw;
+    }
+    .for_{
+        width: 70%;
+        font-size: 0.8rem;
+    }
+    .submit{
+        width: 15vw;
+        height: 4vh;
+      
+    }
+
+  }
+
+
+  @media screen and (max-width:999.9px)and (min-width:730px){
+ 
+    .container{
+        width: 45vw;
+        height: 65vh;
+        box-shadow: 3px 3px 5px rgb(128, 129, 129);
+    }
+    fieldset{
+        width: 92%;
+        height: 85%;
+    }
+    .box{
+        width: auto;
+        height:4vh;
+        font-size: 0.8rem;
+    }
+    input{
+        line-height: 1rem;
+        font-size: 1rem;
+        margin: 5px;
+    } 
+    .f_name{
+        width: 12vw;
+    }
+    .l_name{
+        width: 12.1vw;
+    }
+    .for_mobile{
+        width: 12vw;
+        margin-right: 1vw;
+    }
+    .for_image{
+        width: 11.4vw;
+    }
+    .for_{
+        width: 70%;
+        font-size: 0.8rem;
+    }
+
+  }
+
+
+  @media screen and (max-width:1199.9px)and (min-width:1000px){
+    input{
+        line-height: 1rem;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .f_name{
+        width: 12.5vw;
+    }
+    .l_name{
+        width: 12.1vw;
+    }
+    .for_mobile{
+        width: 12.5vw;
+        margin-right: 1vw;
+    }
+    .for_image{
+        width: 12vw;
+    }
+  }
+
+  
+  @media screen and (min-width:1200px){
+    input{
+        line-height: 1rem;
+        font-size: 1rem;
+        margin: 5px;
+    }
+
+    
+    .f_name{
+        width: 12.5vw;
+    }
+    .l_name{
+        width: 12.5vw;
+    }
+    .for_mobile{
+        width: 12.5vw;
+        margin-right: 2vw;
+    }
+    .for_image{
+        width: 12vw;
+    }
+  
+}
 
 /* background animation */
 
@@ -543,4 +774,5 @@ img{
     0% { transform:rotate(660deg) ;left:16vw; top:70vh;}
     
   }
+    
 </style>
