@@ -63,37 +63,14 @@ methods:{
        fd.append('link_details',this.link_details)
        fd.append('note',this.note)
 
-       axios.post('http://localhost:8000/api/addevents',fd)
+       axios.post(process.env.VUE_APP_SERVER_URL+'/addevents',fd)
        .then(res=>{
-           console.log(res);
            this.topic="";
            this.link_details="";
            this.image=" ";
            this.note="";
        })
    }
-
-//   addevent(e){
-    
-//       //axios.post('http://localhost:8000/api/addevents',
-//      API.addevent({
-//       topic:this.topic,
-//       link_details:this.link_details,
-//       image:this.image,
-//       note:this.note,
-//         })
-//     .then((response)=>{
-//       console.log(response);
-//       this.topic="";
-//       this.link_details="";
-//       this.image="";
-//       this.note="";
-//     })
-//     .catch((err)=>{
-//       console.log(err);
-//     })
-//    }
-   
   }
 }
 

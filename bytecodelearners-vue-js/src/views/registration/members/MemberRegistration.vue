@@ -1,7 +1,7 @@
 
 <template>
   <div class="mainContainer">
-      <div class="bytecodeLogo"><img src="../../../assets/bytecode.png" alt=""></div>
+      <div class="bytecodeLogo"><img :src="`/bytecode.png`|staticFile" alt=""></div>
       <div class="container">
           <h1 class="heading">~: Registration :~</h1>
             <FormContainer @submit="addNewMember" :formData="forms" >
@@ -229,6 +229,12 @@ export default {
         setInterval(hide(),2000);
       }
     },
+    filters:{
+    staticFile(e)
+    {
+      return process.env.VUE_APP_SERVER_STATIC_FILES+e;
+    }
+  }
 
 }
 </script>
@@ -249,14 +255,14 @@ export default {
     flex-direction: column;
     place-items: center ;
     border: 2px solid black;
-    background-image: url( "../../../assets/9.jpg") ;
+    background-image: url( "https://www.bytecodelearners.club/statics/9.jpg") ;
     background-size: 100% 100%;
     z-index: index -10; 
    
 }
 .bytecodeLogo{
-    height: 5rem;
-    width: 6rem;
+    height: 6rem;
+    width:  7rem;
     animation: logo_animation 5s infinite;
     margin-bottom: 10px;
     margin-top: 0;
@@ -284,8 +290,9 @@ export default {
 .heading{
     color: white;
     font-weight: 800;
-    font-size: 1.9rem;
+    font-size: 2.6rem;
     margin-bottom:1vh;
+    margin-top: -15vh;
     text-align: center;
 }
 .main{
@@ -373,7 +380,7 @@ input{
 }
 @media only screen and (max-width: 426px){
     .mainContainer{
-      background-image: url("../../../assets/mob_back1.jpg");
+      background-image: url("https://www.bytecodelearners.club/statics/mob_back1.jpg");
   }
   .one,.two{
       display: none;
@@ -415,7 +422,7 @@ input{
 /* background animation */
 
 #logo{ 
-    background-image: url("../../../assets/26.png");
+    background-image: url("https://www.bytecodelearners.club/statics/26.png");
     width: 8vw;
     height: 17vh;
     position: absolute;
@@ -424,7 +431,7 @@ input{
     animation-timing-function: unset;
 }
 #logo1{ 
-    background-image: url("../../../assets/27.png");
+    background-image: url("https://www.bytecodelearners.club/statics/27.png");
     width: 10vw;
     height: 25vh;
     position: absolute;
@@ -440,7 +447,7 @@ img{
     height: 100%;
 }
 #logo2{ 
-    background-image: url("../../../assets/28.png");
+    background-image: url("https://www.bytecodelearners.club/statics/28.png");
     width: 10vw;
     height: 22vh;
     position: absolute;
@@ -452,7 +459,7 @@ img{
 }
 
 #logo3{ 
-    background-image: url("../../../assets/23.png");
+    background-image: url("https://www.bytecodelearners.club/statics/23.png");
     width: 6vw;
     height: 10vh;
     position: absolute;

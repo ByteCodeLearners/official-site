@@ -5,13 +5,11 @@
     <v-container>
     <About/>
     <Events/>
-
     <ByteCodeSlider sliderTitle="MEMBERS">
       <v-card style="width:100%;text-align:center"><div id="members">MEMBERS</div></v-card>
     </ByteCodeSlider>
-    <PhotoGallery/>
+    <PhotoGallery />
     <SocialFeed/>
-
     </v-container>
   </div>
 </template>
@@ -26,7 +24,6 @@ import About from "../components/Layout/ByteCodeAboutUs"
 
 import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
  export default {
-
     name:"homePage",
     data:()=>({
       formData:{
@@ -40,8 +37,7 @@ import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
     PhotoGallery,
     SocialFeed,
   },
-  methods:{   
- }
+  methods:{
   }
 
 </script>
