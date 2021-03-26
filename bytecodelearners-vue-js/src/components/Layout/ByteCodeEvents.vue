@@ -95,7 +95,7 @@ export default {
   filters:{
     storageFile(e)
     {
-      return process.env.VUE_APP_SERVER_STORAGE_FILES+e.split("public")[1];
+      return process.env.VUE_APP_SERVER_STORAGE_FILES+e;
     },
     staticFile(e)
     {
@@ -103,7 +103,7 @@ export default {
     }
   },
   created() {
-          axios.get('http://localhost:8000/api/getevents').then(response => {
+          axios.get(process.env.VUE_APP_SERVER_URL+'/getevents').then(response => {
             this.results = response.data;
             console.log(response.data);
             
