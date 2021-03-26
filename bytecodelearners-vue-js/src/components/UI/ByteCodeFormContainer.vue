@@ -43,15 +43,46 @@ form{
     text-align:center;
 }
 .submit-btn{
-    width: 10vw;
+    width: 9vw;
     text-shadow: 1px 1px 1px black;
     border-radius: 13px;
-    font-weight: 600;
-    margin-top: -45px;
+    font-weight: 500;
+    margin-top:-7vh;
+    height:0.5vh;
 }
-@media only screen and (max-width: 426px){
+.v-btn:not(.v-btn--round).v-size--default{
+height:3vh;
+}
+
+@media only screen and (max-width: 809.9px)and (min-width: 600px){
+
+.v-btn:not(.v-btn--round).v-size--default{
+height:4.2vh;
+}
+.submit-btn{
+    width: 18vw;
+    font-weight: 600;
+    margin-top:-7vh;
+}
+}
+
+@media only screen and (max-width: 599.9px)and (min-width: 423px){
+
+.v-btn:not(.v-btn--round).v-size--default{
+height:4.2vh;
+ font-size:1rem;
+}
+.submit-btn{
+    width: 22vw;
+    font-weight: 700;
+    margin-top:-3vh;
+   
+}
+}
+@media only screen and (max-width: 423px){
     .submit-btn{
         width: 25vw;
+        margin-top:1vh;
     }
 }
 
