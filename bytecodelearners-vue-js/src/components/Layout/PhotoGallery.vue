@@ -256,10 +256,9 @@ export default {
     background: rgba(0, 0, 0, 0.9);
   }
   .close, .previous,.next{
-    
     position: absolute;
-    color: gray;
-    opacity: 0.7;
+    color:white;
+    opacity: 1;
     user-select: none;
   }
   .close:hover,.previous:hover,.next:hover {
@@ -287,7 +286,7 @@ export default {
     margin: auto;
     display: block;
     width: auto;
-    height: 80%;
+    height: 80vh;
     border: 0.1rem solid teal;
     border-radius: 0.5rem;
   }
@@ -300,9 +299,9 @@ export default {
     margin-top: 1rem;
   }
   @media (max-width: 1100px) {
-    .modal .previous, .container .modal .next {
+    /* .modal .previous, .container .modal .next {
       display: none;
-    }
+    } */
   }
   @media (max-width: 1024px) {
     /* .container {
