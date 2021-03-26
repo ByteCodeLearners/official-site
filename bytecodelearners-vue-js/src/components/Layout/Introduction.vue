@@ -324,7 +324,11 @@ export default {
   .bcl-intro-text-container .heading{
     font-size: 4em;
   }
-  
+  .content{
+    margin-top: 15vh;
+    flex-direction: column-reverse;
+    height: 50vh;
+  }
   .bcl-intro-text-container{
     width: 70%;
   }
@@ -332,9 +336,18 @@ export default {
     font-size: 1.2em;
   }
   
+  .bcl-social-links{
+  margin: 2% 0 0 10%;
+  width:50%;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
   .bcl-side-image{
     height: 100%;
-    width: 20%;
+    width: 40%;
     margin: 0;
     padding: 0;
   }

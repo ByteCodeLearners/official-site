@@ -272,7 +272,7 @@ export default {
 
 .container{
     width: 45vw;
-    height: auto;
+    height: 75vh;
     background: linear-gradient(to bottom right, rgba(153, 102, 255,0.4) -17%, rgba(255,102,204,0.9) 124%);
     border-radius: 20px;
     display: flex;
