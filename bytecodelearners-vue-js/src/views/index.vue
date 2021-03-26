@@ -23,7 +23,7 @@ import PhotoGallery from "../components/Layout/PhotoGallery"
 import Events from "../components/Layout/ByteCodeEvents"
 import About from "../components/Layout/ByteCodeAboutUs"
 
-export default {
+
 import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
  export default {
 
@@ -43,7 +43,7 @@ import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
   methods:{   
  }
   }
-}
+
 </script>
 
 <style scoped>

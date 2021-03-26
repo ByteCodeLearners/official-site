@@ -47,7 +47,7 @@ form{
     text-shadow: 1px 1px 1px black;
     border-radius: 13px;
     font-weight: 600;
-    margin-top: -15px;
+    margin-top: -45px;
 }
 @media only screen and (max-width: 426px){
     .submit-btn{
