@@ -247,18 +247,23 @@ export default {
     justify-content: center;
     flex-direction: column;
     place-items: center ;
-    border: 2px solid black;
+   
     background-image: url( "../../../assets/9.jpg") ;
-    background-size: 100% 100%;
+    background-size: 100% 115% ;
+    
     z-index: index -10; 
    
 }
 .bytecodeLogo{
-    height: 6rem;
-    width:  7rem;
+    height:10vh ;
+    width: 10vh;
     animation: logo_animation 5s infinite;
     margin-bottom: 10px;
-    margin-top: 0;
+    margin-top:px;
+    position:absolute;
+    top:1.5vh;
+    
+    
 }
 
 @keyframes logo_animation{
@@ -271,34 +276,42 @@ export default {
 }
 
 .container{
-    width: 45vw;
-    height: auto;
-    background: linear-gradient(to bottom right, rgba(153, 102, 255,0.4) -17%, rgba(255,102,204,0.9) 124%);
-    border-radius: 20px;
+    width: 44vw;
+    height:50vh;
+    background-image: url( "../../../assets/mob_back.jpg") ;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 35px;
+    margin-left:-5.8vh;
+    margin-top:-17.5vh;
+    background-size:100% 100%;
+    
+   
 }
 .heading{
-    color: white;
+    color:aqua;
     font-weight: 800;
-    font-size: 2.6rem;
+    font-size: 1.8rem;
     margin-bottom:1vh;
-    margin-top: -15vh;
+    margin-top:-0vh;
     text-align: center;
 }
 .main{
     width: 100%;
     height: 100%;
     padding-bottom: 0;
+    margin-left: 3.5vw;
 }
 .row{
     width: 90%;
     display: flex;
+    height:3.25vh;
+   
     /* flex-direction: column; */
-    margin: 5px;
+    margin-top: 1vh;
     /* border: 1px solid red; */
+   
 }
 .inputname{
     width: 80%;
@@ -313,6 +326,11 @@ export default {
     width: 37%;
     margin-left: 20px;
 }
+.for_image{
+
+height:3.2vh;
+font-size:1rem;
+}
 input{
     padding-left: 5px;
     color: rgb(224, 19, 146);
@@ -321,6 +339,8 @@ input{
     box-shadow: 2px 2px 4px rgb(110, 110, 116);
     border-radius: 8px;
     width: 80%;
+    height:3.25vh;
+    
 }
 ::placeholder{
     color:rgb(224, 19, 146);
@@ -357,12 +377,162 @@ input{
     color: rgb(161, 68, 248);
     text-shadow: 1px 1px 1px rgb(15, 15, 19);
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (min-width: 1200px){
+
+.container{
+    margin-left:-6.8vh;
+}
+
+.for_image{
+
+padding-bottom:24px;
+}
+}
+@media only screen and (max-width: 1199.9px)and (min-width: 810px){
+
+.container{
+    margin-left:-3.3vw;
+     width: 44.5vw;
+}
+
+.for_image{
+
+padding-bottom:24px;
+}
+}
+
+@media only screen and (max-width: 809.9px)and (min-width: 600px){
+.mainContainer{
+   background-image: url( "../../../assets/mob_back1.jpg") ;
+}
+
+.one,.two{
+      display: none;
+  }
+.container{
+    width: 65vw;
+    height:65vh;
+    background-image: url( "../../../assets/mob_back.jpg") ;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-top:5vh;
+    background-size:100% 100%;
+    
+   
+}
+.heading{
+    color:aqua;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom:3vh;
+    margin-top:-0vh;
+    text-align: center;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    
+    margin-left: 4.5vw;
+}
+.row{
+    width: 90%;
+    display: flex;
+    height:4.25vh;
+   
+    /* flex-direction: column; */
+    margin-top: 1vh;
+    /* border: 1px solid red; */
+   
+}
+
+.for_image{
+height:4vh;
+padding-bottom:24px;
+}
+
+input{
+    padding-left: 5px;
+    color: rgb(224, 19, 146);
+    background-color: white;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 4px rgb(110, 110, 116);
+    border-radius: 8px;
+    width: 80%;
+    height:4.15vh;
+    
+}
+}
+
+@media only screen and (max-width: 599.9px)and (min-width: 423px){
+.mainContainer{
+   background-image: url( "../../../assets/mob_back1.jpg") ;
+}
+.one,.two{
+      display: none;
+  }
+.container{
+    width: 75vw;
+    height:75vh;
+    background-image: url( "../../../assets/mob_back.jpg") ;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:2vw;
+    margin-top:5vh;
+    background-size:100% 100%;
+    
+   
+}
+.for_image{
+height:4vh;
+padding-bottom:24px;
+}
+.heading{
+    color:aqua;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom:3vh;
+    margin-top:-0vh;
+    text-align: center;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    
+    margin-left: 4.5vw;
+}
+.row{
+    width: 90%;
+    display: flex;
+    height:4.25vh;
+   
+    /* flex-direction: column; */
+    margin-top: 1vh;
+    /* border: 1px solid red; */
+   
+}
+
+input{
+    padding-left: 5px;
+    color: rgb(224, 19, 146);
+    background-color: white;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 4px rgb(110, 110, 116);
+    border-radius: 8px;
+    width: 80%;
+    height:4.15vh;
+    
+}
+}
+
+@media only screen and (max-width: 400px) {
   /* For mobile phones: */
   
-  .container{
-      padding-left: 10px;
-  }
   
   .heading{
       font-size: 1.9rem;
@@ -371,21 +541,32 @@ input{
       font-size: 1rem;
   }
 }
-@media only screen and (max-width: 426px){
+@media only screen and (max-width: 423px){
     .mainContainer{
       background-image: url("../../../assets/mob_back1.jpg");
   }
   .one,.two{
       display: none;
   }
+  .heading{
+  color:darkblue;
+  }
+  .bytecodeLogo{
+  margin-top:7vh;
+  }
     .container{
         width: 87vw;
         padding-left: 0px;
         padding-right: 0px;
         background: none;
+        margin-left:1vw;
+        margin-top:14vh;
+        height:78vh;
     }
     input{
         color: lightseagreen;
+        height:4.2vh;
+        margin-top:1vh;
     }
     ::placeholder{
         color: lightseagreen;
@@ -393,6 +574,8 @@ input{
 
     .row{
         width: 100%;
+        height:4vh;
+        
     }
     .inputname{
         flex-direction: column;
@@ -405,9 +588,15 @@ input{
         margin-left: 0;
         margin-top: 5px;
     }
-    .submit{
-        width: 40vw;
-        background: lightseagreen;
+    .for_image{
+    height:3vh;
+    padding-bottom:24px;
+    }
+    .mainContainer{
+    height:90vh;
+    }
+    .material-icons{
+    margin-top:1.8vh ;
     }
 }
  
