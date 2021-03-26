@@ -3,7 +3,7 @@
         
         <v-card class="events-heading  mx-auto mb-4" flat outlined> EVENTS
         </v-card>
-        <vue-typer class="typer" text='Come learn, share and connect with us in person'></vue-typer>
+        <vue-typer class="typer" text='Come, Learn, Share and Connect with us in person'></vue-typer>
        <div class="container ">
         <div class="row ">
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500" color="rgba(0,0,0,0)">
@@ -95,7 +95,7 @@ export default {
   filters:{
     storageFile(e)
     {
-      return process.env.VUE_APP_SERVER_STORAGE_FILES+e.split("public")[1];
+      return process.env.VUE_APP_SERVER_STORAGE_FILES+e;
     },
     staticFile(e)
     {
@@ -103,10 +103,8 @@ export default {
     }
   },
   created() {
-          axios.get('http://localhost:8000/api/getevents').then(response => {
+          axios.get(process.env.VUE_APP_SERVER_URL+'/getevents').then(response => {
             this.results = response.data;
-            console.log(response.data);
-            
           })
         },
   
