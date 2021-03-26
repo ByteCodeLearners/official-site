@@ -1,6 +1,6 @@
 <template>
     <div id="form">
-            <h2>UPCOMING EVENTS</h2>
+            <h2 class="heading">UPCOMING EVENTS</h2>
              <!-- <form @submit.prevent="addevent" method="post"> -->
                 <div class="form-group">
                     <label>Topic</label>
@@ -19,16 +19,13 @@
                 </div>
                 <div class="form-group">
                     <label >Add Note</label>
-                    <input type="text" name="note" class="form-control" id="note" placeholder="add note" v-model="note"
-                        >
+                    <input type="text" name="note" class="form-control" id="note" placeholder="add note" v-model="note">
                         
                 </div>
                 
                 <div class="form-group">
                     <v-btn  
-                  color="success"
-                  
-                  @click="addevent">Submit</v-btn>
+                  color="success" id="button"  @click="addevent">Submit</v-btn>
                 </div>
             <!-- </form>  -->
     </div>
@@ -112,5 +109,16 @@ methods:{
   }
   label{
       flex:1;
+  }
+  @media only screen and (max-width:425px){
+      #form{
+          width: 20em;
+      }
+      #button{
+          margin-left: 35%;
+      }
+      .heading{
+          font-size: 35px;
+      }
   }
 </style>
