@@ -9,7 +9,7 @@
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="zoom-in-up" data-aos-duration="1500" color="rgba(0,0,0,0)">
               <center><h1>UPCOMING EVENTS</h1></center>
               <div class="bcl-current-event-img">
-                  <center><img :src='results.image |storageFile ' width="100%"></center>
+                  <center><img :src='results.image |storageFile' width="100%"></center>
                   <!-- upcomingEvent | staticFile -->
                   <br><br>    
               </div>
@@ -25,17 +25,12 @@
 
              </div> 
             
-            <div class="bcl-current-event">
+              <div class="bcl-current-event">
                <v-hover close-delay="200"><span><p> Link: </p><h4><a :href="results.link_details" target="_blank">{{results.link_details}}</a></h4></span></v-hover>
-              
               </div>
               <div class="bcl-current-event">
                <v-hover close-delay="200"><span><p>Details:</p><h4> {{results.note}}</h4></span></v-hover>
-               
               </div>
-              
-              
-
             </div>  
       
          </v-card>
@@ -160,6 +155,11 @@ h4{
   background-color: rgba(0, 0, 0, 0.7);
   padding:20px ;
   height: 30%;
+  bottom: 0;
+  border: 1px solid red;
+}
+.eventdetails h1{
+  font-size: 2rem;
 }
 
 .bcl-previous-events{
@@ -178,6 +178,9 @@ h4{
 .bcl-previous-events img{
     height: 12em;
     margin: 2%;
+}
+.eventdetails{
+  height: 20em;
 }
 
 
