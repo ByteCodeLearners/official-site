@@ -105,8 +105,6 @@ export default {
   created() {
           axios.get(process.env.VUE_APP_SERVER_URL+'/getevents').then(response => {
             this.results = response.data;
-            console.log(response.data);
-            
           })
         },
   
