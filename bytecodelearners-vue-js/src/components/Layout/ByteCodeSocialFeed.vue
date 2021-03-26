@@ -66,14 +66,13 @@ export default {
     document.head.appendChild(ckeditor);
     let instagrameditor = document.createElement("script");
     instagrameditor.setAttribute("src","https://apps.elfsight.com/p/platform.js");
-    document.head.appendChild(instagrameditor);
-    
+    document.head.appendChild(instagrameditor);  
   },
 };
 </script>
 
 <style scoped>
-.feed-head {
+.feed-head{
   text-align: center;
   font-size: 4em;
   font-weight: 700;

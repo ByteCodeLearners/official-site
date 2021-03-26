@@ -9,5 +9,10 @@ export default {
        },
        addNewMember(memberDetails){
             return instance.post("/members/new",memberDetails);
-       }
+       },
+
+       addevent(data){
+        return instance.post("/addevents",data);
+    }
+
 }
