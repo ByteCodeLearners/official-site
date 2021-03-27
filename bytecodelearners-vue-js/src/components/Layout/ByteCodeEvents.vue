@@ -156,7 +156,6 @@ h4{
   padding:20px ;
   height: 30%;
   bottom: 0;
-  border: 1px solid red;
 }
 .eventdetails h1{
   font-size: 2rem;
