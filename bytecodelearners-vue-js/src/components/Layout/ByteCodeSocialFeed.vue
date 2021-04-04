@@ -39,18 +39,14 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-card
-        class="col-sm-12  col-md-3 mt-3 bcl-small-container-1"
+        class="col-sm-12  col-md-3 mt-3  bcl-small-container-1 twitter-1"
         data-aos="zoom-in-up"
         data-aos-duration="1500"
         color="rgba(0,0,0,0)">
         <center>
           <h1>TWITTER FEEDS</h1>
-          <a class="twitter-timeline"
-            data-width="320"
-            data-height="500"
-            style="overflow-y:hidden;"
-            href="https://twitter.com/ByteCodeLearner?ref_src=twsrc%5Etfw">Tweets by ByteCodeLearner
-          </a>
+         <a class="twitter-timeline" data-width="320" data-height="500" href="https://twitter.com/ByteCodeLearner?
+         ref_src=twsrc%5Etfw">Tweets by ByteCodeLearner</a>
         </center>
       </v-card>
     </div>
@@ -88,9 +84,14 @@ export default {
   justify-content: center;
   margin-bottom: 3vh;
 }
+div.timeline-viewport{
+   width: 320px !important;
+   height: 500px !important;
+}
 @media only screen and (max-width: 500px) {
   .feed-head {
     font-size: 2em !important;
   }
+
 }
 </style>
