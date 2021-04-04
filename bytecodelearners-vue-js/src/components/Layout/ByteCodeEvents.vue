@@ -178,9 +178,9 @@ h4{
     height: 12em;
     margin: 2%;
 }
-.eventdetails{
+/* .eventdetails{
   height: 20em;
-}
+} */
 
 
 @media only screen and (max-width:500px)
@@ -191,8 +191,18 @@ h4{
   .bcl-current-event-img img{
       width:12em;
   }
-  .eventdetails{
-    height: 50%;
+  .eventdetails {
+    height: 25em;
+    width: 16em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+  }
+  .eventdetails h1 {
+    font-size: 1.5rem;
+  }
+  .bcl-current-event a {
+    font-size: 12px;
   }
   
 .bcl-previous-event-content{
