@@ -48,6 +48,7 @@ export default {
         scrollToContactUs(){
         this.scrollTo("contact-us");
         },
+       
         scrollTo(e){
         $( 'html, body' ).animate({
             scrollTop: $("#"+e).offset().top

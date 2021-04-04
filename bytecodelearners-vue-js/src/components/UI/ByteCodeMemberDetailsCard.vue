@@ -81,7 +81,7 @@ export default {
 .bcl-members-image>img{
     min-height: 50px;
     height: 350px;
-    width: 300px;
+    width: 100%;
 }
 .bcl-members-details{
     text-align: center;

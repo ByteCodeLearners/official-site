@@ -5,6 +5,7 @@ import NotFoundPage from "../views/404"
 import register from "../views/registration/members/MemberRegistration"
 import login from "../views/login/index"
 import ByteCodeInitiator from "../views/initiators/index"
+import UpComingEvents from "@/components/UpComingEvents"
 
 Vue.use(VueRouter);
 
@@ -29,12 +30,18 @@ const routes = [
 
     path:"/login",
     name:"login",
-    component:login
+    component:login,
   },
+  
   {
     path:"*",
     name:"not-found",
     component:NotFoundPage
+  },
+  {
+    path:"/add/upcoming/events",
+    name:"UpComingEvents",
+    component:UpComingEvents,
   }
 ];
 

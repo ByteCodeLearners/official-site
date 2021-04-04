@@ -2,7 +2,7 @@
     <div class="bcl-about-us">
         
         <v-card class="about-us-heading  mx-auto mb-4" flat outlined> ABOUT US </v-card>
-        <vue-typer class="typer" :text="['We make this happen!','Come , Learn , Guide , Make Your Network !']" :shuffle='true'></vue-typer>
+        <vue-typer class="typer" :text="['We make this happen!!!','Come, Learn, Guide, Make Your Network!!!']" :shuffle='true'></vue-typer>
        
        <div class="container ">
         
@@ -11,11 +11,16 @@
          <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600" color="rgba(0,0,0,0)">
               
               <div class="about-us-content">
-              <vue-typer class="typer" text="Bytecode learner is a group of students working together with patience and enthusiasm to create something ctrl + N
-Anyone who is passionate about exploring the technologies or want to learn something new can join the club.
+
+              <!-- <vue-typer class="typer" text="ByteCodeLearner is a group of students working together with patience and enthusiasm to create something Ctrl + N.
+Anyone who is passionate about exploring the technologies or want to 
+learn something new can join the club.
 We believe that learning together is fun.
 Along with academic knowledge, various skills are there , a student should have.
-We are here for you to introduce all those things and build your personality full with required skills." :repeat=0></vue-typer>
+We are here for you to introduce all those things and build your personality 
+full with required skills." :repeat=0></vue-typer> -->
+               <p> <span>ByteCodeLearner</span> is a group of students working together with patience and enthusiasm <span> to create something Ctrl + N.</span> Anyone who is passionate about exploring the technologies or want to learn something new can join the club. We believe that learning together is fun. Along with academic knowledge, various skills are there, a student should have. We are here for you to introduce all those things and build your personality full with required skills.</p>
+
               </div>
          </v-card>
 
@@ -83,6 +88,18 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* width: 35vw; */
+    padding: 30px;
+}
+.about-us-content p{
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 400;
+  text-align: justify;
+  /* font-size: 18px; */
+}
+.about-us-content p span{
+  font-weight: 600;
 }
 /* .bcl-small-container-2{
     border: 1px solid red;
@@ -119,6 +136,7 @@ export default {
   .bcl-about-us-img img{
       width: 10em;
   }
+ 
 
 
 }
