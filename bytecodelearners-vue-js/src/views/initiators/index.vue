@@ -1,6 +1,6 @@
 <template>
     <div class="founders-page mt-7">
-        <div class="heading d-flex flex-row ">
+        <div class="heading">
             <div class="logo">
                 <img src="http://bytecodelearners.club/statics/byte-code-learners.svg">
             </div>
@@ -8,9 +8,9 @@
         </div>
             <v-card >
                 <v-card-text elevation="0">
-                    <div class="description d-flex justify-center align-center">
+                    <div class="description">
                         <div class="image flex-shrink-1">
-                            <img src="../../assets/img.jpg"/>
+                            <img src="http://bytecodelearners.club/statics/init_img.jpg"/>
                         </div>
                         <div class="texts">
                             <span>ByteCodeLearners Club</span> was founded in 2019  by 4 CSE students when they were in their 2nd year of college.<br>
@@ -23,7 +23,7 @@
                     </div>
                 </v-card-text>
             </v-card>
-        <div class="d-flex">
+        <div class="initiators">
             <InitiatorDetailsCard class="flex-shrink-1 flex-grow-1 mx-2 my-2"  v-for="(initiator,key) in initiators" :key="key" :details="initiator"/>
         </div>
     </div>
@@ -42,7 +42,8 @@
                         imageUrl:"http://bytecodelearners.club/initiators-image/dipu-kumar-sah.jpg",
                         socialLinks:{
                             github:"https://github.com/dipu-kr-sah",
-                            email:"dipuxah7@gmail.com"
+                            email:"dipuxah7@gmail.com",
+                            linkedin: "https://www.linkedin.com/in/dipu-kumar-sah-07b308181/",
                         }
                     },
                     {
@@ -51,16 +52,29 @@
                         socialLinks:{
                             github:"https://github.com/180905",
                             email:"yash180905@gmail.com",
+                            linkedin: "https://www.linkedin.com/in/yash-raj-3719111b2/",
                         }
 
                     },
                     {
                         fullName:"Raj Patel",
                         imageUrl:"http://bytecodelearners.club/initiators-image/raj-patel.jpg",
+                        socialLinks:{
+                            github:"https://github.com/rajpatel2619",
+                            email:"kakhilesh79@gmail.com",
+                            linkedin :"https://www.linkedin.com/in/rajpatel2619/",
+
+                        }
                     },
                     {
                         fullName:"Shantanu Pratap",
                         imageUrl:"http://bytecodelearners.club/initiators-image/shantanu-pratap.jpg",
+                        socialLinks:{
+                            linkedin: "https://www.linkedin.com/in/shantanu-p-291b991b4",
+                            github:"https://github.com/180896-cse",
+                            email:"shantanupratap180896@gmail.com",
+                            
+                        }
                     },
                 ]
             }
@@ -95,7 +109,7 @@
     }
     .texts{
         font-family: 'PT Serif', sans-serif;
-        width: 60%;
+        width: 80%;
         font-size: 1.3em;
         text-align: justify;
         box-sizing: border-box;
@@ -108,11 +122,13 @@
     .image{
         width: 15em;
         height: 15em;
+
     }
     .image>img{
         height: 100%;
         width: 100%;
         border-radius: 1em;
+        margin-left:5%;
     }
     .v-card__text{
         justify-content: center !important;
@@ -120,7 +136,35 @@
         box-sizing: border-box !important;
         padding: 2em 0 2em 0 !important;
         min-height: 20em !important;
-
+    }
+    .heading{
+        display: flex;
+        flex-direction: row;
+    }
+    .description{
+        display: flex;
+        flex-direction: row;
+    }
+    .initiators{
+        display: flex;
+        flex-direction: row;
+    }
+    @media only screen and (max-width: 960px)
+    {   
+        .heading{
+            flex-direction: column;
+            align-items: center;
+        }
+        .description{
+        flex-direction: column;
+        align-items: center;    
+    }
+        .texts{
+            width: 95%;
+        }
+        .initiators{
+        flex-direction: column;
+    }
     }
 </style>
  
