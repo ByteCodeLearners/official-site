@@ -39,7 +39,6 @@ import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
   },
   methods:{
   }
-
  }
 </script>
 
