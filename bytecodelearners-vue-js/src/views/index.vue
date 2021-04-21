@@ -20,6 +20,8 @@ import Introduction from "../components/Layout/Introduction"
 import PhotoGallery from "../components/Layout/PhotoGallery"
 import Events from "../components/Layout/ByteCodeEvents"
 import About from "../components/Layout/ByteCodeAboutUs"
+
+
 import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
  export default {
     name:"homePage",
@@ -37,7 +39,7 @@ import SocialFeed from "../components/Layout/ByteCodeSocialFeed"
   },
   methods:{
   }
-}
+ }
 </script>
 
 <style scoped>

@@ -117,8 +117,9 @@
           </div> -->
           </div>
         </FormContainer>
-        <p>{{result}}</p> 
+        
       </div>
+      <p>{{result}}</p> 
       
 <!-- for animation -->
       <div class="one" id="logo"></div>
@@ -256,9 +257,7 @@ export default {
    
     background-image: url( "https://www.bytecodelearners.club/statics/9.jpg") ;
     background-size: 100% 115% ;
-    
     z-index: index -10; 
-   
 }
 .bytecodeLogo{
     height:10vh ;
@@ -333,7 +332,6 @@ export default {
     margin-left: 20px;
 }
 .for_image{
-
 height:3.2vh;
 font-size:1rem;
 }
@@ -746,4 +744,5 @@ img{
     0% { transform:rotate(660deg) ;left:16vw; top:70vh;}
     
   }
-</style>
+  </style>
+    
