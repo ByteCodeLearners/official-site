@@ -49,7 +49,6 @@ export default {
   },
 methods:{
   onFileChoosen(event){
-      console.log(event)
      this.image=event.target.files[0]
    },
 
