@@ -42,16 +42,6 @@
       </div>
       <div
         class="bcl-menu-item"
-        @click="scrollToContactUs"
-        v-if="getCurrentRoute == '/'"
-      >
-        <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
-          >mdi-human-greeting-proximity</v-icon
-        >
-        <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
-      </div>
-      <div
-        class="bcl-menu-item"
         @click="routerView('/')"
         v-if="getCurrentRoute != '/'"
       >
@@ -80,6 +70,15 @@
           >mdi-wall</v-icon
         >
         <div class="bcl-menu-item-title bcl-medium-text">Initiator</div>
+      </div>
+      <div
+        class="bcl-menu-item"
+        @click="scrollToContactUs"
+      >
+        <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
+          >mdi-human-greeting-proximity</v-icon
+        >
+        <div class="bcl-menu-item-title bcl-medium-text">Contact Us</div>
       </div>
     </v-container>
   </v-navigation-drawer>
