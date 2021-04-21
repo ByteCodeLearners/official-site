@@ -52,7 +52,17 @@
       </div>
       <div
         class="bcl-menu-item"
-        @click="routerView"
+        @click="routerView('/')"
+        v-if="getCurrentRoute != '/'"
+      >
+        <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
+          >mdi-home-assistant</v-icon
+        >
+        <div class="bcl-menu-item-title bcl-medium-text">Home</div>
+      </div>
+      <div
+        class="bcl-menu-item"
+        @click="routerView('/freshers_register')"
         v-if="getCurrentRoute != '/freshers_register'"
       >
         <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
@@ -64,23 +74,12 @@
       </div>
       <div
         class="bcl-menu-item"
-        @click="routerView"
-        v-if="getCurrentRoute != '/initiator'"
+        @click="routerView('/initiator')"
       >
         <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
-          >mdi-file-document-edit-outline</v-icon
+          >mdi-wall</v-icon
         >
         <div class="bcl-menu-item-title bcl-medium-text">Initiator</div>
-      </div>
-      <div
-        class="bcl-menu-item"
-        @click="$router.replace('/'), $emit('closeNavigationDrawer')"
-        v-if="getCurrentRoute != '/'"
-      >
-        <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
-          >mdi-home-assistant</v-icon
-        >
-        <div class="bcl-menu-item-title bcl-medium-text">Home</div>
       </div>
     </v-container>
   </v-navigation-drawer>
@@ -120,8 +119,8 @@ export default {
       );
     },
 
-    routerView() {
-      this.$router.replace("/freshers_register");
+    routerView(route) {
+      this.$router.push(route);
       this.$emit("closeNavigationDrawer");
     },
 
