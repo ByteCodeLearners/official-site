@@ -253,8 +253,9 @@ export default {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    place-items: center;
-    background-image: url( "../../../assets/9.jpg") ;
+    place-items: center ;
+   
+    background-image: url( "https://www.bytecodelearners.club/statics/9.jpg") ;
     background-size: 100% 115% ;
     z-index: index -10; 
 }
@@ -263,7 +264,7 @@ export default {
     width: 10vh;
     animation: logo_animation 5s infinite;
     margin-bottom: 10px;
-    margin-top:px;
+    margin-top:4vh;
     position:absolute;
     top:1.5vh;
     
@@ -282,7 +283,7 @@ export default {
 .container{
     width: 44vw;
     height:50vh;
-    background-image: url( "../../../assets/mob_back.jpg") ;
+    /* background-image: url( "https://www.bytecodelearners.club/statics/mob_back.jpg") ; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -294,7 +295,7 @@ export default {
    
 }
 .heading{
-    color:aqua;
+    color:#fff;
     font-weight: 800;
     font-size: 1.8rem;
     margin-bottom:1vh;
@@ -343,11 +344,12 @@ input{
     border-radius: 8px;
     width: 80%;
     height:3.25vh;
+    font-family: 'Playfair Display', serif;
     
 }
 ::placeholder{
     color:rgb(224, 19, 146);
-    text-shadow: 0.5px 0.5px 1px rgb(80, 79, 79);
+    
     font-family: 'Playfair Display', serif;
 }
 
@@ -406,8 +408,12 @@ padding-bottom:24px;
 }
 
 @media only screen and (max-width: 809.9px)and (min-width: 600px){
+
+  ::placeholder{
+    color: lightseagreen;
+  }
 .mainContainer{
-   background-image: url( "../../../assets/mob_back1.jpg") ;
+   background-image: url( "https://www.bytecodelearners.club/statics/mob_back1.jpg") ;
 }
 
 .one,.two{
@@ -416,7 +422,7 @@ padding-bottom:24px;
 .container{
     width: 65vw;
     height:65vh;
-    background-image: url( "../../../assets/mob_back.jpg") ;
+    /* background-image: url( "https://www.bytecodelearners.club/statics/mob_back.jpg") ; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -428,7 +434,7 @@ padding-bottom:24px;
    
 }
 .heading{
-    color:aqua;
+    color:#fff;
     font-weight: 800;
     font-size: 1.8rem;
     margin-bottom:3vh;
@@ -459,7 +465,7 @@ padding-bottom:24px;
 
 input{
     padding-left: 5px;
-    color: rgb(224, 19, 146);
+    color: lightseagreen;
     background-color: white;
     font-size: 1.2rem;
     box-shadow: 2px 2px 4px rgb(110, 110, 116);
@@ -471,8 +477,11 @@ input{
 }
 
 @media only screen and (max-width: 599.9px)and (min-width: 423px){
+  ::placeholder{
+    color: lightseagreen;
+  }
 .mainContainer{
-   background-image: url( "../../../assets/mob_back1.jpg") ;
+   background-image: url( "https://www.bytecodelearners.club/statics/mob_back1.jpg") ;
 }
 .one,.two{
       display: none;
@@ -480,7 +489,7 @@ input{
 .container{
     width: 75vw;
     height:75vh;
-    background-image: url( "../../../assets/mob_back.jpg") ;
+    
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -496,7 +505,7 @@ height:4vh;
 padding-bottom:24px;
 }
 .heading{
-    color:aqua;
+    color:#fff;
     font-weight: 800;
     font-size: 1.8rem;
     margin-bottom:3vh;
@@ -522,7 +531,7 @@ padding-bottom:24px;
 
 input{
     padding-left: 5px;
-    color: rgb(224, 19, 146);
+    color: lightseagreen;
     background-color: white;
     font-size: 1.2rem;
     box-shadow: 2px 2px 4px rgb(110, 110, 116);
@@ -546,13 +555,13 @@ input{
 }
 @media only screen and (max-width: 423px){
     .mainContainer{
-      background-image: url("../../../assets/mob_back1.jpg");
+      background-image: url("https://www.bytecodelearners.club/statics/mob_back1.jpg");
   }
   .one,.two{
       display: none;
   }
   .heading{
-  color:darkblue;
+  color:#fff;
   }
   .bytecodeLogo{
   margin-top:7vh;
@@ -581,7 +590,7 @@ input{
         
     }
     .inputname{
-        flex-direction: column;
+        flex-direction: row;
     }
     .f_name{
         width: 100%;
@@ -607,7 +616,7 @@ input{
 /* background animation */
 
 #logo{ 
-    background-image: url("../../../assets/26.png");
+    background-image: url("https://www.bytecodelearners.club/statics/26.png");
     width: 8vw;
     height: 17vh;
     position: absolute;
@@ -616,7 +625,7 @@ input{
     animation-timing-function: unset;
 }
 #logo1{ 
-    background-image: url("../../../assets/27.png");
+    background-image: url("https://www.bytecodelearners.club/statics/27.png");
     width: 10vw;
     height: 25vh;
     position: absolute;
@@ -632,7 +641,7 @@ img{
     height: 100%;
 }
 #logo2{ 
-    background-image: url("../../../assets/28.png");
+    background-image: url("https://www.bytecodelearners.club/statics/28.png");
     width: 10vw;
     height: 22vh;
     position: absolute;
@@ -644,7 +653,7 @@ img{
 }
 
 #logo3{ 
-    background-image: url("../../../assets/23.png");
+    background-image: url("https://www.bytecodelearners.club/statics/23.png");
     width: 6vw;
     height: 10vh;
     position: absolute;
