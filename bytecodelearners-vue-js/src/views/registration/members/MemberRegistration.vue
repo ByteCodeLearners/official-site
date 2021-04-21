@@ -255,6 +255,7 @@ export default {
     flex-direction: column;
     place-items: center ;
    
+    place-items: center;
     background-image: url( "../../../assets/9.jpg") ;
     background-size: 100% 115% ;
     
