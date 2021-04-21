@@ -26,6 +26,13 @@
         >
           <v-icon> mdi-email-edit-outline</v-icon>
         </v-btn>
+        <v-btn
+          class="social-media-buttons"
+          target="_blank"
+          :href="Details.socialLinks.linkedin"
+        >
+          <v-icon>mdi-linkedin</v-icon>
+        </v-btn>
       </div>
     </v-card-subtitle>
   </v-card>
