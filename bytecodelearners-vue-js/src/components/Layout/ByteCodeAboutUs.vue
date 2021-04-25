@@ -1,53 +1,29 @@
 <template>
     <div class="bcl-about-us">
-        
         <v-card class="about-us-heading  mx-auto mb-4" flat outlined> ABOUT US </v-card>
         <vue-typer class="typer" :text="['We make this happen!!!','Come, Learn, Guide, Make Your Network!!!']" :shuffle='true'></vue-typer>
-       
-       <div class="container ">
-        
-        <div class="row ">
-         
-         <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600" color="rgba(0,0,0,0)">
-              
-              <div class="about-us-content">
-
-              <!-- <vue-typer class="typer" text="ByteCodeLearner is a group of students working together with patience and enthusiasm to create something Ctrl + N.
-Anyone who is passionate about exploring the technologies or want to 
-learn something new can join the club.
-We believe that learning together is fun.
-Along with academic knowledge, various skills are there , a student should have.
-We are here for you to introduce all those things and build your personality 
-full with required skills." :repeat=0></vue-typer> -->
-               <p> <span>ByteCodeLearner</span> is a group of students working together with patience and enthusiasm <span> to create something Ctrl + N.</span> Anyone who is passionate about exploring the technologies or want to learn something new can join the club. We believe that learning together is fun. Along with academic knowledge, various skills are there, a student should have. We are here for you to introduce all those things and build your personality full with required skills.</p>
-
-              </div>
-         </v-card>
-
-        <v-card class="col-sm-12   col-md-6 bcl-small-container-2" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1600" color="rgba(0,0,0,0)">
-           <div class="bcl-about-us-img">
-              <center><img :src="logo" alt=""></center>
-
-           </div>
-       
-        </v-card>
-
-
+          <div class="container ">
+             <div class="row ">
+                <v-card class="col-sm-12  col-md-6 bcl-small-container-1" data-aos="fade-right" data-aos-duration="1600" color="rgba(0,0,0,0)">
+                    <div class="about-us-content">
+                      <p> <span>ByteCodeLearner</span> is a group of students working together with patience and enthusiasm <span> to create something Ctrl + N.</span> Anyone who is passionate about exploring the technologies or want to learn something new can join the club. We believe that learning together is fun. Along with academic knowledge, various skills are there, a student should have. We are here for you to introduce all those things and build your personality full with required skills.</p>
+                    </div>
+                </v-card>
+                <v-card class="col-sm-12  col-md-6 bcl-small-container-2" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1600" color="rgba(0,0,0,0)">
+                    <div class="bcl-about-us-img">
+                       <img :src="logo" alt="">
+                    </div>      
+                </v-card>
           </div>
-
-
-        </div>
-        
-      </div>
-
-
+        </div>  
+    </div>
 </template>
 
 <script>
 export default {
     name: 'About',
           data:()=>({
-    logo:process.env.VUE_APP_SERVER_STATIC_FILES+"/bytecode.png"
+    logo:process.env.VUE_APP_SERVER_STATIC_FILES+"/byte-code-learners.svg"
   }),
 }
 </script>
@@ -106,13 +82,14 @@ export default {
     margin: 1%;
 } */
 
-.bcl-about-us-img .line1{
-    text-align: center;
+.bcl-about-us-img {
+    /* text-align: center; */
     display: flex;
-    margin: 2%;
+    /* margin: 2%; */
     justify-content: center;
+    align-items: center;
 }
-.bcl-about-us-img .line1 img{
+/* .bcl-about-us-img .line1 img{
     height: 12em;
     margin: 2%;
 }
@@ -125,6 +102,9 @@ export default {
 .bcl-about-us-img .line2 img{
     height: 12em;
     margin: 2%;
+} */
+.bcl-about-us-img img{
+  width: 50%;
 }
 
 

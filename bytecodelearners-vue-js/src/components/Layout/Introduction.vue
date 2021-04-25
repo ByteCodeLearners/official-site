@@ -50,7 +50,7 @@
 export default {
   name:"Introduction",
   data:()=>({
-    logo:"/bytecode.png"
+    logo:"/byte-code-learners.svg"
 
   }),
   name:"Introduction"
