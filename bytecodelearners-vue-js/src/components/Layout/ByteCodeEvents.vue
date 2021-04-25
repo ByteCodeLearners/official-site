@@ -84,6 +84,7 @@ export default {
                 "/prevEvent3.jpg",
                 "/prevEvent4.jpg",
                 "/prevEvent5.jpg",
+                "/prevEvent6.jpg"
               ],
     // logo:"/logo.png",
   }),
