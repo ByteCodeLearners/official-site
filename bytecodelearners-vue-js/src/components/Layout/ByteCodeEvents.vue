@@ -157,6 +157,7 @@ h4{
   padding:20px ;
   height: 30%;
   bottom: 0;
+  overflow: auto;
 }
 .eventdetails h1{
   font-size: 2rem;
@@ -198,6 +199,7 @@ h4{
     margin-left: auto;
     margin-right: auto;
     font-size: 12px;
+    overflow: auto;
   }
   .eventdetails h1 {
     font-size: 1.5rem;
