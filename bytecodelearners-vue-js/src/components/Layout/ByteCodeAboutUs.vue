@@ -11,7 +11,7 @@
                 </v-card>
                 <v-card class="col-sm-12  col-md-6 bcl-small-container-2" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1600" color="rgba(0,0,0,0)">
                     <div class="bcl-about-us-img">
-                       <img :src="logo" alt="">
+                       <a href="/" class="bcl-about-us-img"><img :src="logo" alt=""></a>
                     </div>      
                 </v-card>
           </div>

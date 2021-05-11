@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <center><img id="logo_img" :src="logo" /></center>
+          <center><a href="/"><img id="logo_img" :src="logo" /></a></center>
         </div>
 
         <div class="col-xs-6 col-md-3" id="contact-us">

@@ -2,7 +2,7 @@
     <div class="founders-page mt-7">
         <div class="heading">
             <div class="logo">
-                <img src="http://bytecodelearners.club/statics/byte-code-learners.svg">
+               <a href="/"><img src="http://bytecodelearners.club/statics/byte-code-learners.svg"></a>
             </div>
             <v-card elevation="0" class="initiators-head">FOUNDERS OF THE CLUB</v-card>
         </div>

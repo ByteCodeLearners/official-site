@@ -1,7 +1,7 @@
 
 <template>
   <div class="mainContainer">
-      <div class="bytecodeLogo"><img :src="`/bytecode.png`|staticFile" alt=""></div>
+      <div class="bytecodeLogo"><a href="/"><img :src="`/bytecode.png`|staticFile" alt=""></a></div>
       <div class="container">
           <h1 class="heading">~: Registration :~</h1>
             <FormContainer @submit="addNewMember" :formData="forms" >
