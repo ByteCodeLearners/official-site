@@ -1,7 +1,7 @@
 
 <template>
   <div class="mainContainer">
-      <div class="bytecodeLogo"><a href="/"><img :src="`/bytecode.png`|staticFile" alt=""></a></div>
+      <div class="bytecodeLogo"> <router-link :to="{ path: '/' }"><img :src="`/bytecode.png`|staticFile" alt="" /></router-link> </div>
       <div class="container">
           <h1 class="heading">~: Registration :~</h1>
             <FormContainer @submit="addNewMember" :formData="forms" >
