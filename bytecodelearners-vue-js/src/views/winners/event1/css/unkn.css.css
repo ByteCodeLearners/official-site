@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(226, 186, 101);
+    background-image: ;
+}
+.box1 {
+    background-color: rgb(33, 235, 124);
+    width: 1300px;
+    height: 50px;
+
+}
+.box2{
+    background-color: salmon;
+    width: 1300px;
+    height: 200px;
+
+}
+.box3 {
+    background-color: rgb(115, 236, 226);
+    width: 1300px;
+    height: 300px;
+
+}
+.box4{
+    background-color: rgb(214, 50, 63);
+    width: 1300px;
+    height: 30px;
+}
+h1{
+    color: hsl(225, 22%, 93%);
+    width: 1300px;
+    height: 40px;
+    
+}

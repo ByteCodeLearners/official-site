@@ -6,6 +6,7 @@ import register from "../views/registration/members/MemberRegistration"
 import login from "../views/login/index"
 import ByteCodeInitiator from "../views/initiators/index"
 import UpComingEvents from "@/components/UpComingEvents"
+import EventsWinner from "../views/winners/EventWinners"
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,12 @@ const routes = [
     path:"/initiator",
     name:"initiator",
     component:ByteCodeInitiator,
+  },
+  {
+
+    path:"/events_winner",
+    name:"events_winner",
+    component:EventsWinner,
   },
   {
 
