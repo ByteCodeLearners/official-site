@@ -1,0 +1,26 @@
+body{
+    background-image: url(background4.jpg);
+    background-color: rgba(222, 253, 245, 0.267);
+    background-size: 100%;
+}
+.container{
+    width: 300mm;
+    height: 40mm;
+    color: rgba(83, 3, 3, 0.973);
+    border: 30mm;
+    box-sizing: border-box;
+
+} 
+p{
+    font-size: x-large;
+    font-style: inherit;
+    font-weight: bold;
+    color: rgb(12, 1, 37);
+}
+a{
+    font-size: xx-large;
+    color: rgb(5, 90, 116);
+}
+h1,h2{
+    color: rgb(80, 1, 1);
+}

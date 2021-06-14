@@ -24,7 +24,7 @@
   <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front" :title="getFullName">
-           <img :src="details.user_details.image |prependImageUrl" :alt="getFullName" style="width:300px;height:300px;">
+           <img :src="details.user_details.image |prependImageUrl" :alt="getFullName">
           </div>
           <div class="flip-card-back">
            <p>{{getFullName}}</p>
@@ -32,15 +32,16 @@
             <p>2021</p>
           </div>
         </div>
-      </div>
-      </div>
+   </div>
+  <div id="name">{{getFullName}}</div>
+  </div>
  </v-card>
  
 </template>
 
 <script>
 export default {
-    name:"ByteCodeMemberDetailsCard",
+    name:"ByteCodeMemberDetailsCard2021",
     data:()=>({
             
         }),
@@ -77,150 +78,74 @@ export default {
 </script>
 
 <style scoped>
-
+#name{
+  font-size: 1.3em;
+  text-align: center;
+  padding: 0.3em 0;
+  background: black;
+  width: inherit;
+  color: #fff;
+}
 .bcl-members-details-container{
     display: flex;
     flex-direction: column;
-    border:0.5px solid grey;
+    /* border:0.5px solid grey; */
     z-index: -5;
     width: 300px;
-
+    margin: 20px 0;
 }
-
-.bcl-members-image
-{
-    height: 350px;
-
-}
-
-.bcl-members-image>img{
-    min-height: 50px;
-    height: 350px;
-    width: 100%;
-}
-.bcl-members-details{
-    text-align: center;
-    font-weight: 600;
-
-}
-.bcl-social-links{
-  min-height: 50px;
-}
-@media only screen and (max-width:500px)
-{
-    .bcl-members-image>img{
-        width: 200px;
-        
-    }
-    .bcl-members-image
-    {
-        height: 350px;
-        width: 200px;
-    }
-    .bcl-members-details-container{
-        width: 200px;
-    }
+img{
+  display: block;
+  width: inherit;
+  height: inherit;
 }
 
 
 
 
+   
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
 
-
-
-
-
-.bcl-social-links
-{
-  padding-left:0;
-  margin-bottom:4px;
-  list-style:none;
-  display: flex;
-  flex-wrap: wrap;
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
   width: 100%;
-  flex-direction: row;
-  justify-content: center;
-
-}
-/* .bcl-social-links li
-{
-  display:inline-block;
-  margin-bottom:4px
-} */
-/* .bcl-social-links li.title
-{
-  margin-right:15px;
-  text-transform:uppercase;
-  color:#96a2b2;
-  font-weight:700;
-  font-size:13px
-} */
-.bcl-social-links a{
-  background-color:#eceeef;
-  color:#818a91;
-  font-size:16px;
-  text-decoration: none;
-  display:inline-block;
-  line-height:44px;
-  width:44px;
-  height:44px;
-  text-align:center;
-  margin-right:8px;
-  border-radius:100%;
-  -webkit-transition:all .2s linear;
-  -o-transition:all .2s linear;
-  transition:all .2s linear
-}
-.bcl-social-links a:active,.bcl-social-links a:focus,.bcl-social-links a:hover
-{
-  color:#fff;
-  background-color:#29aafe
-}
-.bcl-social-links.size-sm a
-{
-  line-height:34px;
-  height:34px;
-  width:34px;
-  font-size:14px
-}
-.bcl-social-links a.facebook:hover
-{
-  background-color:#3b5998
-}
-.bcl-social-links a.twitter:hover
-{
-  background-color:#00aced
-}
-.bcl-social-links a.instagram:hover
-{
-  background-color:#007bb6
-}
-.bcl-social-links a.github:hover
-{
-  background-color:#ea4c89
-}
-.bcl-social-links a.linkedin:hover
-{
-  background-color:#00aced
-}
-.bcl-social-links a.youtube:hover
-{
-  background-color: #FF0000
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.bcl-social-links
-{
-  text-align:right
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
-.bcl-social-links a
-{
-  width:40px;
-  height:40px;
-  text-decoration: none;
-  line-height:40px;
-  margin-left:6px;
-  margin-right:0;
-  border-radius:100%;
-  background-color:#33353d
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: rgba(0, 180, 0, 0.4);
+  color: white;
+  transform: rotateY(180deg);
 }
 </style>

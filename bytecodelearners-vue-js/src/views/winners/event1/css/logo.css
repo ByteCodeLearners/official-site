@@ -1,0 +1,78 @@
+/* *{margin: 5px; padding: 5px;  } 
+    .centerdiv{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+    .a{
+      height: 100px;
+      width: 100px;
+      background-color: rgb(252, 252, 248);
+      border-radius: 50px;
+      text-align: center;
+      margin: 10px;
+      line-height: 120px;
+      box-shadow: 1px 4px 2px 2px rgb(94, 79, 79);
+     }  */
+
+a:hover i {
+  font-size: 9 0px;
+}
+
+.fa-facebook {
+  color: rgb(6, 21, 105);
+}
+.fa-instagram {
+  color: rgb(241, 67, 154);
+}
+.fa-twitter {
+  color: rgb(126, 237, 252);
+}
+.fa-linkedin {
+  color: rgb(53, 37, 100);
+}
+.fa-youtube {
+  color: rgb(235, 19, 19);
+}
+.fa-whatsapp {
+  color: rgb(18, 59, 20);
+}
+.f1 {
+  color: rgb(4, 109, 238);
+}
+
+.g1 {
+  color: rgb(222, 236, 20);
+}
+/* @media screen and (max-width: 1200px) and (min-width:700px   )  { */
+@media only screen and (max-width: 1200px) {
+  .a1 {
+    font-size: 15px;
+  }
+
+  .b1 {
+    font-size: 15px;}
+
+  .c1 {
+      font-size: 15px;
+     }
+
+    .d1 {
+      font-size: 15px;
+    }
+
+    .e1 {
+      font-size: 15px;
+    }
+
+    .f1{
+      font-size: 15px;
+    }
+
+    .g1 {
+      font-size: 15px;
+    }
+   .i1{
+        font-size: 15px;}
+}

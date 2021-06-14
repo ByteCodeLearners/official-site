@@ -8,15 +8,15 @@
   <v-card>
     <v-tabs
       v-model="tab"
-      background-color="primary"
-      dark
+      background-color="rgba(0, 180, 0, 0.4)"
+      light
       centered
     >
       <v-tab
         v-for="item in items"
         :key="item.year"
       >
-        {{ item.year }}
+        <b>{{ item.year }}</b>
       </v-tab>
     </v-tabs>
 
@@ -24,35 +24,14 @@
       <v-tab-item
         v-for="item, key in items"
         :key="key"
-        style="display:flex; flex-direction:row"
+        class="tabs"
+        style="display:flex; flex-wrap:wrap;flex-direction:row;justify-content: space-between;margin:10px;"
       >
-      <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
+      <div class="bcl-group-slider-content" v-for="(i ,key) in item.members" :key="key">
             <MembersDetailsCard2021 :details="i"/>
       </div>
       </v-tab-item>
-      <v-tab-item
-        v-for="item in items"
-        :key="item.year"
-        style="display:flex; flex-direction:row"
-      >
-      <!-- card item -->
-      <!-- <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="http://bytecodelearners.club/statics/byte-code-learners.svg" alt="Avatar" style="width:300px;height:300px;">
-          </div>
-          <div class="flip-card-back">
-            <h1>John Doe</h1>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
-          </div>
-        </div>
-      </div> -->
-      <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
-            <MembersDetailsCard :details="i"/>
-      </div>
-      <!-- card item -->
-      </v-tab-item>
+      
     </v-tabs-items>
   </v-card>
 
@@ -67,12 +46,11 @@ export default {
     name:'BytecodeMembers',
      data () {
       return {
-        sliderContent:[],
         tab: null,
         items: [
-          { year: '2019', content: 'Tab 1 Content' },
-          { year: '2020', content: 'Tab 2 Content' },
-          { year: '2021', content: 'Tab 3 Content' },
+          { year: '2019', members: null},
+          { year: '2020', members: null},
+          // { year: '2021', members: null},
         ],
       }
     },
@@ -81,25 +59,35 @@ export default {
         MembersDetailsCard,
     },
     mounted(){
-      API.getAllMembers()
-          .then((data)=>{
-              this.sliderContent=data.data;
-          })
-          .catch((err)=>{
-              
-          })
-      },
-      API.getAllUsers()
-        .then(data=>{
-            this.sliderContent=data.data;
+      
+       API.getAllUsers()
+        .then(details=>{
+            this.items[1]['members'] = details.data;
         })
         .catch(err=>{
             
-        })  
+        }) ;
+      API.getAllMembers()
+          .then((details)=>{
+              this.items[0]['members'] = details.data;
+          })
+          .catch((err)=>{
+              
+          }); 
+      },
+     
 }
 </script>
 
 <style>
+.tabs{
+  /* background: rgb(73, 243, 144); */
+  display:flex; 
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content: space-between;
+  padding:10px;
+}
 .v-card--reveal {
   align-items: center;
   bottom: 0;
@@ -136,50 +124,5 @@ export default {
         
     }
 
-   
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-}
 
 </style>

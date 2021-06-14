@@ -1,0 +1,41 @@
+html{
+    font-size: 62%;
+}
+
+
+
+p{
+    font-size: 2rem;
+    font-family: fantasy;
+    color: rgb(133, 39, 62);
+}
+h1{
+     font-size: 4rem;
+     color:rgb(44, 14, 14); 
+}
+h2{
+    font-size: 2rem;
+}
+h3,h4,h5,h6{
+    font-size: 2rem;
+}
+a{
+    font-size: 3rem;
+    font-style: oblique;
+    color: rgb(71, 103, 247);
+}
+
+@media(max-width:998px){
+    html {
+        font-size: 55%;
+
+    }
+}@media(max-width:768px) {
+    html{
+        font-size: 45%;
+    }
+    /* .pic1{
+        width: 10vh;
+        height: 3vh;
+    } */
+}
