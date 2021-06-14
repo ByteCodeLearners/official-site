@@ -32,6 +32,15 @@
       </div>
       <div
         class="bcl-menu-item"
+        @click="routerView('/batches')"
+      >
+        <v-icon class="bcl-menu-item-icon" color="green darken-2" x-large
+          >mdi-account-group-outline</v-icon
+        >
+        <div class="bcl-menu-item-title bcl-large-text">Batches</div>
+      </div>
+      <div
+        class="bcl-menu-item"
         @click="scrollToEventsGallery"
         v-if="getCurrentRoute == '/'"
       >

@@ -7,6 +7,9 @@ export default {
        getAllMembers(){
            return instance.get("/members/all");
        },
+       getAllUsers(){
+        return instance.get("/users/all");
+       },
        addNewMember(memberDetails){
             return instance.post("/members/new",memberDetails);
        },
