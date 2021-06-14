@@ -7,7 +7,7 @@
           <div class="bcl-group-slider  slide">
           <!-- CONTENT for sliding-->
           <div class="bcl-group-slider-content" v-for="(i ,key) in sliderContent" :key="key">
-            <MembersDetailsCard :details="i"/>
+            <MembersDetailsCard2021 :details="i"/>
           </div>
       </div>
   </div>
@@ -16,7 +16,7 @@
 
 <script>
 import API from "../../config/api"
-import MembersDetailsCard from "../UI/ByteCodeMemberDetailsCard"
+import MembersDetailsCard2021 from "../UI/ByteCodeMemberDetailsCard2021"
 export default {
     data:()=>({
         sliderContent:[],
@@ -29,7 +29,7 @@ export default {
         repeatTimer:'',
     }),
     components:{
-        MembersDetailsCard,
+        MembersDetailsCard2021,
     },
     props:{
         sliderTitle:String
@@ -45,14 +45,13 @@ export default {
     },
     mounted()
     {
-        API.getAllMembers()
+        API.getAllUsers()
         .then(data=>{
             this.sliderContent=data.data;
         })
         .catch(err=>{
             
         })
-        
         this.currentPos=3;
         
        $(".bcl-slider-container").ready(()=>{
