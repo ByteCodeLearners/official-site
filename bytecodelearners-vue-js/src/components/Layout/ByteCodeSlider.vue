@@ -52,6 +52,7 @@ export default {
         .catch(err=>{
             
         })
+        
         this.currentPos=3;
         
        $(".bcl-slider-container").ready(()=>{

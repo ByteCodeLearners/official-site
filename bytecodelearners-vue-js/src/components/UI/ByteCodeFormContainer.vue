@@ -1,7 +1,10 @@
 <template>
 <form @submit.prevent="formSubmit">
     <slot></slot>
-    <v-btn class="submit-btn" type="submit"> submit</v-btn>
+    <v-btn class="submit-btn"
+    color="success"
+              dark
+              large type="submit"> submit</v-btn>
 </form>
 
 </template>

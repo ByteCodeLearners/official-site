@@ -6,6 +6,8 @@ import register from "../views/registration/members/MemberRegistration"
 import login from "../views/login/index"
 import ByteCodeInitiator from "../views/initiators/index"
 import UpComingEvents from "@/components/UpComingEvents"
+import EventsWinner from "../views/winners/EventWinners"
+import BytecodeMembers from "../views/members/index"
 
 Vue.use(VueRouter);
 
@@ -28,6 +30,12 @@ const routes = [
   },
   {
 
+    path:"/events_winner",
+    name:"events_winner",
+    component:EventsWinner,
+  },
+  {
+
     path:"/login",
     name:"login",
     component:login,
@@ -42,7 +50,13 @@ const routes = [
     path:"/add/upcoming/events",
     name:"UpComingEvents",
     component:UpComingEvents,
-  }
+  },
+  {
+
+    path:"/batches",
+    name:"BytecodeMembers",
+    component:BytecodeMembers,
+  },
 ];
 
 const router = new VueRouter({
