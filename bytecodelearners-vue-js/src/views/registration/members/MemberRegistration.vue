@@ -1,9 +1,122 @@
 <template>
-  <div class="bcl-member-regstration-container">
-      <br>
-      <img src="https://www.bytecodelearners.club/statics/byte-code-learners.svg" height="150px">
-      <div class="registration-form-title">
-          ByteCodeLearners Registration
+  <div class="mainContainer">
+      <div class="bytecodeLogo"> <router-link :to="{ path: '/' }"><img :src="`/bytecode.png`|staticFile" alt="" /></router-link> </div>
+      <div class="container">
+          <h1 class="heading">~: Registration :~</h1>
+            <FormContainer @submit="addNewMember" :formData="forms" >
+               <div class="main">
+                  <div  class="row">
+                        <span class="material-icons">person</span>
+                          <div class="inputname">
+                          <input
+                            type="text"
+                            required
+                            placeholder="First Name"
+                            class="f_name" 
+                            v-model="forms.first_name"
+                          />
+                         <input type="text" 
+                            placeholder="Last Name" 
+                            class="l_name" 
+                            v-model="forms.last_name" 
+                         />
+                         </div>
+                    
+                  </div>
+
+            
+              <div class="row">
+                <span class="material-icons">call</span>
+                <input
+                  type="tel"
+                  placeholder="Mobile No."
+                  value="+91"
+                  maxlength="13"
+                  class="for_mobile"
+                  v-model="forms.mobile_number"
+                />
+              </div>
+              <div class="row">
+                <span class="material-icons">photo_camera</span>
+                <input
+                  type="file"
+                  required
+                  placeholder="Image"
+                  class="for_image"  
+                  @click:clear.prevent="fileFieldCleared" 
+                  @change="filePicked($event)" 
+                  accept="image/*"
+                />
+              </div>
+           
+            <div class="row">
+              <span class="material-icons">event_note</span>
+              <input
+                type="date"
+                required
+                placeholder="select date of joining college "
+                class="for_"
+                v-model="forms.selected_date"
+              />
+            </div>
+
+            <div class="row">
+              <span class="material-icons">school</span>
+              <input type="number" placeholder="Batch" class="for_" v-model="getBatchYear" />
+            </div>
+
+            <div class="row">
+              <span class="material-icons">person_pin_circle</span>
+              <input
+                type="text"
+                required
+                placeholder="Address"
+                class="for_"
+              />
+            </div>
+
+            <div class="row">
+              <span class="material-icons">mail_outline</span>
+              <input type="email" required placeholder="Email" class="for_" 
+              v-model="forms.email"/>
+            </div>
+
+            <div class="row">
+              <span class="material-icons">security</span>
+              <input
+                type="password"
+                required
+                placeholder="Password"
+                class="for_"
+                id="first_ps"
+                v-model="forms.password" 
+              />
+              <span class="material-icons" @click="show()" id="open"
+                >visibility_off</span
+              >
+            </div>
+
+            <div class="row">
+              <span class="material-icons">security</span>
+              <input
+                type="password"
+                required
+                placeholder="Confirm Password"
+                class="for_"
+                id="second_ps"
+                v-model="forms.rePassword"
+              />
+
+              <span class="material-icons" @click="show1()" id="open1"
+                >visibility_off</span
+              >
+            </div>
+            <!-- <div class="for_button">
+              <button class="submit" type="submit">Submit</button>
+          </div> -->
+          </div>
+        </FormContainer>
+        
       </div>
      <div class="bcl-member-registration-form">
          <center><img :src="url" width="200px" alt=""></center>
