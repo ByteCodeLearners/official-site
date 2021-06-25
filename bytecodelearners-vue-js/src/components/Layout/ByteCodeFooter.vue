@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <center><img id="logo_img" :src="logo" /></center>
+             <center><router-link :to="{ path: '/' }"><img id="logo_img" :src="logo" /></router-link></center>
         </div>
 
         <div class="col-xs-6 col-md-3" id="contact-us">
