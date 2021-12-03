@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
       <div class="bytecodeLogo"> <router-link :to="{ path: '/' }"><img :src="`/bytecode.png`|staticFile" alt="" /></router-link> </div>
-      <div class="container">
+      <!-- <div class="container">
           <h1 class="heading">~: Registration :~</h1>
             <FormContainer @submit="addNewMember" :formData="forms" >
                <div class="main">
@@ -111,13 +111,13 @@
                 >visibility_off</span
               >
             </div>
-            <!-- <div class="for_button">
+            <div class="for_button">
               <button class="submit" type="submit">Submit</button>
-          </div> -->
+          </div>
           </div>
         </FormContainer>
         
-      </div>
+      </div> -->
      <div class="bcl-member-registration-form">
          <center><img :src="url" width="200px" alt=""></center>
           <FormContainer @submit="addNewMember" :formData="forms" >

@@ -48,9 +48,11 @@ export default {
         API.getAllUsers()
         .then(data=>{
             this.sliderContent=data.data;
+            console.log("Comming 1");
         })
         .catch(err=>{
-            
+            console.log("Comming 2");
+
         })
         this.currentPos=3;
         

@@ -64,7 +64,7 @@ export default {
         initiators:[
                     {
                         fullName:"Dipu Kumar Sah",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/dipu-kumar-sah.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/dipu-kumar-sah.jpg",
                         socialLinks:{
                             github:"https://github.com/dipu-kr-sah",
                             email:"dipuxah7@gmail.com",
@@ -73,7 +73,7 @@ export default {
                     },
                     {
                         fullName:"Yash Raj",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/yash-raj.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/yash-raj.jpg",
                         socialLinks:{
                             github:"https://github.com/180905",
                             email:"yash180905@gmail.com",
@@ -83,7 +83,7 @@ export default {
                     },
                     {
                         fullName:"Raj Patel",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/raj-patel.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/raj-patel.jpg",
                         socialLinks:{
                             github:"https://github.com/rajpatel2619",
                             email:"kakhilesh79@gmail.com",
@@ -93,7 +93,7 @@ export default {
                     },
                     {
                         fullName:"Shantanu Pratap",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/shantanu-pratap.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/shantanu-pratap.jpg",
                         socialLinks:{
                             linkedin: "https://www.linkedin.com/in/shantanu-p-291b991b4",
                             github:"https://github.com/180896-cse",

@@ -66,7 +66,7 @@ export default {
     winners:[
         {team:'Girls Team',about:'Our girls team together with passion and perseverance build a beautiful handcrafted website specially designed for students. In this, we have tried to bring together all the things which are related to the life of a students. It is a small initiative for Revolutionizing Education system. ADHYAYAN is designed to give your career the perfect boost to achieve your full potential and e mpowring the student with access to better future. Find every college, exam, scholarship and loan at one place whether it is a private or a government scheme. Apply for loans, bridge the gap in education finance.Apply for scholarship , find the best scholarship as per your eligibility. We are confident that after visiting our website you will not need to go anywhere else. We have taken care of all the needs of a student.If any student feels any kind of problem, then they can also talk to our experts by connecting on social media.We will all try with the help of this website that our students can get the right guidance.We have created this website so that all the students who come here keep getting fresh updates and they should not miss a single information. Our main moto is to spread awarness.',
         members:'Archana Kumari, Susmita Sagar, Umesh Kumari',
-        project: 'https://bytecodelearners.club/winners/event1/html/'}
+        project: 'https://bytecodelearners.tech/winners/event1/html/'}
     ]
   }),
 }
