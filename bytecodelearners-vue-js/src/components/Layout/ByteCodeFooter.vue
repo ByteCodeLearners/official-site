@@ -37,7 +37,7 @@
         <div class="col-md-8 col-sm-6 col-xs-12">
           <p class="copyright-text">
             Copyright &copy; 2020 | Created by
-            <a href="https://www.bytecodelearners.club/">ByteCodeLearners</a>.
+            <a href="https://www.bytecodelearners.tech/">ByteCodeLearners</a>.
           </p>
         </div>
 

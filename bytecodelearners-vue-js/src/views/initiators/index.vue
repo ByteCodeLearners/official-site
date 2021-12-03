@@ -2,7 +2,7 @@
     <div class="founders-page mt-7">
         <div class="heading">
             <div class="logo">
-               <router-link :to="{ path: '/' }"> <img src="http://bytecodelearners.club/statics/byte-code-learners.svg"></router-link>
+               <router-link :to="{ path: '/' }"> <img src="http://bytecodelearners.tech/statics/byte-code-learners.svg"></router-link>
             </div>
             <v-card elevation="0" class="initiators-head">FOUNDERS OF THE CLUB</v-card>
         </div>
@@ -10,7 +10,7 @@
                 <v-card-text elevation="0">
                     <div class="description">
                         <div class="image flex-shrink-1">
-                            <img src="http://bytecodelearners.club/statics/init_img.jpg"/>
+                            <img src="http://bytecodelearners.tech/statics/init_img.jpg"/>
                         </div>
                         <div class="texts">
                             <span>ByteCodeLearners Club</span> was founded in 2019  by 4 CSE students when they were in their 2nd year of college.<br>
@@ -39,7 +39,7 @@
                 initiators:[
                     {
                         fullName:"Dipu Kumar Sah",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/dipu-kumar-sah.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/dipu-kumar-sah.jpg",
                         socialLinks:{
                             github:"https://github.com/dipu-kr-sah",
                             email:"dipuxah7@gmail.com",
@@ -48,7 +48,7 @@
                     },
                     {
                         fullName:"Yash Raj",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/yash-raj.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/yash-raj.jpg",
                         socialLinks:{
                             github:"https://github.com/180905",
                             email:"yash180905@gmail.com",
@@ -58,7 +58,7 @@
                     },
                     {
                         fullName:"Raj Patel",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/raj-patel.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/raj-patel.jpg",
                         socialLinks:{
                             github:"https://github.com/rajpatel2619",
                             email:"kakhilesh79@gmail.com",
@@ -68,7 +68,7 @@
                     },
                     {
                         fullName:"Shantanu Pratap",
-                        imageUrl:"http://bytecodelearners.club/initiators-image/shantanu-pratap.jpg",
+                        imageUrl:"http://bytecodelearners.tech/initiators-image/shantanu-pratap.jpg",
                         socialLinks:{
                             linkedin: "https://www.linkedin.com/in/shantanu-p-291b991b4",
                             github:"https://github.com/180896-cse",

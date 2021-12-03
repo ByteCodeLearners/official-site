@@ -5,10 +5,10 @@ const configuration={
 const instance=axios.create(configuration);
 export default {
        getAllMembers(){
-           return instance.get("/members/all");
+           return instance.get("/batch/2019");
        },
        getAllUsers(){
-        return instance.get("/users/all");
+        return instance.get("/batch/2020");
        },
        addNewMember(memberDetails){
             return instance.post("/members/new",memberDetails);

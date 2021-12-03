@@ -3,8 +3,8 @@
     <slot></slot>
     <v-btn class="submit-btn"
     color="success"
-              dark
-              large type="submit"> submit</v-btn>
+    dark
+    large type="submit"> submit</v-btn>
 </form>
 
 </template>

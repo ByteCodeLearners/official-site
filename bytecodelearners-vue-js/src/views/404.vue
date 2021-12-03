@@ -1,6 +1,6 @@
 <template>
   <div class="page-404">
-    <center><img src="https://www.bytecodelearners.club/statics/byte-code-learners.svg" style="margin-top:20px;" height="150px"></center>
+    <center><img src="https://www.bytecodelearners.tech/statics/byte-code-learners.svg" style="margin-top:20px;" height="150px"></center>
 
       <h1>404</h1>
 <!-- <p>Oops! Something is wrong.</p> -->
@@ -28,7 +28,7 @@ export default {
   font-size: 100%;
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
-  /* background-image: url(https://www.bytecodelearners.club/statics/byte-code-learners.svg);
+  /* background-image: url(https://www.bytecodelearners.tech/statics/byte-code-learners.svg);
   background-position-x: center;
   background-position-y: center; */
 }

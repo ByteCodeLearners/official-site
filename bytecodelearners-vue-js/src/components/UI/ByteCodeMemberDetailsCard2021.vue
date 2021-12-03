@@ -4,21 +4,21 @@
   <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front" :title="getFullName">
-           <img :src="details.user_details.image |prependImageUrl" :alt="getFullName">
+           <img :src="details.image |prependImageUrl" :alt="getFullName">
           </div>
           <div class="flip-card-back">
            <h2>{{getFullName}}</h2>
             <!-- <p>Junior</p> -->
-            <!-- <p>{{details.user_details.year}}</p> -->
-            <template v-if="details.user_details.social_media_links">
+            <!-- <p>{{details.year}}</p> -->
+            <template v-if="details.social_media_links">
               <div class="bcl-members-social-icon">
                 <div class="bcl-social-links">
-                    <a class="instagram" v-if="details.user_details.social_media_links.instagram" :href="details.user_details.social_media_links.instagram" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
-                    <a class="twitter" v-if="details.user_details.social_media_links.twitter" :href="details.user_details.social_media_links.twitter"  target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-twitter</v-icon></a>
-                    <a class="facebook" v-if="details.user_details.social_media_links.facebook" :href="details.user_details.social_media_links.facebook" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
-                    <a class="github" v-if="details.user_details.social_media_links.github" :href="details.user_details.social_media_links.github" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
-                    <a class="youtube" v-if="details.user_details.social_media_links.youtube" :href="details.user_details.social_media_links.youtube" target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-youtube</v-icon></a>
-                    <a class="linkedin" v-if="details.user_details.social_media_links.linkedin" :href="details.user_details.social_media_links.linkedin" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-linkedin</v-icon></a>
+                    <a class="instagram" v-if="details.social_media_links.instagram" :href="details.social_media_links.instagram" target="_blank"><v-icon class="bcl-social-media-icons"  dark>mdi-instagram</v-icon></a>
+                    <a class="twitter" v-if="details.social_media_links.twitter" :href="details.social_media_links.twitter"  target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-twitter</v-icon></a>
+                    <a class="facebook" v-if="details.social_media_links.facebook" :href="details.social_media_links.facebook" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-facebook</v-icon></a>
+                    <a class="github" v-if="details.social_media_links.github" :href="details.social_media_links.github" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-github</v-icon></a>            
+                    <a class="youtube" v-if="details.social_media_links.youtube" :href="details.social_media_links.youtube" target="_blank"><v-icon class="bcl-social-media-icons" href="" dark>mdi-youtube</v-icon></a>
+                    <a class="linkedin" v-if="details.social_media_links.linkedin" :href="details.social_media_links.linkedin" target="_blank"><v-icon class="bcl-social-media-icons" dark>mdi-linkedin</v-icon></a>
                 </div>    
             </div>
             </template>
@@ -57,9 +57,9 @@ export default {
           getFullName(){
             if(this.details.middle_name)
             {
-            return (this.details.user_details.first_name.trim()+" "+this.details.user_details.middle_name.trim()+" "+this.details.user_details.last_name.trim()).toUpperCase()
+            return (this.details.first_name.trim()+" "+this.details.middle_name.trim()+" "+this.details.last_name.trim()).toUpperCase()
             }
-            return (this.details.user_details.first_name.trim()+" "+this.details.user_details.last_name.trim()).toUpperCase();
+            return (this.details.first_name.trim()+" "+this.details.last_name.trim()).toUpperCase();
 
           }
 

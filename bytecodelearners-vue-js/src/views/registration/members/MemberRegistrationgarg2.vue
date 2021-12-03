@@ -255,7 +255,7 @@ export default {
     flex-direction: column;
     place-items: center ;
    
-    background-image: url( "https://www.bytecodelearners.club/statics/9.jpg") ;
+    background-image: url( "https://www.bytecodelearners.tech/statics/9.jpg") ;
     background-size: 100% 115% ;
     z-index: index -10; 
 }
@@ -283,7 +283,7 @@ export default {
 .container{
     width: 44vw;
     height:50vh;
-    /* background-image: url( "https://www.bytecodelearners.club/statics/mob_back.jpg") ; */
+    /* background-image: url( "https://www.bytecodelearners.tech/statics/mob_back.jpg") ; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -413,7 +413,7 @@ padding-bottom:24px;
     color: lightseagreen;
   }
 .mainContainer{
-   background-image: url( "https://www.bytecodelearners.club/statics/mob_back1.jpg") ;
+   background-image: url( "https://www.bytecodelearners.tech/statics/mob_back1.jpg") ;
 }
 
 .one,.two{
@@ -422,7 +422,7 @@ padding-bottom:24px;
 .container{
     width: 65vw;
     height:65vh;
-    /* background-image: url( "https://www.bytecodelearners.club/statics/mob_back.jpg") ; */
+    /* background-image: url( "https://www.bytecodelearners.tech/statics/mob_back.jpg") ; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -481,7 +481,7 @@ input{
     color: lightseagreen;
   }
 .mainContainer{
-   background-image: url( "https://www.bytecodelearners.club/statics/mob_back1.jpg") ;
+   background-image: url( "https://www.bytecodelearners.tech/statics/mob_back1.jpg") ;
 }
 .one,.two{
       display: none;
@@ -555,7 +555,7 @@ input{
 }
 @media only screen and (max-width: 423px){
     .mainContainer{
-      background-image: url("https://www.bytecodelearners.club/statics/mob_back1.jpg");
+      background-image: url("https://www.bytecodelearners.tech/statics/mob_back1.jpg");
   }
   .one,.two{
       display: none;
@@ -616,7 +616,7 @@ input{
 /* background animation */
 
 #logo{ 
-    background-image: url("https://www.bytecodelearners.club/statics/26.png");
+    background-image: url("https://www.bytecodelearners.tech/statics/26.png");
     width: 8vw;
     height: 17vh;
     position: absolute;
@@ -625,7 +625,7 @@ input{
     animation-timing-function: unset;
 }
 #logo1{ 
-    background-image: url("https://www.bytecodelearners.club/statics/27.png");
+    background-image: url("https://www.bytecodelearners.tech/statics/27.png");
     width: 10vw;
     height: 25vh;
     position: absolute;
@@ -641,7 +641,7 @@ img{
     height: 100%;
 }
 #logo2{ 
-    background-image: url("https://www.bytecodelearners.club/statics/28.png");
+    background-image: url("https://www.bytecodelearners.tech/statics/28.png");
     width: 10vw;
     height: 22vh;
     position: absolute;
@@ -653,7 +653,7 @@ img{
 }
 
 #logo3{ 
-    background-image: url("https://www.bytecodelearners.club/statics/23.png");
+    background-image: url("https://www.bytecodelearners.tech/statics/23.png");
     width: 6vw;
     height: 10vh;
     position: absolute;
